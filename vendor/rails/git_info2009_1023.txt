@@ -1,0 +1,102 @@
+vendor/rails/git_info2009_1023.txt
+
+The software in this dir corresponds to Rails 2-3-stable.
+
+Here is a screen dump of me getting this software into this state:
+
+
+Fri Oct 23 12:37 /pt/tt10/vendor maco$ git clone git://github.com/rails/rails.git
+
+Initialized empty Git repository in /Users/maco/pt/customers3/thubten/tt10/vendor/rails/.git/
+remote: Counting objects: 121013, done.        
+remote: Compressing objects: 100% (26432/26432), done.        
+remote: Total 121013 (delta 93443), reused 120543 (delta 93128)        
+Receiving objects: 100% (121013/121013), 21.31 MiB | 278 KiB/s, done.
+Resolving deltas: 100% (93443/93443), done.
+Fri Oct 23 12:41 /pt/tt10/vendor maco$ 
+
+Fri Oct 23 12:41 /pt/tt10/vendor maco$ ll
+
+total 0
+drwxr-xr-x   4 maco  staff  136 Oct 23 12:39 ./
+drwxr-xr-x  15 maco  staff  510 Oct 23 12:36 ../
+drwxr-xr-x   2 maco  staff   68 Oct 23 12:36 plugins/
+drwxr-xr-x  18 maco  staff  612 Oct 23 12:41 rails/
+
+Fri Oct 23 12:41 /pt/tt10/vendor maco$ cd rails
+
+Fri Oct 23 12:41 /pt/tt10/vendor/rails maco$ 
+
+Fri Oct 23 12:41 /pt/tt10/vendor/rails maco$ 
+
+Fri Oct 23 12:41 /pt/tt10/vendor/rails maco$ git br -a
+
+* master
+  origin/1-2-stable
+  origin/2-0-stable
+  origin/2-1-stable
+  origin/2-2-stable
+  origin/2-3-bench
+  origin/2-3-stable
+  origin/HEAD
+  origin/experimental
+  origin/initializer_refactor
+  origin/master
+  origin/metal_middleware
+Fri Oct 23 12:42 /pt/tt10/vendor/rails maco$ git checkout -b 2-3-stable origin/2-3-stable
+
+Branch 2-3-stable set up to track remote branch refs/remotes/origin/2-3-stable.
+Switched to a new branch "2-3-stable"
+Fri Oct 23 12:45 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:45 /pt/tt10/vendor/rails maco$ 
+
+
+Fri Oct 23 12:48 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:48 /pt/tt10/vendor/rails maco$ ll .git*
+
+-rw-r--r--  1 maco  staff  337 Oct 23 12:45 .gitignore
+
+.git:
+total 464
+drwxr-xr-x  13 maco  staff     442 Oct 23 12:45 ./
+drwxr-xr-x  17 maco  staff     578 Oct 23 12:48 ../
+-rw-r--r--   1 maco  staff      27 Oct 23 12:45 HEAD
+drwxr-xr-x   2 maco  staff      68 Oct 23 12:39 branches/
+-rw-r--r--   1 maco  staff     321 Oct 23 12:45 config
+-rw-r--r--   1 maco  staff      58 Oct 23 12:39 description
+drwxr-xr-x  12 maco  staff     408 Oct 23 12:39 hooks/
+-rw-r--r--   1 maco  staff  216672 Oct 23 12:45 index
+drwxr-xr-x   3 maco  staff     102 Oct 23 12:39 info/
+drwxr-xr-x   4 maco  staff     136 Oct 23 12:41 logs/
+drwxr-xr-x   4 maco  staff     136 Oct 23 12:39 objects/
+-rw-r--r--   1 maco  staff    6325 Oct 23 12:41 packed-refs
+drwxr-xr-x   5 maco  staff     170 Oct 23 12:41 refs/
+Fri Oct 23 12:48 /pt/tt10/vendor/rails maco$ 
+
+Fri Oct 23 12:48 /pt/tt10/vendor/rails maco$ cat .gitignore 
+cat .gitignore 
+debug.log
+doc/rdoc
+activeresource/doc
+activerecord/doc
+actionpack/doc
+actionmailer/doc
+activesupport/doc
+activeresource/pkg
+activerecord/pkg
+actionpack/pkg
+actionmailer/pkg
+activesupport/pkg
+railties/pkg
+railties/test/500.html
+railties/doc/guides/html/images
+railties/doc/guides/html/stylesheets
+railties/guides/output
+*.rbc
+*.swp
+*.swo
+Fri Oct 23 12:48 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ rm -rf .git
+Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
