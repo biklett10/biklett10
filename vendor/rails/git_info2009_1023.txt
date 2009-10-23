@@ -100,3 +100,49 @@ Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$
 Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ rm -rf .git
 Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
 Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
+
+
+
+Fri Oct 23 12:50 /pt/tt10/vendor/rails maco$ 
+Fri Oct 23 12:52 /pt/tt10/vendor/rails maco$ cd ..
+Fri Oct 23 12:52 /pt/tt10/vendor maco$ cd ..
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ ll
+total 32
+drwxr-xr-x  15 maco  staff    510 Oct 23 12:36 ./
+drwxr-xr-x   9 maco  staff    306 Oct 23 12:36 ../
+-rw-r--r--   1 maco  staff  10011 Oct 23 12:36 README
+-rw-r--r--   1 maco  staff    307 Oct 23 12:36 Rakefile
+drwxr-xr-x   6 maco  staff    204 Oct 23 12:36 app/
+drwxr-xr-x   9 maco  staff    306 Oct 23 12:36 config/
+drwxr-xr-x   2 maco  staff     68 Oct 23 12:36 db/
+drwxr-xr-x   3 maco  staff    102 Oct 23 12:36 doc/
+drwxr-xr-x   3 maco  staff    102 Oct 23 12:36 lib/
+drwxr-xr-x   6 maco  staff    204 Oct 23 12:36 log/
+drwxr-xr-x  11 maco  staff    374 Oct 23 12:36 public/
+drwxr-xr-x  11 maco  staff    374 Oct 23 12:36 script/
+drwxr-xr-x   8 maco  staff    272 Oct 23 12:36 test/
+drwxr-xr-x   6 maco  staff    204 Oct 23 12:36 tmp/
+drwxr-xr-x   4 maco  staff    136 Oct 23 12:39 vendor/
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ git init
+Initialized empty Git repository in /Users/maco/pt/customers3/thubten/tt10/.git/
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ git add .
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ 
+Fri Oct 23 12:52 /pt/tt10 maco$ git commit -a -m 'commit 1'
+git commit -a -m 'commit 1'
+[master (root-commit)]: created 51af07b: "commit 1"
+ 1831 files changed, 233951 insertions(+), 0 deletions(-)
+ create mode 100644 README
+ create mode 100644 Rakefile
+ create mode 100644 app/controllers/application_controller.rb
+ create mode 100644 app/helpers/application_helper.rb
+ create mode 100644 config/boot.rb
+ create mode 100644 config/database.yml
+
+snip
