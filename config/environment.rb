@@ -10,13 +10,7 @@ Rails::Initializer.run do |config|
   # bikle
   config.gem 'rspec-rails', :lib => false, :version => '1.2.7.1'
   config.gem 'rspec', :lib => false, :version => '1.2.7'
-  config.gem 'rack', :version => '1.0.0'
   config.gem 'cucumber', :version => '0.3.11'
-  config.gem 'term-ansicolor', :version => '1.0.3'
-  config.gem 'treetop', :version => '1.4.2'
-  config.gem 'polyglot', :version => '0.2.9'
-  config.gem 'diff-lcs', :version => '1.1.2'
-  config.gem 'builder', :version => '2.1.2'
   config.gem 'webrat', :version => '0.4.4'
   config.gem 'nokogiri', :version => '1.3.3'
   # bikle
