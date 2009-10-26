@@ -23,3 +23,35 @@ Processing MoviesController#index (for 127.0.0.1 at 2009-10-26 16:07:51) [GET]
 Rendering template within layouts/movies
 Rendering movies/index
 Completed in 15ms (View: 11, DB: 1) | 200 OK [http://www.example.com/movies]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 23:22:10', '2009-10-26 23:22:10')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-26 16:22:10) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-26 16:22:10) [GET]
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/movies/new]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 23:27:06', '2009-10-26 23:27:06')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-26 16:27:06) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-26 16:27:06) [GET]
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://www.example.com/movies/new]
