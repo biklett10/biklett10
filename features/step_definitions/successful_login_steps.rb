@@ -7,7 +7,6 @@ Given /^I am the registered user (.+)$/ do |login|
     "password"=>"password",
     "password_confirmation"=>"password"
   }
-  debugger
   @user = User.new(params)
   @user.save_without_session_maintenance
 end
@@ -18,6 +17,3 @@ When /^I login with valid credentials$/ do
   click_button("Login")
 end
 
-Then /^I should be on ([^\"]*)$/ do |page_name|
-  response.request.path.should == path_to(page_name)
-end

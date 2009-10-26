@@ -1,1 +1,47 @@
-# Logfile created on Sun Oct 25 18:29:54 -0700 2009
+# Logfile created on Sun Oct 25 18:29:54 -0700 2009  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'john_doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c9920deec409a74c80604b17fabda133db454df81322639b0828d886bc715aa7b43ba8710913788533f358b4a34cdd6f543bc62f801f3a86ff1501c1c3030889') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '24D01UbAVz2dKZp_O8QE') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'john_doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '5947eef9fca9e8a252e17363595bfd472b4523284c8c0a03f01842809d5764aeab468edd5d48fa4b727d4d7f2c9c466ddca9479fc9724d21ca994a132bea6181') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Y_8ApvzgDLk1WB7y_P0r') LIMIT 1[0m
+REQUESTING PAGE: GET /user_sessions/new with {} and HTTP headers {}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-26 01:14:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:04:12') [0m
+Completed in 87ms (View: 83, DB: 1) | 200 OK [http://www.example.com/user_sessions/new]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"password", "login"=>"john_doe"}} and HTTP headers {"HTTP_REFERER"=>"/user_sessions/new"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-26 01:14:12) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"john_doe", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'john_doe') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:04:12') [0m
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://www.example.com/user_session]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'john_doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '318f33930aa36ab2357eefc14bbedbf5aef66c5dbbe739c92fb31123c1f0a500893fa5b8105bb27f767b792b18cc7f52185070c607bfee84e42a9ddc13c75adb') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'ERRNd_6XH1eQ0XkeGFis') LIMIT 1[0m
+REQUESTING PAGE: GET /user_sessions/new with {} and HTTP headers {}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-26 01:20:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:10:27') [0m
+Completed in 42ms (View: 38, DB: 1) | 200 OK [http://www.example.com/user_sessions/new]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"password", "login"=>"john_doe"}} and HTTP headers {"HTTP_REFERER"=>"/user_sessions/new"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-26 01:20:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"john_doe", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'john_doe') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:10:27') [0m
+Completed in 20ms (View: 16, DB: 1) | 200 OK [http://www.example.com/user_session]
