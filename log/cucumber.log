@@ -4,3 +4,22 @@
   [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:44:49', '2009-10-26 19:44:49')[0m
   [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("name", "created_at", "genre_id", "updated_at") VALUES('Caddyshack', '2009-10-26 19:44:49', 1, '2009-10-26 19:44:49')[0m
   [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 21:28:57', '2009-10-26 21:28:57')[0m
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 23:02:54', '2009-10-26 23:02:54')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-26 16:02:54) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 65ms (View: 62, DB: 1) | 200 OK [http://www.example.com/movies]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 23:07:27', '2009-10-26 23:07:27')[0m
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 23:07:51', '2009-10-26 23:07:51')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-26 16:07:51) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://www.example.com/movies]
