@@ -14,6 +14,9 @@ module NavigationHelpers
     when /the login page/
       '/user_sessions/new'
     
+    when /the account page/
+      '/user_session'
+    
     # Add more mappings here.
     # Here is a more fancy example:
     #

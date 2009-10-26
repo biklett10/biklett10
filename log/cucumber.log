@@ -45,3 +45,47 @@ Rendering template within layouts/application
 Rendering user_sessions/new
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:10:27') [0m
 Completed in 20ms (View: 16, DB: 1) | 200 OK [http://www.example.com/user_session]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'john_doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '586e3871562b6f1240e4271817ae0d6e6bea4f6dd16fc32f821b79933acea5e07eeeb3c59a39835012b9c9edf3f34bd1aadfca6a7582c37b6ffb0c1d92d3ca7a') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'iPb-IuSjfHbFk1pYhx-7') LIMIT 1[0m
+REQUESTING PAGE: GET /user_sessions/new with {} and HTTP headers {}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-26 01:28:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:18:41') [0m
+Completed in 41ms (View: 37, DB: 1) | 200 OK [http://www.example.com/user_sessions/new]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"password", "login"=>"john_doe"}} and HTTP headers {"HTTP_REFERER"=>"/user_sessions/new"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-26 01:28:41) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"john_doe", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'john_doe') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:18:41') [0m
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://www.example.com/user_session]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'john_doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '2f2551a1cc017d699d52d22edb2f29c3819139611d891fadb74d0e8b4220704c9f3e708ebbcf179256b5f836f4c02c0e659cbda8caeea6f307fddbf5681f19b2') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Ovl5FlqaprsNqPE-deUi') LIMIT 1[0m
+REQUESTING PAGE: GET /user_sessions/new with {} and HTTP headers {}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-10-26 01:31:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:21:28') [0m
+Completed in 41ms (View: 37, DB: 1) | 200 OK [http://www.example.com/user_sessions/new]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"password", "login"=>"john_doe"}} and HTTP headers {"HTTP_REFERER"=>"/user_sessions/new"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-10-26 01:31:28) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"john_doe", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'john_doe') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2009-10-26 08:21:28') [0m
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://www.example.com/user_session]
