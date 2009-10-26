@@ -1,1 +1,1 @@
-# Logfile created on Sun Oct 25 13:41:35 -0700 2009
+# Logfile created on Sun Oct 25 13:41:35 -0700 2009  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:25:16', '2009-10-26 19:25:16')[0m
