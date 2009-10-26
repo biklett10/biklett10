@@ -5,5 +5,5 @@ Given /^a genre named Comedy$/ do
 end
 
 When /^I create a movie Caddyshack in the Comedy genre$/ do
-  @caddyshack = Movie.create!(:name => "Caddyshack", :genre => "Comedy")
+  @caddyshack = Movie.create!(:name => "Caddyshack", :genre => @comedy)
 end

@@ -1,1 +1,5 @@
 # Logfile created on Sun Oct 25 13:41:35 -0700 2009  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:25:16', '2009-10-26 19:25:16')[0m
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:35:38', '2009-10-26 19:35:38')[0m
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:41:32', '2009-10-26 19:41:32')[0m
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-26 19:44:49', '2009-10-26 19:44:49')[0m
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("name", "created_at", "genre_id", "updated_at") VALUES('Caddyshack', '2009-10-26 19:44:49', 1, '2009-10-26 19:44:49')[0m
