@@ -5,7 +5,7 @@ Feature: Successful login
   I want to create successful Cucumber tests for Authlogic
 
   Scenario: successful login
-    Given I am the registered user John Doe
+    Given I am the registered user john_doe
     And I am on the login page
     When I login with valid credentials
     Then I should be on the account page

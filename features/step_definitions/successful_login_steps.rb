@@ -1,4 +1,5 @@
 # features/step_definitions/successful_login_steps.rb
+require 'ruby-debug'
 
 Given /^I am the registered user (.+)$/ do |login|
   params = {
@@ -6,7 +7,9 @@ Given /^I am the registered user (.+)$/ do |login|
     "password"=>"password",
     "password_confirmation"=>"password"
   }
-  @user = User.create(params)
+  debugger
+  @user = User.new(params)
+  @user.save_without_session_maintenance
 end
 
 When /^I login with valid credentials$/ do
