@@ -18,8 +18,15 @@
     <%= f.text_field :release_year %>
   </p>
 -->
+  <% @genres.each do |genre| %>
+    <label>
+      <%=h genre.name %>
+      <%= check_box_tag "genres[]", genre.id %>
+    </label>
+  <% end %>
+  
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Save' %>
   </p>
 <% end %>
 

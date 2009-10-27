@@ -25,6 +25,7 @@ class MoviesController < ApplicationController
   # GET /movies/new.xml
   def new
     @movie = Movie.new
+    @genres = Genre.all
 
     respond_to do |format|
       format.html # new.html.erb
