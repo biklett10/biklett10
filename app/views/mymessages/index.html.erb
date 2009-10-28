@@ -1,0 +1,20 @@
+<h1>Listing mymessages</h1>
+
+<table>
+  <tr>
+    <th>Amessage</th>
+  </tr>
+
+<% @mymessages.each do |mymessage| %>
+  <tr>
+    <td><%=h mymessage.amessage %></td>
+    <td><%= link_to 'Show', mymessage %></td>
+    <td><%= link_to 'Edit', edit_mymessage_path(mymessage) %></td>
+    <td><%= link_to 'Destroy', mymessage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New mymessage', new_mymessage_path %>
