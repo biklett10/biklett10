@@ -81,3 +81,12 @@ Rendering mymessages/index
 Completed in 73ms (View: 66, DB: 1) | 200 OK [http://localhost/mymessages/]
 Rendering messages/show2.haml
 Rendering messages/show2.haml
+
+
+Processing MymessagesController#index (for 127.0.0.1 at 2009-10-28 14:51:48) [GET]
+  [4;36;1mMymessage Load (0.5ms)[0m   [0;1mSELECT * FROM "mymessages" [0m
+Rendering template within layouts/mymessages
+Rendering mymessages/index
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://localhost/mymessages/]
+Rendering messages/show2.haml
+Rendering messages/show2.haml
