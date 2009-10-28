@@ -9,7 +9,15 @@ require 'spec/rails'
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
+# bikle
+require 'webrat'
+# bikle
+
 Spec::Runner.configure do |config|
+  # bikle
+  config.include Webrat::Matchers, :type => :views 
+  # bikle
+
   # If you're not using ActiveRecord you should remove these
   # lines, delete config/database.yml and disable :active_record
   # in your config/boot.rb
