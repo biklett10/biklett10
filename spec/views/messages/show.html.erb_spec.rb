@@ -16,7 +16,8 @@ describe "messages/show.html.erb" do
 
   it "should display the text of the message" do
     @message.stub!(:text).and_return "Hello world!"
-    render "messages/show.html.erb"
+    render "messages/show2.haml"
+    BikleLib.ws2f(response.body,'/tmp/x.txt')
     response.should contain("Hello world!")
   end
 end

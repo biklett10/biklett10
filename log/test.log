@@ -47,3 +47,37 @@ Migrating to CreateMymessages (20091028194030)
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091028194030')[0m
 Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+Rendering messages/show.html.erb
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-28 14:07:03) [GET]
+
+ActionController::RoutingError (No route matches "/messages/show2" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-28 14:07:33) [GET]
+
+ActionController::RoutingError (No route matches "/messages/show" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MymessagesController#index (for 127.0.0.1 at 2009-10-28 14:07:56) [GET]
+  [4;36;1mMymessage Load (0.8ms)[0m   [0;1mSELECT * FROM "mymessages" [0m
+Rendering template within layouts/mymessages
+Rendering mymessages/index
+Completed in 73ms (View: 66, DB: 1) | 200 OK [http://localhost/mymessages/]
+Rendering messages/show2.haml
+Rendering messages/show2.haml

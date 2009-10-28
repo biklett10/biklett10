@@ -11,6 +11,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 # bikle
 require 'webrat'
+require 'bikle_lib'
 # bikle
 
 Spec::Runner.configure do |config|
