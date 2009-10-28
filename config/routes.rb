@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  # bikle 2009-10-28 authlogic install/setup
   map.resources :users
+  map.resources :user_session
+  # bikle 2009-10-28 authlogic install/setup
 
   # The priority is based upon order of creation: first created -> highest priority.
 
