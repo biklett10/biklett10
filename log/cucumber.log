@@ -124,3 +124,519 @@ Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 02:24:58) [GET]
 Rendering template within layouts/movies
 Rendering movies/show
 Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 18:07:40', '2009-10-27 18:07:40')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 11:07:40) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 32ms (View: 29, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 11:07:40) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 11:07:40) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 18:07:40', 'Caddyshack', '2009-10-27 18:07:40')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 11:07:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 18:20:25', '2009-10-27 18:20:25')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 11:20:25) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 11:20:25) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 11:20:25) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.3ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 18:20:25', 'Caddyshack', '2009-10-27 18:20:25')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 11:20:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 11:20:25) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:04:47', '2009-10-27 20:04:47')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:04:47) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 73ms (View: 70, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:04:47) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:04:47) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:04:47', 'Caddyshack', '2009-10-27 20:04:47')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:04:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+  [4;36;1mGenre Create (0.6ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:16:07', '2009-10-27 20:16:07')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:16:07) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:16:07) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:16:07) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:16:07', 'Caddyshack', '2009-10-27 20:16:07')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:16:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:16:15) [GET]
+  [4;35;1mGenre Load (0.8ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.8ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:24:12', '2009-10-27 20:24:12')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:24:12) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:24:12) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:24:12) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:24:12', 'Caddyshack', '2009-10-27 20:24:12')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:24:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:24:12) [GET]
+  [4;35;1mGenre Load (0.2ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:26:06', '2009-10-27 20:26:06')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:26:06) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:26:06) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:26:06) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:26:06', 'Caddyshack', '2009-10-27 20:26:06')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:26:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:26:06) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:27:18', '2009-10-27 20:27:18')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:27:18) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:27:18) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:27:18) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:27:18', 'Caddyshack', '2009-10-27 20:27:18')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:27:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:27:18) [GET]
+  [4;35;1mGenre Load (0.2ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:31:48', '2009-10-27 20:31:48')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:31:48) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:31:48) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:31:48) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:31:48', 'Caddyshack', '2009-10-27 20:31:48')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:31:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:31:48) [GET]
+  [4;35;1mGenre Load (0.4ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:32:11', '2009-10-27 20:32:11')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:32:11) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:32:11) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:32:11) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:32:11', 'Caddyshack', '2009-10-27 20:32:11')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:32:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:32:11) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+  [4;36;1mGenre Create (0.5ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:47:39', '2009-10-27 20:47:39')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:47:39) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:47:39) [GET]
+  [4;36;1mGenre Load (0.3ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:47:39) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:47:39', 'Caddyshack', '2009-10-27 20:47:39')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:47:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:47:39) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/genres]
+REQUESTING PAGE: GET /genres/1 with {} and HTTP headers {"HTTP_REFERER"=>"/genres"}
+
+
+Processing GenresController#show (for 127.0.0.1 at 2009-10-27 13:47:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGenre Load (0.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+Rendering template within layouts/genres
+Rendering genres/show
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://www.example.com/genres/1]
+  [4;36;1mGenre Create (0.6ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-27 20:48:59', '2009-10-27 20:48:59')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 13:48:59) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 13:48:59) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 13:48:59) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-27 20:48:59', 'Caddyshack', '2009-10-27 20:48:59')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 13:48:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 13:48:59) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+REQUESTING PAGE: GET /genres/1 with {} and HTTP headers {"HTTP_REFERER"=>"/genres"}
+
+
+Processing GenresController#show (for 127.0.0.1 at 2009-10-27 13:48:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGenre Load (0.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+Rendering template within layouts/genres
+Rendering genres/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://www.example.com/genres/1]
+  [4;36;1mGenre Create (0.4ms)[0m   [0;1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES('Comedy', '2009-10-28 02:28:49', '2009-10-28 02:28:49')[0m
+REQUESTING PAGE: GET /movies with {} and HTTP headers {}
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2009-10-27 19:28:49) [GET]
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://www.example.com/movies]
+REQUESTING PAGE: GET /movies/new with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2009-10-27 19:28:52) [GET]
+  [4;36;1mGenre Load (0.2ms)[0m   [0;1mSELECT * FROM "genres" [0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/movies/new]
+REQUESTING PAGE: POST /movies with {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]} and HTTP headers {"HTTP_REFERER"=>"/movies/new"}
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2009-10-27 19:28:52) [POST]
+  Parameters: {"commit"=>"Save", "movie"=>{"release_year"=>"1980", "title"=>"Caddyshack"}, "genres"=>["1"]}
+  [4;35;1mMovie Create (0.3ms)[0m   [0mINSERT INTO "movies" ("release_year", "created_at", "title", "updated_at") VALUES('1980', '2009-10-28 02:28:52', 'Caddyshack', '2009-10-28 02:28:52')[0m
+Redirected to http://www.example.com/movies/1
+Completed in 4ms (DB: 0) | 302 Found [http://www.example.com/movies]
+REQUESTING PAGE: GET http://www.example.com/movies/1 with {} and HTTP headers {"HTTP_REFERER"=>"/movies"}
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2009-10-27 19:28:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/movies/1]
+REQUESTING PAGE: GET /genres with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/movies/1"}
+
+
+Processing GenresController#index (for 127.0.0.1 at 2009-10-27 19:28:52) [GET]
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM "genres" [0m
+Rendering template within layouts/genres
+Rendering genres/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://www.example.com/genres]
+REQUESTING PAGE: GET /genres/1 with {} and HTTP headers {"HTTP_REFERER"=>"/genres"}
+
+
+Processing GenresController#show (for 127.0.0.1 at 2009-10-27 19:28:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mGenre Load (0.3ms)[0m   [0;1mSELECT * FROM "genres" WHERE ("genres"."id" = 1) [0m
+Rendering template within layouts/genres
+Rendering genres/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/genres/1]
