@@ -13,6 +13,7 @@ Rails::Initializer.run do |config|
   config.gem 'cucumber', :version => '0.3.11'
   config.gem 'webrat', :version => '0.4.4'
   config.gem 'nokogiri', :version => '1.3.3'
+  config.gem 'authlogic'
   # bikle
 
   # Settings in config/environments/* take precedence over those specified here.
