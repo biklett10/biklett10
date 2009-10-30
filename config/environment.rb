@@ -14,6 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'webrat', :version => '0.4.4'
   config.gem 'nokogiri', :version => '1.3.3'
   config.gem 'authlogic', :version => '2.1.2'
+  config.gem 'haml', :version => '2.0.9'
   # bikle
 
   # Settings in config/environments/* take precedence over those specified here.

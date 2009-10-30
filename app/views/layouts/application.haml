@@ -1,0 +1,19 @@
+!!!
+
+%html{html_attrs('en-US')}
+  %head
+    %meta{ 'http-equiv' => 'content-type', :content => 'text/html;charset=UTF-8'}
+    %title Under Development
+  %body
+    %table{:width => '98%', :border => '1'}
+      %tr
+        %td{:valign => 'top'} 
+          %a{:href => '/'}About
+          %br/
+          %br/
+          %a{:href => '/login'}Login
+          %br/
+          %a{:href => '/register'}Register
+          %hr/
+        %td{:valign => 'top'}
+          =yield

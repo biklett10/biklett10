@@ -2,3 +2,20 @@
 
 
 Processing ApplicationController#index (for 127.0.0.1 at 2009-10-29 16:36:19) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-10-29 21:36:09) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+
+Processing ApplicationController#about (for 127.0.0.1 at 2009-10-29 21:36:09) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-10-29 21:38:28) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://www.example.com/]
