@@ -6,6 +6,12 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+# bikle
+require 'hpricot'
+require 'ruby-debug'
+Hpricot.buffer_size = 262144
+# bikle
+
 Rails::Initializer.run do |config|
   # bikle
   config.gem 'rspec-rails', :lib => false, :version => '1.2.7.1'

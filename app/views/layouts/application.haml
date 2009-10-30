@@ -5,9 +5,9 @@
     %meta{ 'http-equiv' => 'content-type', :content => 'text/html;charset=UTF-8'}
     %title Under Development
   %body
-    %table{:width => '98%', :border => '1'}
-      %tr
-        %td{:valign => 'top'} 
+    %table.main_table{:width => '98%', :border => '1'}
+      %tr.main_tr
+        %td.lhs{:valign => 'top'} 
           %a{:href => '/'}About
           %br/
           %br/
@@ -15,5 +15,5 @@
           %br/
           %a{:href => '/register'}Register
           %hr/
-        %td{:valign => 'top'}
+        %td.rhs{:valign => 'top'}
           =yield
