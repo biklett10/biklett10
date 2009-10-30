@@ -20,6 +20,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :last_login_ip                                      # optional, see Authlogic::Session::MagicColumns
       # from http://github.com/binarylogic/authlogic_example/
 
+      # http://github.com/matthooks/authlogic-activation-tutorial
+      t.boolean   :active, :boolean, :default => false, :null => false
+      # http://github.com/matthooks/authlogic-activation-tutorial
+
       t.timestamps
     end
   end
