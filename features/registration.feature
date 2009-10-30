@@ -6,12 +6,9 @@ Feature: Registration
 
   Scenario: Registration
 
-    Given I am not yet logged in
+    Given I am not logged in
     When I go to the register page
-    And I fill in a username
-    And I fill in an e-mail address
-    And I fill in a password
+    And I fill in login with bobsmith
+    And I fill in email with bobsmith@hotmail.com
     And I press Submit 
-    Then I should see a message asking me to check my e-mail for an activation link
-
-
+    Then I should see "Check your email for activation instructions."
