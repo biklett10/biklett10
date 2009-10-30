@@ -8,7 +8,7 @@ Feature: Welcome Page
 
     Given the server is up
     And I am not logged in
-    When I navigate to the site root
+    When I go to the homepage
     Then I should see a page with 2 columns
     And the LHS column should be relatively narrow
     And the RHS column should be much more prominent
