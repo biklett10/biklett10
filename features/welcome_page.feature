@@ -12,6 +12,6 @@ Feature: Welcome Page
     Then I should see a page with 2 columns
     And the LHS column should be relatively narrow
     And the RHS column should be much more prominent
-    And the LHS column should have the links: about, login, register
-    And the RHS should contain the word Welcome and site information
+    And the LHS column should have the links: login, register
+    And the RHS should only contain the word Welcome
 

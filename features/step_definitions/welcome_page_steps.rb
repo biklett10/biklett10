@@ -27,13 +27,12 @@ Then /^the RHS column should be much more prominent$/ do
   # So just look at it.
 end
 
-Then /^the LHS column should have the links: about, login, register$/ do
-  response.should have_selector("a", :href => "/" , :content => "About") 
+Then /^the LHS column should have the links: login, register$/ do
+  response.should_not have_selector("a", :href => "/" , :content => "About") 
   response.should have_selector("a", :href => "/login" , :content => "Login") 
   response.should have_selector("a", :href => "/register" , :content => "Register") 
 end
 
-Then /^the RHS should contain the word Welcome and site information$/ do
-  response.should contain("Welcome")
-  response.should contain("Twitter")
+Then /^the RHS should only contain the word Welcome$/ do
+  response.should have_selector("html/body/table.main_table/tr.main_tr/td.rhs/h1", :content => "Welcome") 
 end
