@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :user_session
   map.root :controller => "static", :action => "about"
-  map.connect '/register', :controller => 'users', :action => 'create'
+  map.connect '/register', :controller => 'users', :action => 'new'
   # bikle 2009-10-28 authlogic install/setup
 
   # The priority is based upon order of creation: first created -> highest priority.

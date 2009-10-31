@@ -238,3 +238,145 @@ Rendering template within layouts/users
 Rendering users/new
 Rendered users/_form (12.3ms)
 Completed in 148ms (View: 126, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:16:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (78.5ms)
+Completed in 128ms (View: 122, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:30:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 130ms (View: 125, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:34:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 137ms (View: 133, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:39:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 129ms (View: 124, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:42:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.3ms)
+Completed in 142ms (View: 137, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:43:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (5.3ms)
+Completed in 129ms (View: 125, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-10-31 01:43:26) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'abb3b98235d244b4ceaf4a52e8efad1fdf957b7e1e3afaa75674b4c3f3ed5bfc78a5a8ac7ab240d14a996852e42d7eb71e1c5e0031b06afd8b1276d8cf7a3ff2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'IWbLrRaop2V3r44iBc_M') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('IWbLrRaop2V3r44iBc_M', NULL, 'f', '2009-10-31 08:43:26', '34deff84ba07e0848dbd99d03fd53433e3f1ec41463a770a61024a03563478b5d1875249c5b7a3a2ac7af836df1b58dd48b7e61d9a5a41f69971f5566320edb3', 'VNnWhj2sCcuaWYu4T7AH', '2009-10-31 08:43:26', 0, NULL, 'l_lLnyiHWhSn1wucGMrn', NULL, 'abb3b98235d244b4ceaf4a52e8efad1fdf957b7e1e3afaa75674b4c3f3ed5bfc78a5a8ac7ab240d14a996852e42d7eb71e1c5e0031b06afd8b1276d8cf7a3ff2', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+Redirected to http://www.example.com/account
+Completed in 183ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/account with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-10-31 01:43:26) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://www.example.com/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/user_session/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/account"}
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-10-31 01:43:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_session"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 01:47:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 120ms (View: 112, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-10-31 01:47:20) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0dd2b325f38d12991a7b6d81afa5853b0dc4c5b13337d3800f24fbf54287f7d5527dd56b5ceed1f5b159dfb9b9e64431caa53be3fbdb1a92878af770dc29f4f0') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'pTJjbf0eJTRbZOWBUzlS') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('pTJjbf0eJTRbZOWBUzlS', NULL, 'f', '2009-10-31 08:47:21', 'cce0d724912140641e2902431208c63e0648ef955bd18bf1dc8153a85b19f8d520e91300e7c88a8398825a1e99772a6855109cf56bc8eb0dd73658251a14ebab', 'Rw2jbvgN3jwtTFCAYFN-', '2009-10-31 08:47:21', 0, NULL, 'yX1ECRzMTx-LnlLA5mcV', NULL, '0dd2b325f38d12991a7b6d81afa5853b0dc4c5b13337d3800f24fbf54287f7d5527dd56b5ceed1f5b159dfb9b9e64431caa53be3fbdb1a92878af770dc29f4f0', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+Redirected to http://www.example.com/account
+Completed in 700ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/account with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-10-31 01:47:21) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://www.example.com/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 3ms (DB: 0) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/user_session/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/account"}
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-10-31 01:47:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_session"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-10-31 02:37:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 107ms (View: 103, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-10-31 02:37:44) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'a6abde98cb4b7b4ac9d360003463c468b17ce1438bd186a8039791d71900af568939ba9393756ce75506fe62ec2e8484d2e919297ee1a8a04ec394351d8637b8') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'BCAUtVQL_7IMUqZDWfF2') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('BCAUtVQL_7IMUqZDWfF2', NULL, 'f', '2009-10-31 09:37:45', '86d74fe805ab80831b7ca84f2cd9cba907c4d1f7081dd30d9eee7e70e0e1f1d25bc937d61eabe7ff8e51c11b551a8a2f49870c3bfdf2e77dfc14c1491113bd3e', '_8dWR00Wc4Bncw3b_KsC', '2009-10-31 09:37:45', 0, NULL, 'XobBrtwzCjnjp6DYsUYJ', NULL, 'a6abde98cb4b7b4ac9d360003463c468b17ce1438bd186a8039791d71900af568939ba9393756ce75506fe62ec2e8484d2e919297ee1a8a04ec394351d8637b8', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+Redirected to http://www.example.com/static/check_email
+Completed in 142ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-10-31 02:37:45) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]

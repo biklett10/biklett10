@@ -12,4 +12,5 @@
           %br/
           %a{:href => '/register'}Register
         %td.rhs{:valign => 'top'}
+          %p{:style => "color:green"}= flash[:notice]
           =yield
