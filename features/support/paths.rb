@@ -14,6 +14,9 @@ module NavigationHelpers
     when /the register page/
       '/register'
     
+    when /the login page/
+      '/login'
+    
     # Add more mappings here.
     # Here is a more fancy example:
     #
