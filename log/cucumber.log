@@ -227,3 +227,14 @@ Processing StaticController#about (for 127.0.0.1 at 2009-10-30 10:54:00) [GET]
 Rendering template within layouts/application
 Rendering static/about
 Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-10-30 17:09:02) [GET]
+  Parameters: {"action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '3aee8f73aac955fa2ec8986c45ee13c11c06419210eea2f22f2d181b52308dad0b70b9b1af5baa84d7fbf6d358c58ae962a006581b72ceaecf978002e4ab7ccb') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'V-z6jCo9MzhDdH43-wSB') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (12.3ms)
+Completed in 148ms (View: 126, DB: 0) | 200 OK [http://www.example.com/register]
