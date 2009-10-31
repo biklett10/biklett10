@@ -2,7 +2,7 @@
 
 When /^I fill in Email with x9b0bsm1th2009@hotmail.com$/ do
   fill_in "Email", :with => "x9b0bsm1th2009@hotmail.com"
-  save_and_open_page
+  # save_and_open_page
 end
 
 When /^I fill in Login with bobsmith$/ do
@@ -20,4 +20,11 @@ end
 When /^I press Register$/ do
   click_button "Register"
 end
+
+Then /^I should not be logged in yet$/ do
+  # I am not supposed to be logged in.
+  # Raise an error if I am logged in.
+  raise("I am logged in") unless defined?(current_user).nil?
+end
+
 

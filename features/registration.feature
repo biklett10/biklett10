@@ -14,3 +14,4 @@ Feature: Registration
     And I fill in Password confirmation with r1chbr0wn
     And I press Register
     Then I should see "Check your email for activation instructions."
+    And I should not be logged in yet
