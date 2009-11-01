@@ -35,23 +35,6 @@ class User < ActiveRecord::Base
     Notifier.deliver_activation_confirmation(self)
   end
 
-  # added to app/models/notifier.rb
-  def activation_instructions(user)
-    subject       "Activation Instructions"
-    from          "Binary Logic Notifier <noreply@binarylogic.com>"
-    recipients    user.email
-    sent_on       Time.now
-    body          :account_activation_url => register_url(user.perishable_token)
-  end
-
-  def activation_confirmation(user)
-    subject       "Activation Complete"
-    from          "Binary Logic Notifier <noreply@binarylogic.com>"
-    recipients    user.email
-    sent_on       Time.now
-    body          :root_url => root_url
-  end
-
   # step 8 http://github.com/matthooks/authlogic-activation-tutorial
   # we need to make sure that either a password or openid gets set
   # when the user activates his account
