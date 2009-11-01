@@ -3,7 +3,7 @@ class ActivationsController < ApplicationController
 
   def new
     @user = User.find_using_perishable_token(params[:activation_code], 1.week) || (raise Exception)
-    raise Exception if @user.active?
+    raise(Exception,"Maybe @user is active.") if @user.active?
   end
 
   def create
@@ -18,5 +18,11 @@ class ActivationsController < ApplicationController
       render :action => :new
     end # if
   end # def create
+
+  def create_activation_instructions
+    @bobsmith = User.find_by_login("bobsmith")
+    email_txt = Notifier.create_activation_instructions(@bobsmith)
+    render(:text => "<pre>" + email_txt.encoded + "</pre>") 
+  end # def create_activation_instructions
 
 end # class

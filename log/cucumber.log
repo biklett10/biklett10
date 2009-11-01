@@ -915,3 +915,2224 @@ Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 01:31:26) [
 Rendering template within layouts/application
 Rendering static/check_email
 Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 11:45:47) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 51ms (View: 49, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 11:46:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 43ms (View: 39, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 11:46:10) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'f9bb449f92228afa2b9c5689b377e94d9baa16e644a8c17faefeaaa91a002ade5327e3440e80c82327cbb322447a7ba9ad8a4b9e965b8578218de8669473a123') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'yvWQ_y7FB50GdC6MRWZW') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('yvWQ_y7FB50GdC6MRWZW', NULL, 'f', '2009-11-01 19:46:11', '307fda1969fa06abfb304f81dee03120c8be4fe35d08712cde222f522397ac4d903cac9c8096eaecd0ffa729b2cefefc6ecfde2c88975b7a68f3561a0b2c9a3d', 'Knin4IprYEbTDS7ymuSt', '2009-11-01 19:46:11', 0, NULL, 'iBMRMWnoj1pgpLT7Txas', NULL, 'f9bb449f92228afa2b9c5689b377e94d9baa16e644a8c17faefeaaa91a002ade5327e3440e80c82327cbb322447a7ba9ad8a4b9e965b8578218de8669473a123', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 19:46:11', "perishable_token" = '2qK5LBvYLU0TviK4lcLY' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 11:46:11 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/2qK5LBvYLU0TviK4lcLY
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 420ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 11:46:11) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 11:46:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 11:46:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://www.example.com/user_session]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 12:06:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 156ms (View: 151, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 12:06:45) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'b20c0093ded369f44876e6457c4ef2f840db4e0a278f760fea5b8d8344088d3693b633d23fe60b243f8e9a18b6ed0a3f2254c596448104e4ff07fbd466c58a5a') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'KcTSvgx9COb1qxlsl7cG') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('KcTSvgx9COb1qxlsl7cG', NULL, 'f', '2009-11-01 20:06:45', '624d24b39c302c209b2c87973e070fc1276ac5287cc65462346cb2676f652641da90227832ba123648aa2dc57d3ed3ceabb9ca8cd8f9b54c381109c11ac65439', 'FAoMEUxjC1asvIahm71k', '2009-11-01 20:06:45', 0, NULL, 'Qgm3tlVC5hjBT_SfHHgj', NULL, 'b20c0093ded369f44876e6457c4ef2f840db4e0a278f760fea5b8d8344088d3693b633d23fe60b243f8e9a18b6ed0a3f2254c596448104e4ff07fbd466c58a5a', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 20:06:45', "perishable_token" = 'azFvJtHLtUjN4Trw7U7M' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 12:06:45 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/azFvJtHLtUjN4Trw7U7M
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 660ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 12:06:45) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 12:28:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.1ms)
+Completed in 45ms (View: 40, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 12:28:18) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'fc7a833d231c0cc3a106d9ab60ce71303011935a54d131315a2d46dcd7af08c308a381978c908664514afbe3588e32c5007cc27ad8f1e1498dde9c8a3d8fd2e2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Zu0K_mRgM7Nu0T4KKTGe') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('Zu0K_mRgM7Nu0T4KKTGe', NULL, 'f', '2009-11-01 20:28:18', '1d0097c2ff444ad33d9b38f1f5868cf4b962717cda88471a3ffe744f0caf6b2427e82f175bcf836ab49c610dc1d675cd1b8de01793d5c930e4d355ecbdafa0a2', 'HhnztnMvarAfjxfFcC1K', '2009-11-01 20:28:18', 0, NULL, 'phJ4KyaDMB2nJv4AzJlK', NULL, 'fc7a833d231c0cc3a106d9ab60ce71303011935a54d131315a2d46dcd7af08c308a381978c908664514afbe3588e32c5007cc27ad8f1e1498dde9c8a3d8fd2e2', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 20:28:18', "perishable_token" = 'fdYQHDJYbKzFmSO3uX0b' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 12:28:18 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/fdYQHDJYbKzFmSO3uX0b
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 114ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 12:28:18) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 12:31:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 26ms (View: 22, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 12:31:16) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '358541f395c4ea8bf9191819fe66b9bd79461c91494680c2fe739226ebd4607d3a48be25cb520d8a4475e0dfb17b8abfb31c64e2a2b8dc5272222db3f4966c0a') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'CGNVKvRVWbiUj7Mhl-L_') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('CGNVKvRVWbiUj7Mhl-L_', NULL, 'f', '2009-11-01 20:31:17', '81a3aa45b5a0c2ea79a7f7c81d4b5b1930f0f1cba1a893508238d437c499ab039c6224d038c6bee3f639b692efc3cb8bacbbe705a8414e235db122665a9cbffe', 'hV6oecM2_Gg7AHSHLUKV', '2009-11-01 20:31:17', 0, NULL, '83ogLYNwmP8ueyHeH_oR', NULL, '358541f395c4ea8bf9191819fe66b9bd79461c91494680c2fe739226ebd4607d3a48be25cb520d8a4475e0dfb17b8abfb31c64e2a2b8dc5272222db3f4966c0a', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 20:31:17', "perishable_token" = 'l9JFQNJiiHHMBqN8pd0g' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 12:31:17 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/l9JFQNJiiHHMBqN8pd0g
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 125ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 12:31:17) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 12:31:17) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 13:48:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (10.4ms)
+Completed in 95ms (View: 40, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 13:48:18) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '17580224d5a37965d159834037ab363f400b88de9bcc455d67059a3f79210763fba9bf1d556bee1152dee77e7c3f8a2474f16e98b5e19176bd39455d3ab062b5') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'n_r_ZYoX23WSi8wNQP7Y') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('n_r_ZYoX23WSi8wNQP7Y', NULL, 'f', '2009-11-01 21:48:18', '9a7adbf388378c230000c9b5e7140aa1d52f48b26836839fcbefe7ea512df2b06e6e7343a939c3ba821dfe7965832805c8919c961dfcf4939df51e688a38ee74', 'aSAz645Ay9QPb6WA4Wmx', '2009-11-01 21:48:18', 0, NULL, 'oHoJ7Q0mv47noy9jVIoa', NULL, '17580224d5a37965d159834037ab363f400b88de9bcc455d67059a3f79210763fba9bf1d556bee1152dee77e7c3f8a2474f16e98b5e19176bd39455d3ab062b5', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 21:48:18', "perishable_token" = 'aMmszidcTPhXPonbvFSC' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 13:48:18 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/aMmszidcTPhXPonbvFSC
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 166ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 13:48:18) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 13:48:18) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 7ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 13:50:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.1ms)
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 13:50:41) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '1d5bb89787227a4cf14678d425b9616f951af723841cbdc809ac143529c82bdc3fcfbaaaa338a1b12c9bc589020d82d079591c385a4922fcff453a26f841bec2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'DM2PXfP7IrFxJ0oCRhYW') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('DM2PXfP7IrFxJ0oCRhYW', NULL, 'f', '2009-11-01 21:50:41', '9ef708b394684ee3f5cdceaf9b1e920fac5456832e3717115c709941f4691ee210dc095a8a3590d9b37878d2d65b57a0d47627665b2a4be8b52880405422a0e5', 'JrV0Eqq_InaoZh7XRPUB', '2009-11-01 21:50:41', 0, NULL, '1Co4KUkyiU5ZDub1LqcC', NULL, '1d5bb89787227a4cf14678d425b9616f951af723841cbdc809ac143529c82bdc3fcfbaaaa338a1b12c9bc589020d82d079591c385a4922fcff453a26f841bec2', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 21:50:41', "perishable_token" = 'Bg8fWSso384UkEjjKpx1' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 13:50:41 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/Bg8fWSso384UkEjjKpx1
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 158ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 13:50:41) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 13:50:41) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 13:52:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.9ms)
+Completed in 33ms (View: 27, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 13:52:04) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '6b396b933a0cda4737ea6d8a98897ca969d152f238da89a61d18c5a09bfa7064d3404dc4c38b63bfb0f67f81c85c38c68a1dc1443bfcca3b8f920b0374e1bb4c') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'KApAPSNK-MbqqsvjXZ1v') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('KApAPSNK-MbqqsvjXZ1v', NULL, 'f', '2009-11-01 21:52:04', '08be9e48910af3015d3af0903b381808d1d14ac3fadd2638f6b3de94244e2502dcd803f9025b68e3542b942cba8523b5b0fdbcb63821eb9397b98a869e066888', '9jgLhI8De1AgOFrd1Hfu', '2009-11-01 21:52:04', 0, NULL, 'zcgwoDsE3No1Y-JCXnZf', NULL, '6b396b933a0cda4737ea6d8a98897ca969d152f238da89a61d18c5a09bfa7064d3404dc4c38b63bfb0f67f81c85c38c68a1dc1443bfcca3b8f920b0374e1bb4c', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 21:52:04', "perishable_token" = '4X_dhwY2YB3DACg9bduf' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 13:52:04 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/4X_dhwY2YB3DACg9bduf
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 177ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 13:52:04) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 13:52:04) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 13:53:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (14.5ms)
+Completed in 43ms (View: 37, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 13:53:27) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '69dd5573e6468ef83ea5891286bd798265d47dcdc17c8b8f3b9c8e269f572752bb52ef34e1dccc31d4f80b98c581e90fe1148f0c3f715a2f73940e86a5e43568') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'MrKh0kaZPkm2dPdoDrto') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('MrKh0kaZPkm2dPdoDrto', NULL, 'f', '2009-11-01 21:53:27', '5d0e44f7ce5ffa6cf06765b88728f7fb5d26d43394effede806450224f742c3e1209073abd0b85c48ac46a0da49820f6729f85c8c809ced0edd683cc44d3481c', '_9SKV87tEmvF8ptaoV2i', '2009-11-01 21:53:27', 0, NULL, '8xJNViY6SdXlTPCU9O7Y', NULL, '69dd5573e6468ef83ea5891286bd798265d47dcdc17c8b8f3b9c8e269f572752bb52ef34e1dccc31d4f80b98c581e90fe1148f0c3f715a2f73940e86a5e43568', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (58.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 21:53:27', "perishable_token" = '_eFdECUzYQG0Fc_033XU' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 13:53:27 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/_eFdECUzYQG0Fc_033XU
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 182ms (DB: 60) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 13:53:27) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 13:53:27) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 13:56:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 13:56:08) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '3d190e7d98e38161d4340e45dd724e94f65450bc06c59ea4bb5f1ecfe70c5b1df63fe69fc29784e50ca281286da1ec5338f312263861e9bf4c3515b28c93c487') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'bnVjdNArv35r1hB7Rn4H') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('bnVjdNArv35r1hB7Rn4H', NULL, 'f', '2009-11-01 21:56:09', 'a5ab5b547f6bef9a350419048914e7d4df5b5930763df84e7bd67626fe7a4d533a25b428674ec65192a919d29f369b215eaf98342813baeecd49ddb932fd3027', 'M5EiWLaiH1qPtCJQitXz', '2009-11-01 21:56:09', 0, NULL, 'AZi3jxEAmfijP6V-DXeS', NULL, '3d190e7d98e38161d4340e45dd724e94f65450bc06c59ea4bb5f1ecfe70c5b1df63fe69fc29784e50ca281286da1ec5338f312263861e9bf4c3515b28c93c487', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 21:56:09', "perishable_token" = 'aYzE0pJ4l8w4YZpaO_Qn' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 13:56:09 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/aYzE0pJ4l8w4YZpaO_Qn
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 121ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 13:56:09) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 13:56:09) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/aYzE0pJ4l8w4YZpaO_QnaYzE0pJ4l8w4YZpaO_Qn with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 13:57:43) [GET]
+  Parameters: {"activation_code"=>"aYzE0pJ4l8w4YZpaO_QnaYzE0pJ4l8w4YZpaO_Qn", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'aYzE0pJ4l8w4YZpaO_QnaYzE0pJ4l8w4YZpaO_Qn' and updated_at > '2009-10-25 21:57:43') LIMIT 1[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-11-01 13:57:43) [GET]
+  Parameters: {"activation_code"=>"aYzE0pJ4l8w4YZpaO_QnaYzE0pJ4l8w4YZpaO_Qn", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:07:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (6.9ms)
+Completed in 61ms (View: 43, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:07:42) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '442d34c5766cc53a4b72d10582d43a1f9df6c4e23364766178e5e549d427d9c05500b6e044c4419c22bfdea9681b35c9e3a56ab08d5f56f956aa306f98f9bb1a') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Koco3pkbugKB65GQkyDg') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('Koco3pkbugKB65GQkyDg', NULL, 'f', '2009-11-01 22:07:42', 'ea6cd7aac24d4ec5bb7501daca1b17548733e8883d1acd917db60f0c22557058cc71dee998877fc31bd93f0a92222f4920606719effb0c6756c8f3a9df372f5a', 'wOpvYJSFDob5eW63hl52', '2009-11-01 22:07:42', 0, NULL, 'P0aamKuE0j9jiATybIQl', NULL, '442d34c5766cc53a4b72d10582d43a1f9df6c4e23364766178e5e549d427d9c05500b6e044c4419c22bfdea9681b35c9e3a56ab08d5f56f956aa306f98f9bb1a', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (87.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:07:42', "perishable_token" = 'fQxB2lZn8u4c4pjKJ4yT' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:07:43 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/fQxB2lZn8u4c4pjKJ4yT
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 240ms (DB: 88) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:07:43) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:07:43) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/fQxB2lZn8u4c4pjKJ4yT with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:08:36) [GET]
+  Parameters: {"activation_code"=>"fQxB2lZn8u4c4pjKJ4yT", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:10:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (29.1ms)
+Completed in 56ms (View: 51, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:10:47) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '40126688f84dec65b3edc49545bdbc6a76ded9f1325ea49bbb495293fdfd5888fd93608576eb0e1c45912f5cac6e02e4efd72ec608220ca73a778afcd3fbc103') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'U-y-4kC-tT8ZgbPVD2hG') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('U-y-4kC-tT8ZgbPVD2hG', NULL, 'f', '2009-11-01 22:10:47', '961534a606346c977c1249e46649066cf8aec27939811ad6c9e0398347cad823d4984c857e268feb58fd5b616d899533a7c8238cbcf4de3e6e640e3e9366be23', 'HBJcceZMv-sHb_CwPoZV', '2009-11-01 22:10:47', 0, NULL, 'slMO67c6sanwGl9LaXcW', NULL, '40126688f84dec65b3edc49545bdbc6a76ded9f1325ea49bbb495293fdfd5888fd93608576eb0e1c45912f5cac6e02e4efd72ec608220ca73a778afcd3fbc103', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:10:47', "perishable_token" = 'hbVz34CsFI2j9tgg2g17' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:10:47 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/hbVz34CsFI2j9tgg2g17
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 145ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:10:47) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:10:47) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/hbVz34CsFI2j9tgg2g17 with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:11:15) [GET]
+  Parameters: {"activation_code"=>"hbVz34CsFI2j9tgg2g17", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'hbVz34CsFI2j9tgg2g17' and updated_at > '2009-10-25 22:12:31') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (perishable_token = 'hbVz34CsFI2j9tgg2g17' and updated_at > '2009-10-25 22:14:32') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 308903ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/hbVz34CsFI2j9tgg2g17]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:20:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 44ms (View: 39, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:20:45) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'def104483b80cf0da43fcda07bf566014101c5f86edffedbbd2e73551dbab44ab10ebaf5926ed357fbc4567a9d310a32ba0063a79f7a072d1e27d63695355f1c') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'A851mXLMYXumjkEd322V') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('A851mXLMYXumjkEd322V', NULL, 'f', '2009-11-01 22:20:45', '2ac402fe798a4898d78afd1659fffbd8d76d779d9e61c627cb34664344fbb7a2a86fb195dbcc76fb7828c2cf73e29fddb995bfeab1aa0edaaae34b63e4d65366', 'Pms4STX6qo2nyrg5rIts', '2009-11-01 22:20:45', 0, NULL, 'iWdavnQZRbI0j61OgTRk', NULL, 'def104483b80cf0da43fcda07bf566014101c5f86edffedbbd2e73551dbab44ab10ebaf5926ed357fbc4567a9d310a32ba0063a79f7a072d1e27d63695355f1c', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:20:45', "perishable_token" = 'LmPtNBx0rDYC1FispLgQ' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:20:45 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/LmPtNBx0rDYC1FispLgQ
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 136ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:20:45) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:20:45) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 7ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/LmPtNBx0rDYC1FispLgQ with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:20:45) [GET]
+  Parameters: {"activation_code"=>"LmPtNBx0rDYC1FispLgQ", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'LmPtNBx0rDYC1FispLgQ' and updated_at > '2009-10-25 22:20:45') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 45ms (View: 4, DB: 0) | 200 OK [http://www.example.com/register/LmPtNBx0rDYC1FispLgQ]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:21:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (11.1ms)
+Completed in 50ms (View: 46, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:21:47) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '09c1eb768da9cc2f72783d07b58d350e6a60ecf371b983f1c40e7f5c8d6844a523e565677230d5126fae31e71dc76e935176aa2771eb32f7eff4fd1242708acc') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Tewz6Af_tRGpqk69IHMF') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('Tewz6Af_tRGpqk69IHMF', NULL, 'f', '2009-11-01 22:21:47', '93ade2f3024d2f8a4394d79ccbcb6fe373d65b9d586cf04c6a1d9a56288a44d901ef2b6ec67761edf27b26c428cf09eeae6dbec3c8395c7e0354232bee25a505', 'Yi4Zo89v4yQNefLNVx9K', '2009-11-01 22:21:47', 0, NULL, 'GxakqVkNeZq4mF-WrWAJ', NULL, '09c1eb768da9cc2f72783d07b58d350e6a60ecf371b983f1c40e7f5c8d6844a523e565677230d5126fae31e71dc76e935176aa2771eb32f7eff4fd1242708acc', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:21:47', "perishable_token" = 'tKZTmaI5Ibjt58lBImiA' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:21:48 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/tKZTmaI5Ibjt58lBImiA
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 156ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:21:48) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:21:48) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 12ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/tKZTmaI5Ibjt58lBImiA with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:21:48) [GET]
+  Parameters: {"activation_code"=>"tKZTmaI5Ibjt58lBImiA", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'tKZTmaI5Ibjt58lBImiA' and updated_at > '2009-10-25 22:21:48') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 52ms (View: 6, DB: 1) | 200 OK [http://www.example.com/register/tKZTmaI5Ibjt58lBImiA]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/tKZTmaI5Ibjt58lBImiA"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:21:48) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:21:48', "perishable_token" = 'Y1eFbujAhvzWGuZPRsR4', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:21:48', "perishable_token" = 'Cfs_mxv4X31aCkA8ugNf' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:21:48 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 21ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:21:48) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:22:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (7.7ms)
+Completed in 53ms (View: 41, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:22:48) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '4b825a80a93c682b42370d556fa861362caaf4579065a0986d16e10297e738bc78b49cd9f477e73ce66f2b8991718932ba5707a97a82fabe440e4812ce26178a') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'RD0QJQG-bO3w8dnMDHgk') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('RD0QJQG-bO3w8dnMDHgk', NULL, 'f', '2009-11-01 22:22:48', 'b3fa6e54d0415e908030503255c820d9dc33cef4fe9444dab5b7da9b26c1d348389bb530ecf992aa3ae9388df3d158baf1991ebe18679eda910878a26d3820dc', 'drw4tK2mDUZh7ygld0WE', '2009-11-01 22:22:48', 0, NULL, 'xIq235JV6bKV8o75WS8N', NULL, '4b825a80a93c682b42370d556fa861362caaf4579065a0986d16e10297e738bc78b49cd9f477e73ce66f2b8991718932ba5707a97a82fabe440e4812ce26178a', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:22:48', "perishable_token" = 'na8wVHDfssvE6cIolaC2' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:22:48 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/na8wVHDfssvE6cIolaC2
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 122ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:22:48) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:22:48) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 7ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/na8wVHDfssvE6cIolaC2 with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:22:48) [GET]
+  Parameters: {"activation_code"=>"na8wVHDfssvE6cIolaC2", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'na8wVHDfssvE6cIolaC2' and updated_at > '2009-10-25 22:22:48') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 39ms (View: 3, DB: 0) | 200 OK [http://www.example.com/register/na8wVHDfssvE6cIolaC2]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/na8wVHDfssvE6cIolaC2"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:22:48) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:22:48', "perishable_token" = '1XELg0YaHyhWh1TitncM', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:22:48', "perishable_token" = 'x1jkXyZmSvMaSd55_-3q' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:22:48 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 12ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:22:48) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:25:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 38ms (View: 33, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:25:23) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c5321a29eda70ee6a44e28fb92f6e552f0923eee91c6c041f67cdf4f942b5fb76e7ce87b662f9bb0aa29408db7df3b65ec6f0332cbe85da75e194e8ccb34dda2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '_u1SZYoemoPScqIRXT2S') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('_u1SZYoemoPScqIRXT2S', NULL, 'f', '2009-11-01 22:25:23', 'a75743d4ef7f8accc9c9ceedcf2e9ea393f7b385c55db4d1ebe8691b9d151eb04a67119ef81c4061edee306d5f865da8cec506d5240756b34b810e68cb487002', 'WTwqlJ_FNSkR8BKSwST1', '2009-11-01 22:25:23', 0, NULL, 'YQq6i6AZsSRKlp0D2JfQ', NULL, 'c5321a29eda70ee6a44e28fb92f6e552f0923eee91c6c041f67cdf4f942b5fb76e7ce87b662f9bb0aa29408db7df3b65ec6f0332cbe85da75e194e8ccb34dda2', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:25:23', "perishable_token" = 'UskCKd66EiD35d89JKgH' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:25:23 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/UskCKd66EiD35d89JKgH
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 148ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:25:23) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:25:23) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 7ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/UskCKd66EiD35d89JKgH with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:25:23) [GET]
+  Parameters: {"activation_code"=>"UskCKd66EiD35d89JKgH", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'UskCKd66EiD35d89JKgH' and updated_at > '2009-10-25 22:25:23') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 41ms (View: 3, DB: 0) | 200 OK [http://www.example.com/register/UskCKd66EiD35d89JKgH]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/UskCKd66EiD35d89JKgH"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:25:23) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:25:23', "perishable_token" = 'Sne7f6I8v8CnMnLRS0R4', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:25:23', "perishable_token" = 'QN4QFxEM7uDHcKXAJLk-' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:25:23 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 23ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:25:23) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:27:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (13.9ms)
+Completed in 41ms (View: 36, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:27:38) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'fe319049267c554859fac7c76b28cbedc69f76022dec18cd6eb0e0f76994ded440d4cfa166cd8eac6e0d96e90500d9ecc01118bf157094667b20f46320a7015e') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'gsS5nmd7yK-5fUONAUS3') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('gsS5nmd7yK-5fUONAUS3', NULL, 'f', '2009-11-01 22:27:38', '4b0a2312a63cfe4be9e6bc3b83e006617cbb1816029673b1ba980a268df6efd3f65d5e01629ed982181160994c0f15201c326accda5f3a2b7531f999845e5682', 'hgPkZMSUg6k1yRdfK6eu', '2009-11-01 22:27:38', 0, NULL, 'a4eBpluxUgABSocjKLfg', NULL, 'fe319049267c554859fac7c76b28cbedc69f76022dec18cd6eb0e0f76994ded440d4cfa166cd8eac6e0d96e90500d9ecc01118bf157094667b20f46320a7015e', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:27:38', "perishable_token" = 'TW2wpmlJxaJlMTjSho3Y' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:27:38 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/TW2wpmlJxaJlMTjSho3Y
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 137ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:27:38) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:27:38) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/TW2wpmlJxaJlMTjSho3Y with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:27:38) [GET]
+  Parameters: {"activation_code"=>"TW2wpmlJxaJlMTjSho3Y", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'TW2wpmlJxaJlMTjSho3Y' and updated_at > '2009-10-25 22:27:38') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 38ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/TW2wpmlJxaJlMTjSho3Y]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/TW2wpmlJxaJlMTjSho3Y"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:27:38) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:27:38', "perishable_token" = 'a59AjB8yWaZoe_OBaL3H', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:27:38', "perishable_token" = '2wd51wlgIfJPtgl735lE' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:27:38 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 16ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:27:38) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 14:27:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 42ms (View: 11, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:43:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.2ms)
+Completed in 31ms (View: 27, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:43:12) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '5f0627a5023441e3390dcb66548f46e4dd70a4ad2530df5f572d69860e926ac3cf376470a1ce7d4a5916e85dbea0cb85f174fdf15d2a170002a030a9ca24f431') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'tMS3VPBo6hj9b1hRBwMS') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('tMS3VPBo6hj9b1hRBwMS', NULL, 'f', '2009-11-01 22:43:12', 'b5f3125819243170c45f04a1a79701948498430377b003a9017544a2ffb50be06a4bb015f5b799d6eec2fa2e8ab10eadf7210a3ce8446eb026284671b1700507', '1eIHXyQ6hRL0WoeFcGV9', '2009-11-01 22:43:12', 0, NULL, 'LjFxJxBi3AU_R794-9qx', NULL, '5f0627a5023441e3390dcb66548f46e4dd70a4ad2530df5f572d69860e926ac3cf376470a1ce7d4a5916e85dbea0cb85f174fdf15d2a170002a030a9ca24f431', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:43:12', "perishable_token" = 'PiVnh9TZ4RvZWYWs0Wrs' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:43:12 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/PiVnh9TZ4RvZWYWs0Wrs
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 232ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:43:12) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:43:12) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/PiVnh9TZ4RvZWYWs0Wrs with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:43:12) [GET]
+  Parameters: {"activation_code"=>"PiVnh9TZ4RvZWYWs0Wrs", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'PiVnh9TZ4RvZWYWs0Wrs' and updated_at > '2009-10-25 22:43:12') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 35ms (View: 5, DB: 0) | 200 OK [http://www.example.com/register/PiVnh9TZ4RvZWYWs0Wrs]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/PiVnh9TZ4RvZWYWs0Wrs"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:43:12) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:43:12', "perishable_token" = '_LIHCxJAWpOxO5_XsfIA', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:43:12', "perishable_token" = 'V0Z3Xyno7dqcDZRBkISF' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:43:12 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 16ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:43:12) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 14:43:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 35ms (View: 21, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 14:43:13) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 22:43:13', "perishable_token" = '_5X4tSk8l_IjmhT5ZtwE', "last_request_at" = '2009-11-01 22:43:13', "current_login_at" = '2009-11-01 22:43:13' WHERE "id" = 1[0m
+Redirected to http://www.example.com/account
+Completed in 11ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/account with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-01 14:43:13) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:43:13', "perishable_token" = 'Tr5IdaqVf3dXP0f33FnP', "last_request_at" = '2009-11-01 22:43:13' WHERE "id" = 1[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 35ms (View: 12, DB: 3) | 200 OK [http://www.example.com/account]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:49:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 27ms (View: 22, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:49:12) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ae32622fcb9563351fcf3f5de5c3580b041960b21be8e6fa71632acb416b150007479e385d5775eabe2e3f57b3fe2af22551f67892ce27830861b7630fb609ae') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'rNT11-AyBaxCwq_FvMrx') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('rNT11-AyBaxCwq_FvMrx', NULL, 'f', '2009-11-01 22:49:13', '22fe3a45deac5e974dd6f068db7931b3444eac942c248cba30d5df65bbc1227fa8ecd763678db747e6102141d5d4855e88d5eda3d3d8e08d3dac125c0eab2727', 'fGotZGN2uwQv-ZlxAFHR', '2009-11-01 22:49:13', 0, NULL, 'T4qz0xmV3CA_jUrVD2uL', NULL, 'ae32622fcb9563351fcf3f5de5c3580b041960b21be8e6fa71632acb416b150007479e385d5775eabe2e3f57b3fe2af22551f67892ce27830861b7630fb609ae', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:49:13', "perishable_token" = 'K5tX-zGFaI150gK-Axmi' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:49:13 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/K5tX-zGFaI150gK-Axmi
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 261ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:49:13) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:49:13) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 7ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/K5tX with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:49:13) [GET]
+  Parameters: {"activation_code"=>"K5tX", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'K5tX' and updated_at > '2009-10-25 22:49:13') LIMIT 1[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-11-01 14:49:13) [GET]
+  Parameters: {"activation_code"=>"K5tX", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:51:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.6ms)
+Completed in 39ms (View: 34, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:51:07) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '473f6d437f1cd9b7894be3657c6f0202e86b2fb6dfc9e01b996ce436d008c2eed5a6aa7bfc8179090d9d17f8db2d9fecf668a35b61adaa00d0d3d5a2891af367') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'oZdGRSAhbimh0QwEGoT1') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('oZdGRSAhbimh0QwEGoT1', NULL, 'f', '2009-11-01 22:51:07', '7a538028bebc154b5b9ca21def1b0e74d2658cd4608885a1ad7fe28b34cbfd4657d6eebb3d87676c1843274d61af62adb5bb0be5b5326d98392a16c112afbce3', 'QCWAQutKU9BYDMQGvuJY', '2009-11-01 22:51:07', 0, NULL, 'd00rYgV6X22sINtqxMXJ', NULL, '473f6d437f1cd9b7894be3657c6f0202e86b2fb6dfc9e01b996ce436d008c2eed5a6aa7bfc8179090d9d17f8db2d9fecf668a35b61adaa00d0d3d5a2891af367', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:51:07', "perishable_token" = 'HRsgqVSOqlq-pjeSqV9_' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:51:07 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/HRsgqVSOqlq-pjeSqV9_
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 277ms (DB: 5) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:51:07) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:51:07) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/HRsgqVSOqlq with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:51:07) [GET]
+  Parameters: {"activation_code"=>"HRsgqVSOqlq", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'HRsgqVSOqlq' and updated_at > '2009-10-25 22:51:07') LIMIT 1[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-11-01 14:51:07) [GET]
+  Parameters: {"activation_code"=>"HRsgqVSOqlq", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:55:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 44ms (View: 36, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:55:27) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '02c0520f94a6f4e39259e34fef108be471104a401c310c896d2d592fe94438e17a21df3e2f63e392e9fa796a53a51d63a8ccc43361f5027e25433d1b0689d4b3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '9rq1ozWvR255NIGnFfta') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('9rq1ozWvR255NIGnFfta', NULL, 'f', '2009-11-01 22:55:27', '869a1333d8835195cc306f578fc4dbfde4aa6e3c9f172d19252a8808516d82c5cb04608639aed83e6e79c856e581f09c2bc3fa6c37ea286117f54d7fd1f63d94', '6XLz6JAU_RS1gysdChfi', '2009-11-01 22:55:27', 0, NULL, 'nhTwtpTSl0SLWlza9TOU', NULL, '02c0520f94a6f4e39259e34fef108be471104a401c310c896d2d592fe94438e17a21df3e2f63e392e9fa796a53a51d63a8ccc43361f5027e25433d1b0689d4b3', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:55:27', "perishable_token" = '6bHGBWKnqmipCZIY97h9' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:55:28 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/6bHGBWKnqmipCZIY97h9
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 274ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/6bHGBWKnqmipCZIY97h9 with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"activation_code"=>"6bHGBWKnqmipCZIY97h9", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '6bHGBWKnqmipCZIY97h9' and updated_at > '2009-10-25 22:55:28') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 38ms (View: 4, DB: 1) | 200 OK [http://www.example.com/register/6bHGBWKnqmipCZIY97h9]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/6bHGBWKnqmipCZIY97h9"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:55:28) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:55:28', "perishable_token" = 'DbKu-5Q-45dX444nyWC4', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:55:28', "perishable_token" = 'QoxvK4eUnJcq7WyeZJms' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:55:28 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 25ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 64ms (View: 59, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 14:55:28) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 22:55:28', "perishable_token" = '6MUj27CEGzdaec3C77ee', "last_request_at" = '2009-11-01 22:55:28', "current_login_at" = '2009-11-01 22:55:28' WHERE "id" = 1[0m
+Redirected to http://www.example.com/account
+Completed in 11ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/account with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-01 14:55:28) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:55:28', "perishable_token" = 'bJZtd6P1XWy2eak23GxK', "last_request_at" = '2009-11-01 22:55:28' WHERE "id" = 1[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://www.example.com/account]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 14:58:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (8.1ms)
+Completed in 41ms (View: 26, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 14:58:18) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '220fa111116368e651bb1dfe0ab6d7a87baa83635389f87471f682718db03b8a1689fa8dc9dfee67561bc1d87634085c20ef8f75822445bc9af3a2908d8ba145') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'igbArQjXB4I3vBFAg_AG') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('igbArQjXB4I3vBFAg_AG', NULL, 'f', '2009-11-01 22:58:18', '224e29feab18eea9cfacb1649eda57db400b0d1c323331d8bf05dd4e9d572c0ab12bd96c36dade829b7dcbcaa22025ddbd2b96b3d4acd816cd0475b035f5c803', 'AYo2xDNBk6OKEvbWf9WD', '2009-11-01 22:58:18', 0, NULL, 'DVo5dqIF4ARaEbJ0S3Vc', NULL, '220fa111116368e651bb1dfe0ab6d7a87baa83635389f87471f682718db03b8a1689fa8dc9dfee67561bc1d87634085c20ef8f75822445bc9af3a2908d8ba145', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:58:18', "perishable_token" = 'Q_G4EUdCDF0dZf9CIBnU' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:58:18 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/Q_G4EUdCDF0dZf9CIBnU
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 360ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 14:58:18) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 14:58:18) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/Q_G4EUdCDF0dZf9CIBnU with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 14:58:18) [GET]
+  Parameters: {"activation_code"=>"Q_G4EUdCDF0dZf9CIBnU", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'Q_G4EUdCDF0dZf9CIBnU' and updated_at > '2009-10-25 22:58:18') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 43ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/Q_G4EUdCDF0dZf9CIBnU]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/Q_G4EUdCDF0dZf9CIBnU"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 14:58:19) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 22:58:19', "perishable_token" = 'U6LOp5M7q9dpLIv92pdx', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 22:58:19', "perishable_token" = '9F6r808wRg_scTnmJVs3' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 14:58:19 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 66ms (DB: 2) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:58:19) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 14:58:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 14:58:19) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 22:58:19', "perishable_token" = 'HhQi0UFtP5w54e6YpGuU', "last_request_at" = '2009-11-01 22:58:19', "current_login_at" = '2009-11-01 22:58:19' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 38ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 14:58:19) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:00:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.8ms)
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:00:19) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'b91fe0cf9d8afa6d57d906b90677850a3532d1879dd14d3870101e333327f414040c66114998424c90a940d08103271f7e8ab13d200beda4ea43013600de3be3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'as7HgoeGXn7q3aUjs3h_') LIMIT 1[0m
+  [4;36;1mUser Create (109.2ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('as7HgoeGXn7q3aUjs3h_', NULL, 'f', '2009-11-01 23:00:19', '128d84d8781b095d753cfc75d50773f7b5588d552ba5fca7c5c16db805333ec2ab2cddefa85b8af0ae0620a476d521e9c3a02e71fcddbd103c50537e366babe4', 'WBnOINHMb6_7fz7tedd9', '2009-11-01 23:00:19', 0, NULL, 'Q0Ypizvq-Vcla19LkGoa', NULL, 'b91fe0cf9d8afa6d57d906b90677850a3532d1879dd14d3870101e333327f414040c66114998424c90a940d08103271f7e8ab13d200beda4ea43013600de3be3', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:00:20', "perishable_token" = '88MQFdSSdG_mFvGdMuV-' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:00:20 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/88MQFdSSdG_mFvGdMuV-
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 221ms (DB: 110) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:00:20) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:00:20) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/88MQFdSSdG_mFvGdMuV with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:00:20) [GET]
+  Parameters: {"activation_code"=>"88MQFdSSdG_mFvGdMuV", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '88MQFdSSdG_mFvGdMuV' and updated_at > '2009-10-25 23:00:20') LIMIT 1[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-11-01 15:00:20) [GET]
+  Parameters: {"activation_code"=>"88MQFdSSdG_mFvGdMuV", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 46ms (View: 42, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:03:06) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'a5f58220e2dc2a1b1cb0dd05c69acbbd8b5219124be732e89acbdd5dd227bcdb9c059f36716032794dfcfe2683d2f7f9dabedf7a755cea0379f29af628c4a665') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'pZ-FPZJEgQNF_urlbT2W') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('pZ-FPZJEgQNF_urlbT2W', NULL, 'f', '2009-11-01 23:03:06', '0786981d5bf3081f808bae5923f230b40774c4f9e8b44f6cfa69fca5dd587c671bf1e3bf6a245a10d1d9c07327406a03d5bf951d29ddf289347603963ff1be13', 'wdIm0r6y8yFAngAfR2Uv', '2009-11-01 23:03:06', 0, NULL, 'Q6aZH-V0urMrRvJbBgy7', NULL, 'a5f58220e2dc2a1b1cb0dd05c69acbbd8b5219124be732e89acbdd5dd227bcdb9c059f36716032794dfcfe2683d2f7f9dabedf7a755cea0379f29af628c4a665', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:03:06', "perishable_token" = '4iiYEVEXQKy7b9rVrQKW' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:03:06 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/4iiYEVEXQKy7b9rVrQKW
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 225ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/4iiYEVEXQKy7b9rVrQKW with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"activation_code"=>"4iiYEVEXQKy7b9rVrQKW", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '4iiYEVEXQKy7b9rVrQKW' and updated_at > '2009-10-25 23:03:06') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 40ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/4iiYEVEXQKy7b9rVrQKW]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/4iiYEVEXQKy7b9rVrQKW"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 15:03:06) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 23:03:06', "perishable_token" = 'sTMP_efUVQgZBDKFCqlX', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:03:06', "perishable_token" = 'SIsU_pMjwm6XR0kMBYXR' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:03:06 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 14ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 15:03:06) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 23:03:06', "perishable_token" = 'PrCmy6OMglw-4z-XlKyw', "last_request_at" = '2009-11-01 23:03:06', "current_login_at" = '2009-11-01 23:03:06' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 12ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:03:06) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.9ms)
+Completed in 42ms (View: 23, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:20:55) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ada349e5bb6f503b644f2f1d5b3d9bda99c7814eec92cb52bb8f63d78d7289896d2296d977a6355af48e373acaba4484a05c8839890908341c431e8eaddc0996') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'SzvuJSl1doAWO3KR_23g') LIMIT 1[0m
+  [4;36;1mUser Create (3.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('SzvuJSl1doAWO3KR_23g', NULL, 'f', '2009-11-01 23:20:55', '46a2e952a46b0b4cd20aeb7df847a1bbaf60253353a6a6936143f9f14338a946b987d7d62fad3846748d146b2a6d43bfd6988a0418aa8fc6c154203af671bd0c', 'm1KTxnb-qEEcfI7Jrc-a', '2009-11-01 23:20:55', 0, NULL, '0F1e-C94TtdZ_gzuYYq_', NULL, 'ada349e5bb6f503b644f2f1d5b3d9bda99c7814eec92cb52bb8f63d78d7289896d2296d977a6355af48e373acaba4484a05c8839890908341c431e8eaddc0996', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (1.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:20:55', "perishable_token" = 'TEhIIYnC5DviI11fW6fb' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:20:55 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/TEhIIYnC5DviI11fW6fb
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 253ms (DB: 5) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/TEhIIYnC5DviI11fW6fb with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"activation_code"=>"TEhIIYnC5DviI11fW6fb", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'TEhIIYnC5DviI11fW6fb' and updated_at > '2009-10-25 23:20:55') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 42ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/TEhIIYnC5DviI11fW6fb]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/TEhIIYnC5DviI11fW6fb"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 15:20:55) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 23:20:55', "perishable_token" = '5TMqHoAZGo-mXnJAoHgU', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:20:55', "perishable_token" = 'YDDxLbrl2nC93vAWM0SG' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:20:55 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 14ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 15:20:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 24620ms (View: 7, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 15:21:20) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 23:21:20', "perishable_token" = '4euMSI4br8hfhaem6Z_4', "last_request_at" = '2009-11-01 23:21:20', "current_login_at" = '2009-11-01 23:21:20' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 19ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:21:20) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:22:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 35ms (View: 31, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:22:49) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7e7b450e73b7d59785d6ab5e39b13c9c16a136635f6e356974441607f690b4b0aa5f8f7987ce5c85592de44ee079722d55a7261775aa2c940132828a87347113') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'uA6P4MWKfWO53H8dK6EI') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('uA6P4MWKfWO53H8dK6EI', NULL, 'f', '2009-11-01 23:22:50', 'd8ae65cca3062130df21b9d60f0b1a26590c7ac0e477bc71087130e860cfc7ef81ed642170f82b9e374a5c0415b683580a4aee73e993fa56cd748907991fe8b8', 'hgrIh-mtXJrnuhjTnxDl', '2009-11-01 23:22:50', 0, NULL, 'TOs_jCTzipHTjsPMInQg', NULL, '7e7b450e73b7d59785d6ab5e39b13c9c16a136635f6e356974441607f690b4b0aa5f8f7987ce5c85592de44ee079722d55a7261775aa2c940132828a87347113', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:22:50', "perishable_token" = 'UkH1L8w6ofRT9tHECjv8' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:22:50 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/UkH1L8w6ofRT9tHECjv8
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 249ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:22:50) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:22:50) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/UkH1L8w6ofRT9tHECjv8 with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:22:50) [GET]
+  Parameters: {"activation_code"=>"UkH1L8w6ofRT9tHECjv8", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'UkH1L8w6ofRT9tHECjv8' and updated_at > '2009-10-25 23:22:50') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 39ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/UkH1L8w6ofRT9tHECjv8]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/UkH1L8w6ofRT9tHECjv8"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 15:22:50) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 23:22:50', "perishable_token" = 'x8i4kDBTJCK0cO7B2vcF', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:22:50', "perishable_token" = 'wIssdFmmx1w1TeGf5iBr' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:22:50 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 12ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:22:50) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 15:22:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 15:22:50) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 23:22:50', "perishable_token" = 'AZUCOIhZJhjvIlfF4x7f', "last_request_at" = '2009-11-01 23:22:50', "current_login_at" = '2009-11-01 23:22:50' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 29507ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:23:19) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:24:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 28878ms (View: 21, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:25:24) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '4b379a93a59bd14c0649b27ab9876763b162a41ca3406b3452b037642f5957c6251e4e4f3d12db1393b7a3d67b933e59cff141be6910a3b383ca3b8521a6fe14') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'rAVtmhZlZ_ew6ulEFRYK') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('rAVtmhZlZ_ew6ulEFRYK', NULL, 'f', '2009-11-01 23:25:38', '15e27e274e4c3561e830952d030ed9952fd56fe92b781e09729277897ca39f730de44b39e63dddf513ca7caf9966e83ce041d49f771910da1545ce4c500036ec', 'xWv5H0XbdlHQIr_tsRqs', '2009-11-01 23:25:38', 0, NULL, 'PPtuPOVB7c4SQgLhy03L', NULL, '4b379a93a59bd14c0649b27ab9876763b162a41ca3406b3452b037642f5957c6251e4e4f3d12db1393b7a3d67b933e59cff141be6910a3b383ca3b8521a6fe14', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:25:38', "perishable_token" = '-ikpeWQqFB045e8hrx6D' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:25:38 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/-ikpeWQqFB045e8hrx6D
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 13785ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:25:38) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:25:38) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 9ms (View: 0, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:26:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (4.1ms)
+Completed in 28ms (View: 24, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:26:38) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '3812e8787efde4e685d896f3bd6a13b3df42694ddae95c464099a48b11a3ce32456f2e6db375f63ff5bd37f7b50d447f96894c9d92cb488a5e534bd753b65877') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '-YpVE31VzyAdqcUeseIp') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('-YpVE31VzyAdqcUeseIp', NULL, 'f', '2009-11-01 23:26:38', 'c9e669a38d378ac9453d57646aad87baae1a0337f86b487f4d65c5d3d426c73ae3fd99b116e45d9fefa22045999efce29fa3b4ff35832c4b29ef337e4c2675ce', 'nxSf0TXImMolmZi7e7zO', '2009-11-01 23:26:38', 0, NULL, 'D5m_OheCB9rXElarJI4x', NULL, '3812e8787efde4e685d896f3bd6a13b3df42694ddae95c464099a48b11a3ce32456f2e6db375f63ff5bd37f7b50d447f96894c9d92cb488a5e534bd753b65877', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:26:38', "perishable_token" = '9Hpw_eMy68QdXH2tXeI-' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:26:38 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/9Hpw_eMy68QdXH2tXeI-
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 256ms (DB: 2) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:26:38) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:26:38) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 0, DB: 2) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/9Hpw_eMy68QdXH2tXeI with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:26:38) [GET]
+  Parameters: {"activation_code"=>"9Hpw_eMy68QdXH2tXeI", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '9Hpw_eMy68QdXH2tXeI' and updated_at > '2009-10-25 23:26:38') LIMIT 1[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-11-01 15:26:38) [GET]
+  Parameters: {"activation_code"=>"9Hpw_eMy68QdXH2tXeI", "action"=>"new", "controller"=>"activations"}
+REQUESTING PAGE: GET /register with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-01 15:27:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 27ms (View: 22, DB: 0) | 200 OK [http://www.example.com/register]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"password_confirmation"=>"r1chbr0wn", "password"=>"r1chbr0wn", "login"=>"bobsmith", "email"=>"x9b0bsm1th2009@hotmail.com"}} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-01 15:27:09) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"bobsmith", "password"=>"[FILTERED]", "email"=>"x9b0bsm1th2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'x9b0bsm1th2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'dd106d8233832cf2f72d6268ee0ef549a69928786f4a3766fddc0ce0bf7d7f2d1446edb21cc03fa862f2927bdd149e87e78c972e2666d123037b5ac6c2c7d414') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'uOgLUWRUCPJVDKRORkHQ') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('uOgLUWRUCPJVDKRORkHQ', NULL, 'f', '2009-11-01 23:27:09', '2b1c1f3cd588e704d4df385e3cd0eee54bdee16433b7f3fad344a05e854e3c837f7a9b176bf98d221eca9865d69d7d06c72066c8de64d63e8708a53da82d8ba7', 'fbYE2GKbD1nvL4D57C1h', '2009-11-01 23:27:09', 0, NULL, 'weHQuImJoojPLDZTDgJD', NULL, 'dd106d8233832cf2f72d6268ee0ef549a69928786f4a3766fddc0ce0bf7d7f2d1446edb21cc03fa862f2927bdd149e87e78c972e2666d123037b5ac6c2c7d414', 0, NULL, 'bobsmith', NULL, 'x9b0bsm1th2009@hotmail.com', 'f')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:27:09', "perishable_token" = '2u3gJfqmMSedkdtsc47D' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:27:09 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/2u3gJfqmMSedkdtsc47D
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/static/check_email
+Completed in 256ms (DB: 1) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/static/check_email with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-01 15:27:09) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/static/check_email]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+REQUESTING PAGE: GET /activations/create_activation_instructions with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/static/check_email"}
+
+
+Processing ActivationsController#create_activation_instructions (for 127.0.0.1 at 2009-11-01 15:27:09) [GET]
+  Parameters: {"action"=>"create_activation_instructions", "controller"=>"activations"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://www.example.com/activations/create_activation_instructions]
+REQUESTING PAGE: GET /register/2u3gJfqmMSedkdtsc47D with {} and HTTP headers {"HTTP_REFERER"=>"/activations/create_activation_instructions"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-01 15:27:09) [GET]
+  Parameters: {"activation_code"=>"2u3gJfqmMSedkdtsc47D", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '2u3gJfqmMSedkdtsc47D' and updated_at > '2009-10-25 23:27:09') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 51ms (View: 3, DB: 1) | 200 OK [http://www.example.com/register/2u3gJfqmMSedkdtsc47D]
+REQUESTING PAGE: POST /activate/1 with {"commit"=>"Activate"} and HTTP headers {"HTTP_REFERER"=>"/register/2u3gJfqmMSedkdtsc47D"}
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-01 15:27:10) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-01 23:27:10', "perishable_token" = 'Rfv-VnmM4Gpu9JL2nLQX', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-01 23:27:10', "perishable_token" = 'RS0jWTpRCfz-4VE6IE1d' WHERE "id" = 1[0m
+Sent mail to x9b0bsm1th2009@hotmail.com
+
+Date: Sun, 1 Nov 2009 15:27:10 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: x9b0bsm1th2009@hotmail.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://www.example.com/
+Completed in 13ms (DB: 1) | 302 Found [http://www.example.com/activate/1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/activate/1"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:27:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-01 15:27:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-01 15:27:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-01 23:27:10', "perishable_token" = 'nKwJTdHehsragVj1U3uz', "last_request_at" = '2009-11-01 23:27:10', "current_login_at" = '2009-11-01 23:27:10' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 26ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-01 15:27:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/]
