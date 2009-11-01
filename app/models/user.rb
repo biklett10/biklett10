@@ -8,5 +8,13 @@ class User < ActiveRecord::Base
     active
   end
 
+  # step 4 
+  # http://github.com/matthooks/authlogic-activation-tutorial
+  # added to user.rb
+  def activate!
+    self.active = true
+    save
+  end
+
 end # class
 
