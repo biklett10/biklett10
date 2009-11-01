@@ -5,7 +5,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
   map.root :controller => "static", :action => "about"
   map.connect '/register', :controller => 'users', :action => 'new'
-  map.connect '/login', :controller => 'user_sessions', :action => 'new'
+  map.connect '/login', :controller => 'user_sessions', :action => 'new'  
+  # step 5
+  # http://github.com/matthooks/authlogic-activation-tutorial
+  # added to config/routes.rb
+  map.register '/register/:activation_code', :controller => 'activations', :action => 'new'
+  map.activate '/activate/:id', :controller => 'activations', :action => 'create'
   # bikle 2009-10-28 authlogic install/setup
 
   # The priority is based upon order of creation: first created -> highest priority.
