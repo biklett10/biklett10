@@ -2,6 +2,7 @@ class Notifier < ActionMailer::Base
 
   # Syntax below derived from 
   # http://github.com/matthooks/authlogic-activation-tutorial
+  default_url_options[:host] = "x.com"
 
   def activation_instructions(user)
     subject       "Activation Instructions"
