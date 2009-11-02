@@ -14,7 +14,7 @@
           %br/
           Logged in as:
           %br/
-          %p{:style => "color:green"}=@user_displayed
+          %p{:style => "color:green"}=(session[:login]||"unknown_login")
         %td.rhs{:valign => 'top'}
           %p{:style => "color:green"}= flash[:notice]
           =yield
