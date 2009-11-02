@@ -27,5 +27,5 @@ Then /^You inspect the currently loaded page$/ do
 end
 
 Then /^I should be logged in$/ do
-  current_user.should == @bobsmith
+  @user_session.login.should == @bobsmith.login
 end

@@ -11,6 +11,10 @@
           %a{:href => '/login'}Login
           %br/
           %a{:href => '/register'}Register
+          %br/
+          Logged in as:
+          %br/
+          %p{:style => "color:green"}=@user_displayed
         %td.rhs{:valign => 'top'}
           %p{:style => "color:green"}= flash[:notice]
           =yield
