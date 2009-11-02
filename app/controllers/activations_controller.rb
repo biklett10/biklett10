@@ -19,6 +19,7 @@ class ActivationsController < ApplicationController
     end # if
   end # def create
 
+  # For testing
   def create_activation_instructions
     @bobsmith = User.find_by_login("bobsmith")
     email_txt = Notifier.create_activation_instructions(@bobsmith)
