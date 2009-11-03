@@ -13,8 +13,10 @@
           %a{:href => '/register'}Register
           %br/
           Logged in as:
+          %p{:style => "color:green"}=(session[:login]||"not_logged_in")
           %br/
-          %p{:style => "color:green"}=(session[:login]||"unknown_login")
+          %a{:href => '/logout'}Logout
+
         %td.rhs{:valign => 'top'}
           %p{:style => "color:green"}= flash[:notice]
           =yield
