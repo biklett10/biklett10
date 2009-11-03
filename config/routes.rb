@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/register', :controller => 'users', :action => 'new'
   map.connect '/login', :controller => 'user_sessions', :action => 'new'  
   map.connect '/logout', :controller => 'user_sessions', :action => 'destroy'  
+  map.connect "/profile", :controller => "users", :action => "profile"
+  map.connect "/profile/change_password", :controller => "users", :action => "change_password"
   # step 5
   # http://github.com/matthooks/authlogic-activation-tutorial
   # added to config/routes.rb

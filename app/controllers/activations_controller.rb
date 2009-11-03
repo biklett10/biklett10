@@ -2,7 +2,7 @@ class ActivationsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
 
   def new
-    @user = User.find_using_perishable_token(params[:activation_code], 1.week) || (raise Exception)
+    @user = User.find_using_perishable_token(params[:activation_code], 1.week) || (raise Exception,"Problem finding User using token.")
     raise(Exception,"Maybe @user is active.") if @user.active?
   end
 
@@ -21,8 +21,8 @@ class ActivationsController < ApplicationController
 
   # For testing
   def create_activation_instructions
-    @bobsmith = User.find_by_login("bobsmith")
-    email_txt = Notifier.create_activation_instructions(@bobsmith)
+    @me = User.find_by_login(params[:mylogin])
+    email_txt = Notifier.create_activation_instructions(@me)
     render(:text => "<pre>" + email_txt.encoded + "</pre>") 
   end # def create_activation_instructions
 
