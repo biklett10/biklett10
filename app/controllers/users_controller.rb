@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
+    (redirect_to "/" ; return) unless @user.valid_password?(params["cp"]["current_password"])
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to "/"
