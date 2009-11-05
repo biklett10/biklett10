@@ -3,5 +3,7 @@ class StaticController < ApplicationController
   end
   def check_email
   end
+  def messages
+  end
 
 end
