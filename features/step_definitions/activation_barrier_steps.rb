@@ -20,6 +20,5 @@ end
 
 When /^I have not activated it yet$/ do
   @bobsmith = User.find_by_login("bobsmith")
-  p "@bobsmith is active? #{@bobsmith.active}"
   # save_and_open_page
 end

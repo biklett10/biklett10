@@ -8,7 +8,7 @@ Then /^I should see an activation link$/ do
   # app/controllers/activations_controller.rb
   # Here is a method I wrote just for this test:
   # create_activation_instructions()
-  visit("/activations/create_activation_instructions")
+  visit("/activations/create_activation_instructions/?mylogin=bobsmith")
   response.should contain("Click the url below to activate your account")
   @the_activation_url = "/register/"
   scan_a = response.body.scan(/(http:)(.*)(\/register\/)(\w+)(.*)/).flatten

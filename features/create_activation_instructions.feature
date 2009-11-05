@@ -18,7 +18,6 @@ Feature: Create Activation Instructions
     And I fill in "Password" with "r1chbr0wn"
     And I check "Remember me"
     And I press "Login"
-    And You inspect the currently loaded page
     And I should see "Login successful"
     And I should see "Welcome"
     And I should be logged in
