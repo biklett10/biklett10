@@ -6,7 +6,7 @@ When /^I activate "([^\"]*)"$/ do |mylogin|
   @me.save
   # This gives me intermittent bug:
   # It might be a race condition.
-  # It usually works if I am will to wait 10 or 20 sec
+  # It usually works if I am willing to wait 10 or 20 sec
 #  visit("/activations/create_activation_instructions/?mylogin=#{mylogin}")
 #  response.should contain("Click the url below to activate your account")
 #  @the_activation_url = "/register/"
