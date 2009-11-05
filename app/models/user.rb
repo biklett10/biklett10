@@ -1,4 +1,24 @@
 class User < ActiveRecord::Base
+
+
+
+  # http://www.novawave.net/public/rails_messaging_tutorial.html
+  has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
+  has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
+  has_many :folders
+  before_create :build_inbox
+  
+  def inbox
+    folders.find_by_name("Inbox")
+  end
+  
+  def build_inbox
+    folders.build(:name => "Inbox")
+  end
+  # http://www.novawave.net/public/rails_messaging_tutorial.html
+
+
+  
   # For authlogic 2.0+
   # step 8 http://github.com/matthooks/authlogic-activation-tutorial
   acts_as_authentic do |c|
