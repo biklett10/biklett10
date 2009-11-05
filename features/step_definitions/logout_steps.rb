@@ -10,7 +10,7 @@ Given /^that I have an activated account$/ do
   click_button "Register"
   # activate
   @bobsmith = User.find_by_login("bobsmith")
-  visit("/activations/create_activation_instructions")
+  visit("/activations/create_activation_instructions/?mylogin=bobsmith")
   response.should contain("Click the url below to activate your account")
   @the_activation_url = "/register/"
   scan_a = response.body.scan(/(http:)(.*)(\/register\/)(\w+)(.*)/).flatten
