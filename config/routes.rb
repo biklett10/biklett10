@@ -16,6 +16,14 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:id', :controller => 'activations', :action => 'create'
   # bikle 2009-10-28 authlogic install/setup
 
+  # bikle 2009-11-05 http://www.novawave.net/public/rails_messaging_tutorial.html
+  map.resources :sent
+  map.resources :mailbox, :collection => { :trash => :get }
+  map.resources :messages, :member => { :reply => :get, :forward => :get, :reply_all => :get, :undelete => :put }
+  # Home route leads to inbox
+  map.inbox '', :controller => "mailbox", :action => "index"
+  # bikle 2009-11-05 http://www.novawave.net/public/rails_messaging_tutorial.html
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
