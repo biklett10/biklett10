@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Twitter login</th>
     <th>Twitter pass</th>
     <th>Twitter email</th>
     <th>User</th>
@@ -9,6 +10,7 @@
 
 <% @twitter_accounts.each do |twitter_account| %>
   <tr>
+    <td><%=h twitter_account.twitter_login %></td>
     <td><%=h twitter_account.twitter_pass %></td>
     <td><%=h twitter_account.twitter_email %></td>
     <td><%=h twitter_account.user_id %></td>
