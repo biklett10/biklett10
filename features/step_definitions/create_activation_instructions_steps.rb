@@ -22,10 +22,6 @@ Then /^I can use that link to activate$/ do
   click_button("Activate")
 end
 
-Then /^You inspect the currently loaded page$/ do
-  save_and_open_page
-end
-
 Then /^I should be logged in$/ do
   session[:login].should == @bobsmith.login
 end
