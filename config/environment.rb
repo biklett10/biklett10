@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :version => '2.0.9'
   config.gem 'hpricot', :version => '0.8.1'
   config.gem 'will_paginate', :version => '2.3.11'
+  config.gem 'twitter', :version => '0.7.0'
   # bikle
 
   # Settings in config/environments/* take precedence over those specified here.
