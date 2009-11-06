@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :twitter_accounts
+
   # bikle 2009-10-28 authlogic install/setup
   map.resource :account, :controller => "users"
   map.resources :users

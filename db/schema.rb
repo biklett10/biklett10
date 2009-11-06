@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091105070631) do
+ActiveRecord::Schema.define(:version => 20091106204750) do
 
   create_table "folders", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20091105070631) do
     t.integer  "author_id"
     t.string   "subject"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_accounts", :force => true do |t|
+    t.string   "twitter_login"
+    t.string   "twitter_pass"
+    t.string   "twitter_email"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
-
+  # bikle 2009-11-06
+  has_many :twitter_accounts
+  # bikle 2009-11-06
 
   # http://www.novawave.net/public/rails_messaging_tutorial.html
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"

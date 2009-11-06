@@ -1,0 +1,18 @@
+<p>
+  <b>Twitter pass:</b>
+  <%=h @twitter_account.twitter_pass %>
+</p>
+
+<p>
+  <b>Twitter email:</b>
+  <%=h @twitter_account.twitter_email %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @twitter_account.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_twitter_account_path(@twitter_account) %> |
+<%= link_to 'Back', twitter_accounts_path %>
