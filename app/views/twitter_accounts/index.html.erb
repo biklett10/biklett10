@@ -10,11 +10,10 @@
 
 <% @twitter_accounts.each do |twitter_account| %>
   <tr>
-    <td><%=h twitter_account.twitter_login %></td>
+    <td><%= link_to(h(twitter_account.twitter_login), twitter_account) %></td>
     <td><%=h twitter_account.twitter_pass %></td>
     <td><%=h twitter_account.twitter_email %></td>
     <td><%=h twitter_account.user_id %></td>
-    <td><%= link_to 'Show', twitter_account %></td>
     <td><%= link_to 'Edit', edit_twitter_account_path(twitter_account) %></td>
     <td><%= link_to 'Destroy', twitter_account, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
