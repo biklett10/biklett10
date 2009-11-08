@@ -26,6 +26,7 @@ Rails::Initializer.run do |config|
   config.gem 'twitter', :version => '0.7.0'
   config.gem 'selenium-client', :lib => false, :version => '1.2.17'
   config.gem 'Selenium', :lib => false, :version => '1.1.14'
+  config.gem 'database_cleaner', :version => '0.2.3'
   # bikle
 
   # Settings in config/environments/* take precedence over those specified here.
