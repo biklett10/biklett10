@@ -10410,3 +10410,642 @@ Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-06 15:39:50
 Rendering template within layouts/twitter_accounts
 Rendering twitter_accounts/index
 Completed in 15ms (View: 11, DB: 2) | 200 OK [http://www.example.com/twitter_accounts]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:00:58) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 13:01:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-07 13:01:27) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bob", "email"=>"bob@b.com"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bob@b.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'b16f84dd39ec640df2f8298c430398afd66da66d93c6bf9417e73d4f5ade7e039a27c5491998f3ebd86e77de21a171d0415fb02c6cc4397eb986b61ad9a4ff1b') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'ONsddapX2e3VZVBPRDhV') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('ONsddapX2e3VZVBPRDhV', NULL, 'f', '2009-11-07 21:01:27', '0a91032367d23401f317825ee4893b2a27370c8fa0a55c8dd8a03b11994bac56566ff8975387a32e635ddb9834e8848695e3cef2e7f1fed1870abfd438391adc', 'RlIPx8aK8h4KCJqbFrQl', '2009-11-07 21:01:27', 0, NULL, '5eVSxTu-hSW4UqCHMlAR', NULL, 'b16f84dd39ec640df2f8298c430398afd66da66d93c6bf9417e73d4f5ade7e039a27c5491998f3ebd86e77de21a171d0415fb02c6cc4397eb986b61ad9a4ff1b', 0, NULL, 'bob', NULL, 'bob@b.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.1ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-07 21:01:27', '2009-11-07 21:01:27', 1, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:01:27', "perishable_token" = 'yW1-7_oBe4J3l6ybedRq' WHERE "id" = 1[0m
+Sent mail to bob@b.com
+
+Date: Sat, 7 Nov 2009 13:01:27 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bob@b.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/yW1-7_oBe4J3l6ybedRq
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3000/static/check_email
+Completed in 170ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-07 13:01:27) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/static/check_email]
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-07 13:02:19) [GET]
+  Parameters: {"activation_code"=>"yW1-7_oBe4J3l6ybedRq", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (perishable_token = 'yW1-7_oBe4J3l6ybedRq' and updated_at > '2009-10-31 21:02:19') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://localhost/register/yW1-7_oBe4J3l6ybedRq]
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-07 13:02:22) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-07 21:02:22', "perishable_token" = 't0OkPwyO4viLrQNqk-LT', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:02:22', "perishable_token" = '-mYTrVykr4AREc_G0iIH' WHERE "id" = 1[0m
+Sent mail to bob@b.com
+
+Date: Sat, 7 Nov 2009 13:02:22 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bob@b.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 2) | 302 Found [http://localhost/activate/1]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:02:22) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-07 13:02:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 13:02:47) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"bob"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bob') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-07 21:02:47', "perishable_token" = 'St7crK9Uu3Ddzh1R2dFT', "last_request_at" = '2009-11-07 21:02:47', "current_login_at" = '2009-11-07 21:02:47' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:02:47) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-07 13:02:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#new (for 127.0.0.1 at 2009-11-07 13:03:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"twitter_accounts"}
+Rendering template within layouts/application
+Rendering twitter_accounts/new
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/twitter_accounts/new]
+
+
+Processing TwitterAccountsController#create (for 127.0.0.1 at 2009-11-07 13:03:36) [POST]
+  Parameters: {"twitter_account"=>{"twitter_login"=>"abcxyz", "user_id"=>"1", "twitter_email"=>"a@a.edu", "twitter_pass"=>"hh"}, "commit"=>"Create", "action"=>"create", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Create (0.5ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('abcxyz', '2009-11-07 21:03:36', '2009-11-07 21:03:36', 1, 'hh', 'a@a.edu')[0m
+Redirected to http://localhost:3000/twitter_accounts/1
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-07 13:03:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/twitter_accounts/1]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-07 13:03:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-07 13:03:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/twitter_accounts/1]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-11-07 13:04:42) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-07 21:04:42', "perishable_token" = 'trrR3Olccd6JBRcmJ61v', "last_request_at" = '2009-11-07 21:04:42' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:04:42) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20091028223647)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091028223647')[0m
+Migrating to CreateMessages (20091105070611)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070611')[0m
+Migrating to CreateMessageCopies (20091105070622)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070622')[0m
+Migrating to CreateFolders (20091105070631)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070631')[0m
+Migrating to CreateTwitterAccounts (20091106204750)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091106204750')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("folders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("message_copies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("twitter_accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091106204750')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091028223647')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070611')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091105070622')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070631')[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:06:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 13:07:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:07:14) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-07 13:07:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.8ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-07 13:08:01) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"b@b.com"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'b@b.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd76a0bf60ec002acf0547645538389764cc1d150c66a7615d763c1116dd58ec86002a4c53372028f8d21e47653eaed032c56b54d8706e8429c7003f947b0bff0') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'iwAOn9WXN_7eGr51KpJ7') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('iwAOn9WXN_7eGr51KpJ7', NULL, 'f', '2009-11-07 21:08:01', '208c87633ec472f89239030d7af51cf05059b1d157e35565183489348f722d2b812bbdc56a34f00ac3c6b19f4410b2e91b78701a415bf5f58bc11ac81d01ea8b', 'Bbvks4vcw64Q19buWPui', '2009-11-07 21:08:01', 0, NULL, 'MIt9VJ0ZhHkqYycF18rV', NULL, 'd76a0bf60ec002acf0547645538389764cc1d150c66a7615d763c1116dd58ec86002a4c53372028f8d21e47653eaed032c56b54d8706e8429c7003f947b0bff0', 0, NULL, 'bobsmith', NULL, 'b@b.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.1ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-07 21:08:01', '2009-11-07 21:08:01', 1, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:08:01', "perishable_token" = '672oStuARdgkESXpCTwE' WHERE "id" = 1[0m
+Sent mail to b@b.com
+
+Date: Sat, 7 Nov 2009 13:08:01 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: b@b.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/672oStuARdgkESXpCTwE
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3000/static/check_email
+Completed in 205ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-07 13:08:01) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/static/check_email]
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-11-07 13:09:07) [GET]
+  Parameters: {"activation_code"=>"672oStuARdgkESXpCTwE", "action"=>"new", "controller"=>"activations"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = '672oStuARdgkESXpCTwE' and updated_at > '2009-10-31 21:09:07') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 43ms (View: 2, DB: 0) | 200 OK [http://localhost/register/672oStuARdgkESXpCTwE]
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-11-07 13:09:19) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"1", "controller"=>"activations"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-07 21:09:19', "perishable_token" = 'XG-UVhwMv4DfiywwZVzL', "active" = 't' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:09:19', "perishable_token" = '1FOns15NekGQbK1qEwuT' WHERE "id" = 1[0m
+Sent mail to b@b.com
+
+Date: Sat, 7 Nov 2009 13:09:19 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: b@b.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+  <!-- app/views/notifier/activation_confirmation.erb -->
+  Your account has been activated.
+
+  http://x.com/
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+  
+Redirected to http://localhost:3000/
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/activate/1]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:09:19) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-07 13:09:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-07 13:09:49) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"bobsmith"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-07 21:09:49', "perishable_token" = 'DfinvGxuZQuzIjG0VA6I', "last_request_at" = '2009-11-07 21:09:49', "current_login_at" = '2009-11-07 21:09:49' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:09:49) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-07 13:10:56) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-07 13:11:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (1.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:18', "perishable_token" = 'ptn6iif_RwJbU0fuGnkK', "last_request_at" = '2009-11-07 21:11:18' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 12ms (DB: 2) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-07 13:11:18) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:18', "perishable_token" = 'G6Qhu98TSAzbbjzd3KAz', "last_request_at" = '2009-11-07 21:11:18' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-07 13:11:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:39', "perishable_token" = 'vgd-SuBjwmk6RpqlXMbf', "last_request_at" = '2009-11-07 21:11:39' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-07 13:11:39) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:39', "perishable_token" = 'dPxtVnYsy3vF1jUB8_I6', "last_request_at" = '2009-11-07 21:11:39' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-07 13:11:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:44', "perishable_token" = 'zAeuRFT55BDF7Jxd4alu', "last_request_at" = '2009-11-07 21:11:44' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-07 13:11:44) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-07 21:11:44', "perishable_token" = 'AAhQXIE18RwzEBzdKTSt', "last_request_at" = '2009-11-07 21:11:44' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20091028223647)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091028223647')[0m
+Migrating to CreateMessages (20091105070611)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070611')[0m
+Migrating to CreateMessageCopies (20091105070622)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070622')[0m
+Migrating to CreateFolders (20091105070631)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091105070631')[0m
+Migrating to CreateTwitterAccounts (20091106204750)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091106204750')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("folders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("message_copies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("twitter_accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091106204750')[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091028223647')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070611')[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091105070622')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070631')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091106204750')[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091028223647')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070611')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091105070622')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070631')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "twitter_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_login" varchar(255), "twitter_pass" varchar(255), "twitter_email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f' NOT NULL, "boolean" boolean DEFAULT 'f' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091106204750')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091028223647')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070611')[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091105070622')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091105070631')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
