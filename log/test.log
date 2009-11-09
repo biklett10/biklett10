@@ -12942,3 +12942,107 @@ Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-09 04:09:37)
 Rendering template within layouts/application
 Rendering twitter_accounts/show
 Completed in 9ms (View: 2, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/3]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-09 04:19:27) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-09 04:19:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://www.example.com/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (59.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-09 04:33:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "users";[0m
