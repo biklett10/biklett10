@@ -12,7 +12,6 @@ Feature: See Who I Follow On Twitter
     And I login as "richbrown" with password "b0bsm1th"
     And as "richbrown" I own twitter accounts "janis_cowgirl88 billx_thepilot87 eugene_dentist86"
     And I follow "My Twitter Accounts"
-    And You inspect the currently loaded page
     And I follow "eugene_dentist86"
     And I follow "I Am Following"
     Then I should see "alyankovic"
