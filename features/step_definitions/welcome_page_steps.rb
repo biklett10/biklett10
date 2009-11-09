@@ -28,7 +28,6 @@ Then /^the RHS column should be much more prominent$/ do
 end
 
 Then /^the LHS column should have the links: login, register$/ do
-  debugger
 #  response.should_not have_selector("a", :href => "/" , :content => "About") 
 #  response.should have_selector("a", :href => "/login" , :content => "Login") 
 #  response.should have_selector("a", :href => "/register" , :content => "Register") 

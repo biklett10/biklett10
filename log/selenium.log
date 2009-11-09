@@ -209,3 +209,38 @@ Processing StaticController#about (for 127.0.0.1 at 2009-11-08 18:25:35) [GET]
 Rendering template within layouts/application
 Rendering static/about
 Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 20:04:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 20:08:12) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 20:13:30) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 20:14:41) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 20:19:50) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]

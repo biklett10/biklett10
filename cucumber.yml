@@ -1,3 +1,4 @@
-default: --tags ~@selenium -r features/support/env.rb -r features/step_definitions features
-selenium: --tags @selenium -r features/support/env.rb -r features/support/selenium.rb -r features/step_definitions features
+# tools-episode-2-webrat-selenium.mov:
+# default: --tags ~@selenium -r features/support/env.rb -r features/step_definitions features
+# selenium: --tags @selenium -r features/support/env.rb -r features/support/selenium.rb -r features/step_definitions features
 
