@@ -1,13 +1,5 @@
-#---
-# Excerpted from "The RSpec Book",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
-#---
 # Sets up the Rails environment for Cucumber
-ENV["RAILS_ENV"] ||= "cucumber"
+ENV["RAILS_ENV"] ||= "test"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 require 'cucumber/rails/world'
 
@@ -24,18 +16,18 @@ Cucumber::Rails.bypass_rescue
 
 require 'webrat'
 
-Webrat.configure do |config|
-#  config.mode = :selenium
-  config.mode = :rails
-  # This gives error. I comment it out: config.selenium_wait_timeout = 10
-end
+#Webrat.configure do |config|
+##  config.mode = :selenium
+#  config.mode = :rails
+#  # This gives error. I comment it out: config.selenium_wait_timeout = 10
+#end
 
-class ActiveSupport::TestCase
-  self.use_transactional_fixtures = false
-  setup do |session|
-    session.host! "localhost:3001"
-  end
-end
+#class ActiveSupport::TestCase
+#  self.use_transactional_fixtures = false
+#  setup do |session|
+#    session.host! "localhost:3001"
+#  end
+#end
 
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'

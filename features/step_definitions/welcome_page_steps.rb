@@ -13,8 +13,8 @@ end
 # When I go to the homepage
 
 Then /^I should see a page with 2 columns$/ do
-  doc = Hpricot(response.body)
-  (doc/"body/table.main_table/tbody/tr.main_tr/td.lhs/../td").size.should == 2
+  @doc = Hpricot(response.body)
+  (@doc/"body/table.main_table/tbody/tr.main_tr/td.lhs/../td").size.should == 2
 end
 
 Then /^the LHS column should be relatively narrow$/ do
@@ -28,11 +28,13 @@ Then /^the RHS column should be much more prominent$/ do
 end
 
 Then /^the LHS column should have the links: login, register$/ do
-#  response.should_not have_selector("a", :href => "/" , :content => "About") 
-#  response.should have_selector("a", :href => "/login" , :content => "Login") 
-#  response.should have_selector("a", :href => "/register" , :content => "Register") 
+  (@doc/"a[@href=/]").size.should == 0
+  (@doc/"a[@href=/login]").html.should == "Login"
+  (@doc/"a[@href=/register]").html.should == "Register"
 end
 
 Then /^the RHS should only contain the word Welcome$/ do
-  response.should have_selector("html/body/table.main_table/tbody/tr.main_tr/td.rhs/h1", :content => "Welcome") 
+  #  !((@doc/"body/table.main_table tr.main_tr/td.rhs/h1").html =~ /Welcome/).nil?
+  debugger
+  ((@doc/"body/table.main_table tr.main_tr/td.rhs/h1").html.should =~ /Welcome/)
 end
