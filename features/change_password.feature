@@ -18,7 +18,6 @@ Feature: Change Password
     And I fill in "user_password" with "he110w0rld"
     And I fill in "user_password_confirmation" with "he110w0rld"
     And I press "Change password"
-    And You inspect the currently loaded page
     And I follow "Logout"
     And I follow "Login"
     And I login "bobsmith" with "he110w0rld"
