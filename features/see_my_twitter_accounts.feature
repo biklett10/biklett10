@@ -12,7 +12,6 @@ Feature: See My Twitter Accounts
     And I login as "richbrown" with password "b0bsm1th"
     And as "richbrown" I own twitter accounts "janis_cowgirl88 billx_thepilot87 eugene_dentist86"
     When I follow "My Twitter Accounts"
-    And You inspect the currently loaded page
     Then I should see "janis_cowgirl88"
     And I should see "billx_thepilot87"
     And I should see "eugene_dentist86"
