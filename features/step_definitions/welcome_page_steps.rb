@@ -14,6 +14,7 @@ end
 
 Then /^I should see a page with 2 columns$/ do
   @doc = Hpricot(response.body)
+  @nok = Nokogiri::HTML(response.body)
   (@doc/"body/table.main_table/tbody/tr.main_tr/td.lhs/../td").size.should == 2
 end
 

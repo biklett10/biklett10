@@ -321,3 +321,17 @@ Processing StaticController#about (for 127.0.0.1 at 2009-11-08 23:47:37) [GET]
 Rendering template within layouts/application
 Rendering static/about
 Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-08 23:51:16) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-09 00:01:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]

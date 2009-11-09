@@ -328,3 +328,23 @@
 ** Mongrel 1.1.5 available at 0.0.0.0:3001
 ** Writing PID file to /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid
 ** TERM signal received.
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+** Starting Rails with selenium environment...
+** Rails loaded.
+** Loading any Rails specific GemPlugins
+** Signals ready.  TERM => stop.  USR2 => restart.  INT => stop (no restart).
+** Rails signals registered.  HUP => reload (without restart).  It might not work well.
+** Mongrel 1.1.5 available at 0.0.0.0:3001
+** Writing PID file to /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid
+** TERM signal received.
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+** Starting Rails with selenium environment...
+** Rails loaded.
+** Loading any Rails specific GemPlugins
+** Signals ready.  TERM => stop.  USR2 => restart.  INT => stop (no restart).
+** Rails signals registered.  HUP => reload (without restart).  It might not work well.
+** Mongrel 1.1.5 available at 0.0.0.0:3001
+** Writing PID file to /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid
+** TERM signal received.
