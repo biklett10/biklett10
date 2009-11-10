@@ -13,6 +13,7 @@ Feature: See Messages UI
     And I activate "bobsmith"
     And I login "bobsmith" with "r1chbr0wn"
     When I follow "Messages"
+    And You call debugger
     Then I should see "Compose"
     And  I should see "Mailboxes"
     And  I should see "Inbox"

@@ -9,6 +9,7 @@ When /^I login "([^\"]*)" with "([^\"]*)"$/ do |mylogin,mypass|
   response.should contain(mylogin)
   response.should contain("Login successful")
   response.should contain("Welcome")
+  debugger
   session[:login].should == mylogin
 end
 
