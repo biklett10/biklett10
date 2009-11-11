@@ -2,11 +2,13 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/sent/index" do
   before(:each) do
-    render 'sent/index'
-  end
+    @messages = Message.all
+    render 'sent/index', :layout => false
+  end # describe
 
   #Delete this example and add some real ones or delete this file
-  it "should tell you where to find the file" do
-    response.should have_tag('p', %r[Find me in app/views/sent/index])
-  end
+  it "should list sent messages" do
+    response.should have_tag('h2', %r[Sent Messages])
+  end # it
+
 end

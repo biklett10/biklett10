@@ -5,3 +5,12 @@
 #
 # two:
 #   column: value
+user1:
+  id: 1
+  login: user1
+  email: user1@hotmail.com
+  crypted_password: hello
+  password_salt: hello
+  persistence_token: hello
+  single_access_token: hello
+  perishable_token: hello

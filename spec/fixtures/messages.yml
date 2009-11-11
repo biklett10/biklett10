@@ -5,3 +5,8 @@
 #
 # two:
 #   column: value
+
+m1:
+  author_id: 1
+  subject: This is m1
+  body: This is a short message.

@@ -6,7 +6,7 @@
     <th>Subject</th>
     <th>Sent</th>
   </tr>
-  
+  <% @messages = Message.all %>
   <% for message in @messages %>
     <tr>
       <td><%=h message.recipients.map(&:login).to_sentence %></td>
@@ -16,4 +16,3 @@
   <% end %>
 </table>
 
-<%= will_paginate @messages %>

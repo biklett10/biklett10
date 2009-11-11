@@ -14203,3 +14203,30 @@ Processing StaticController#messages (for 127.0.0.1 at 2009-11-10 13:03:43) [GET
 Rendering template within layouts/application
 Rendering static/messages
 Completed in 26594ms (View: 4, DB: 0) | 200 OK [http://localhost/static/messages]
+Rendering sent/index
+Rendering sent/index
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "message_copies" ON "users".id = "message_copies".recipient_id WHERE (("message_copies".message_id = 5506866)) [0m
+Rendering sent/index
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "message_copies" ON "users".id = "message_copies".recipient_id WHERE (("message_copies".message_id = 5506866)) [0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "message_copies" ON "users".id = "message_copies".recipient_id WHERE (("message_copies".message_id = 5506866)) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Rendering sent/index
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".* FROM "users" INNER JOIN "message_copies" ON "users".id = "message_copies".recipient_id WHERE (("message_copies".message_id = 5506866)) [0m
