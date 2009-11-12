@@ -15,7 +15,7 @@ end
 Then /^I should see a page with 2 columns$/ do
   @doc = Hpricot(response.body)
   @nok = Nokogiri::HTML(response.body)
-  (@doc/"body/table.main_table/tbody/tr.main_tr/td.lhs/../td").size.should == 2
+  (@doc/"body/table.main_table tr.main_tr/td.lhs/../td").size.should == 2
 end
  
 Then /^the LHS column should be relatively narrow$/ do
@@ -36,7 +36,6 @@ end
  
 Then /^the RHS should only contain the word Welcome$/ do
   # !((@doc/"body/table.main_table tr.main_tr/td.rhs/h1").html =~ /Welcome/).nil?
-  debugger
   ((@doc/"body/table.main_table tr.main_tr/td.rhs/h1").html.should =~ /Welcome/)
 end
  
