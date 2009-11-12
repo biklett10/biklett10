@@ -7,7 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
 # Sets up the Rails environment for Cucumber
-ENV["RAILS_ENV"] ||= "cucumber"
+ENV["RAILS_ENV"] ||= "test"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 require 'cucumber/rails/world'
 
@@ -25,10 +25,13 @@ Cucumber::Rails.bypass_rescue
 require 'webrat'
 
 Webrat.configure do |config|
-#  config.mode = :rails
-  config.mode = :selenium
-# not working for me  config.selenium_wait_timeout = 10
-end
+  case ENV["RAILS_ENV"]
+    when "selenium"
+      config.mode = :selenium
+    else
+      config.mode = :rails
+  end # case
+end # Webrat.configure 
 
 class ActiveSupport::TestCase
   setup do |session|
