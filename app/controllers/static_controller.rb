@@ -5,5 +5,4 @@ class StaticController < ApplicationController
   end
   def messages
   end
-
-end
+end # class
