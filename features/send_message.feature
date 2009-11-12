@@ -20,8 +20,6 @@ Feature: Send Message
     And I press "Send"
     Then I should see "Message sent"
     And I should see "Sent Messages"
+    And You call debugger
     And I should see "less than a minute ago"
-
-
-
 
