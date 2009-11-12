@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  # bikle 2009-11-12
+  map.connect '/twitter_accounts/query_following', :controller => 'twitter_accounts', :action => 'query_following'
   map.resources :twitter_accounts
+  # bikle 2009-11-12
 
   # bikle 2009-10-28 authlogic install/setup
   map.resource :account, :controller => "users"

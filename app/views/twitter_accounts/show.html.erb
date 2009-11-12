@@ -13,11 +13,11 @@
   <%=h @twitter_account.twitter_email %>
 </p>
 
+<%= link_to "Edit #{h @twitter_account.twitter_login}", edit_twitter_account_path(@twitter_account) %>
 <p>
-  <b>User:</b>
-  <%=h @twitter_account.user_id %>
+  <%=h @twitter_account.twitter_login %> is following  =&gt; 
+<!--
+<a href="/twitter_accounts/query_following">These Twitter Accounts</a>
+-->
+<%= link_to "These Twitter Accounts", :action => "query_following", :id => @twitter_account %>
 </p>
-
-
-<%= link_to 'Edit', edit_twitter_account_path(@twitter_account) %> |
-<%= link_to 'Back', twitter_accounts_path %>

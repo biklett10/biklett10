@@ -17122,3 +17122,14 @@ Completed in 5ms (View: 3, DB: 0) | 200 OK [http://www.example.com/twitter_accou
   [4;36;1mSQL (3.2ms)[0m   [0;1mDELETE FROM "messages";[0m
   [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "twitter_accounts";[0m
   [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mTwitterAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "twitter_accounts" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist86') LIMIT 1[0m
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist86') LIMIT 1[0m
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist86') LIMIT 1[0m
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist8') LIMIT 1[0m
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist8') LIMIT 1[0m
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."twitter_login" = 'eugene_dentist8') LIMIT 1[0m

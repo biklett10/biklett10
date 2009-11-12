@@ -1,4 +1,12 @@
 class TwitterAccountsController < ApplicationController
+  # bikle 2009-11-12
+  def query_following
+    @twitter_account = TwitterAccount.find(params[:id])
+    @friends = @twitter_account.query_following.to_s
+  end
+
+  # bikle 2009-11-12
+
   # GET /twitter_accounts
   # GET /twitter_accounts.xml
   def index

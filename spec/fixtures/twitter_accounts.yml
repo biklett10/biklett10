@@ -1,11 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  twitter_pass: MyString
-  twitter_email: MyString
+eugene_dentist8:
+  twitter_login: eugene_dentist8
+  twitter_pass: ph1llynyfl
+  twitter_email: eugene_dentist86@hotmail.com
   user_id: 1
 
-two:
-  twitter_pass: MyString
-  twitter_email: MyString
+billx_thepilot87:
+  twitter_login: billx_thepilot87
+  twitter_pass: r3n0nvtx
+  twitter_email: billx_thepilot87@hotmail.com
+  user_id: 1
+
+janis_cowgirl88:
+  twitter_login: janis_cowgirl88
+  twitter_pass: da11astxca
+  twitter_email: janis12green34@yahoo.com
   user_id: 1
