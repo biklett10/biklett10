@@ -1825,3 +1825,367 @@ Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/static/check_email]
   [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "messages";[0m
   [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
   [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:27:25) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-11 22:27:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-11 22:27:26) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"richbrown", "email"=>"richbrown2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richbrown2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'richbrown') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '76f7be6268791a79346b7771c33f109424e9e70660093fb515611217d783e3da6a7ba19685e6051b46e595c15d84c7edcd748f6e36c4bd6a65b44068b5e2d9a3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'xqDJSL_rf4iR4H7CrDID') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('xqDJSL_rf4iR4H7CrDID', NULL, 'f', '2009-11-12 06:27:26', '85377b86d7dc0367d09aaa3be0611c4666a669383504bef689a0f4935058910191951bc65da98f7880fcfeda479967d47d62ec642d6485a7563579f9a8cc5c92', 'e_4Af4J9BjkIaZidJU_1', '2009-11-12 06:27:26', 0, NULL, 'n1gPS8zZRGoZyjWQsgbA', NULL, '76f7be6268791a79346b7771c33f109424e9e70660093fb515611217d783e3da6a7ba19685e6051b46e595c15d84c7edcd748f6e36c4bd6a65b44068b5e2d9a3', 0, NULL, 'richbrown', NULL, 'richbrown2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.3ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-12 06:27:26', '2009-11-12 06:27:26', 206669177, NULL)[0m
+  [4;35;1mUser Update (1.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-12 06:27:26', "perishable_token" = 'An0cGzI72_W0Jlz0w0VU' WHERE "id" = 206669177[0m
+Sent mail to richbrown2009@hotmail.com
+
+Date: Wed, 11 Nov 2009 22:27:26 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: richbrown2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/An0cGzI72_W0Jlz0w0VU
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 34ms (DB: 3) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-11 22:27:26) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/static/check_email]
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:31:53) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-11 22:31:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-11 22:31:53) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"richbrown", "email"=>"richbrown2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richbrown2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'richbrown') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '4b123997ac6bdcdd5e3220a1b29e5afd31a817e2d49264bf48e9e18125328584f372b100e0a776fdd46d205f34f719eef8e22578e3ce37cc3d6e4b2831b7d8c4') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Ip0C07fiGOrDB91nUXaK') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('Ip0C07fiGOrDB91nUXaK', NULL, 'f', '2009-11-12 06:31:53', 'd548aa07cd43432fe1406659e3da52d7db4be43113a1f189a31c3de6b2f23b738bc035b8bb88d29a2b22357fcb163871f2d6f75a3fc7ac46f2bb1fbee228255c', '1HSJkLdg_LotrwYgpWtH', '2009-11-12 06:31:53', 0, NULL, 'KfwBFcuqg1o7t3tjdBT9', NULL, '4b123997ac6bdcdd5e3220a1b29e5afd31a817e2d49264bf48e9e18125328584f372b100e0a776fdd46d205f34f719eef8e22578e3ce37cc3d6e4b2831b7d8c4', 0, NULL, 'richbrown', NULL, 'richbrown2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.2ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-12 06:31:53', '2009-11-12 06:31:53', 206669178, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-12 06:31:53', "perishable_token" = 'X7T6Zqy8SP1IYJX1zoFG' WHERE "id" = 206669178[0m
+Sent mail to richbrown2009@hotmail.com
+
+Date: Wed, 11 Nov 2009 22:31:53 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: richbrown2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/X7T6Zqy8SP1IYJX1zoFG
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 52ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-11 22:31:53) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/static/check_email]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (34.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (21.1ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (18.9ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:34:27) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-11 22:34:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-11 22:34:27) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"richbrown", "email"=>"richbrown2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richbrown2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'richbrown') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '1cac594631366c14081e6d4b232ba09300589cb3e3cb43f9cb41ae537e89a03c04729fcce497347442eed8c90784f54b0c261dd1e151438d8234306a55940fca') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'pWJtcwuXCHvoVHvSn5Bm') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('pWJtcwuXCHvoVHvSn5Bm', NULL, 'f', '2009-11-12 06:34:27', '11bfb144e0937add2d833cccacb89a9b7ecd8c8ed668cc8d7d1a591985dae592ccbd5534107428cff83b1cd521b6e7558eb56aac2c276e314eb2a69334fa06fc', 'fJ1z64tPobEtXnkYL79R', '2009-11-12 06:34:27', 0, NULL, '3nM8uRDpTQM5n7hTDYCy', NULL, '1cac594631366c14081e6d4b232ba09300589cb3e3cb43f9cb41ae537e89a03c04729fcce497347442eed8c90784f54b0c261dd1e151438d8234306a55940fca', 0, NULL, 'richbrown', NULL, 'richbrown2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.2ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-12 06:34:27', '2009-11-12 06:34:27', 206669179, NULL)[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-12 06:34:27', "perishable_token" = 'gt8xR1FRFUPc8hYQM9CO' WHERE "id" = 206669179[0m
+Sent mail to richbrown2009@hotmail.com
+
+Date: Wed, 11 Nov 2009 22:34:27 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: richbrown2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/gt8xR1FRFUPc8hYQM9CO
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 29ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-11 22:34:27) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/static/check_email]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:35:25) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-11 22:35:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.7ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-11 22:35:26) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"richbrown", "email"=>"richbrown2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richbrown2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'richbrown') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '53530318462513be92022ec461fdf40688b510febe3616541ea193ae7845b29f0b59ee290c8644e7149782afe704d8fd03bec3681f5350a74b89510b86d4c46e') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'TbNLJHPc-R14mchtQ-MN') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('TbNLJHPc-R14mchtQ-MN', NULL, 'f', '2009-11-12 06:35:26', 'f0f54e12e3f73792b9a4a060a6ac5b8e4d11577d03d36a206c09415080138380e68b490aacb26755c6171d8653a28f9b4603d67c34cb683a2770cb3a844da6c8', 'NaulaciIgbRdqqX194vh', '2009-11-12 06:35:26', 0, NULL, 'z9LbPxdPCqTXA4qgTgYf', NULL, '53530318462513be92022ec461fdf40688b510febe3616541ea193ae7845b29f0b59ee290c8644e7149782afe704d8fd03bec3681f5350a74b89510b86d4c46e', 0, NULL, 'richbrown', NULL, 'richbrown2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-12 06:35:26', '2009-11-12 06:35:26', 206669180, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-12 06:35:26', "perishable_token" = '8-QZPF_oJuI-k8LqP35_' WHERE "id" = 206669180[0m
+Sent mail to richbrown2009@hotmail.com
+
+Date: Wed, 11 Nov 2009 22:35:26 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: richbrown2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/8-QZPF_oJuI-k8LqP35_
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 35ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-11 22:35:26) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/check_email
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/static/check_email]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-12 06:35:26', "perishable_token" = 'DfCewJP5cDUdkC71M4H6', "active" = 't' WHERE "id" = 206669180[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:35:26) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-11 22:35:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 110ms (View: 105, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-11 22:35:26) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"richbrown"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'richbrown') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-12 06:35:26', "perishable_token" = 'ljSJ2hYfceQArM1oVPRF', "last_request_at" = '2009-11-12 06:35:26', "current_login_at" = '2009-11-12 06:35:26' WHERE "id" = 206669180[0m
+Redirected to http://localhost:3001/
+Completed in 61ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-11 22:35:26) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.4ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('janis_cowgirl88', '2009-11-12 06:35:27', '2009-11-12 06:35:27', 206669180, NULL, NULL)[0m
+  [4;36;1mTwitterAccount Create (0.4ms)[0m   [0;1mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('billx_thepilot87', '2009-11-12 06:35:27', '2009-11-12 06:35:27', 206669180, NULL, NULL)[0m
+  [4;35;1mTwitterAccount Create (0.7ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist86', '2009-11-12 06:35:27', '2009-11-12 06:35:27', 206669180, NULL, NULL)[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-12 06:35:27', "perishable_token" = '9tDlYgxvg8qwshH9tn5y' WHERE "id" = 206669180[0m
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-11 22:35:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-11 22:35:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190974", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.6ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 980190974) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/twitter_accounts/980190974]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM "twitter_accounts";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "twitter_accounts";[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mDELETE FROM "users";[0m
