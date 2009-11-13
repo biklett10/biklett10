@@ -31,7 +31,7 @@ class TwitterAccount < ActiveRecord::Base
     # description
     # location
     # url
-    @base.friends.map{ |f| f if f.screen_name == screen_name }.first
+    @base.friends.each{ |friend| return(friend) if friend.screen_name == screen_name }
   end # query_detail
 
 end # class

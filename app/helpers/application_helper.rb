@@ -9,6 +9,11 @@ module ApplicationHelper
         <%= check_box_tag name, item.send(value_method), selected.include?(item.send(value_method)) %> <%=h item.send(display_method) %><br />
       <% end %>
     </div>}).result(binding)
-  end
+  end # checklist
+
+  def google_it(this)
+    that = this.gsub(/ /,'+')
+    "http://www.google.com/search?q=#{that}"
+  end # def google(this)
 end
 

@@ -26,3 +26,4 @@ Feature: See timoreilly
     And I should see "timoreilly"
     And I follow "Details of: timoreilly"
     Then I should see "Sebastopol"
+    And debug

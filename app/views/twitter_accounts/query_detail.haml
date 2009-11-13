@@ -1,9 +1,40 @@
 %h1 query_detail
 
-%ul
-  %li=@query_detail.followers_count
-  %li=@query_detail.screen_name
-  %li=@query_detail.name
-  %li=@query_detail.description
-  %li=@query_detail.location
-  %li=@query_detail.url
+%table{:border => "1"}
+  %tr
+    %td Count of followers
+    %td=@query_detail.followers_count
+    %td &nbsp;
+    %td &nbsp;
+  %tr
+    %td screen_name
+    %td=@query_detail.screen_name
+    %td
+      %a{:href => "http://www.google.com/search?q=#{@query_detail.screen_name}", :target => "g"}Google This!
+    %td &nbsp;
+  %tr
+    %td Name
+    %td=@query_detail.name
+    %td
+      %a{:href => google_it(@query_detail.name), :target => "g"}Google This!
+    %td &nbsp;
+  %tr
+    %td Description
+    %td=@query_detail.description
+    %td &nbsp;
+    %td &nbsp;
+  %tr
+    %td Location
+    %td=@query_detail.location
+    %td
+      %a{:href => google_it(@query_detail.location), :target => "g"}Google This!
+    %td &nbsp;
+  %tr
+    %td Web URL
+    %td
+      %a{:href => @query_detail.url, :target => "u"}=@query_detail.url
+    %td
+      %a{:href => google_it(@query_detail.url), :target => "g"}Google This!
+    %td
+      %a{:href => "http://www.alexa.com/siteinfo/#{@query_detail.url}", :target => "a"}Alexa This!
+
