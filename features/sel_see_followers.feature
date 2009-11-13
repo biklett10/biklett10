@@ -21,7 +21,6 @@ Feature: See followers
     And I should see "Login successful"
     And I follow "My Twitter Accounts"
     And I follow "eugene_dentist8"
-    And debug
     When I follow "These Followers"
     Then I should see "janis"
-    And debug
+
