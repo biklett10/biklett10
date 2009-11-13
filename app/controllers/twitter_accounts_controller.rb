@@ -1,10 +1,17 @@
 class TwitterAccountsController < ApplicationController
+
   # bikle 2009-11-12
+  # Use call to method in model to call twitter API to see my friends (those who I am following)
   def query_friends
     @twitter_account = TwitterAccount.find(params[:id])
     @friends = @twitter_account.query_friends # Gives me array of strings (twitter screen names)
-  end
+  end # query_friends
 
+  # Use call to method in model to call twitter API to see who is following me
+  def query_followers
+    @twitter_account = TwitterAccount.find(params[:id])
+    @followers = @twitter_account.query_followers # Gives me array of strings (twitter screen names)
+  end # query_followers
   # bikle 2009-11-12
 
   # GET /twitter_accounts
@@ -22,7 +29,6 @@ class TwitterAccountsController < ApplicationController
   # GET /twitter_accounts/1.xml
   def show
     @twitter_account = TwitterAccount.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @twitter_account }

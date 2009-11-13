@@ -15,13 +15,13 @@
           Logged in as:
           %p{:style => "color:green"}=(session[:login]||"not_logged_in")
           %br/
-          %a{:href => '/static/messages'}Messages
-          %br/
           =link_to 'My Twitter Accounts', twitter_accounts_path
           %br/
           %a{:href => '/profile'}Profile
           %br/
           %a{:href => '/logout'}Logout
+          %br/
+          %a{:href => '/static/messages',:style => "color:white"}Messages
 
         %td.rhs{:valign => 'top'}
           %p{:style => "color:green"}= flash[:notice]

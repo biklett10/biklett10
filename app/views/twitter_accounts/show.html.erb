@@ -1,3 +1,6 @@
+<h1>A twitter account of 
+  <span style="color:green"> <%=h session[:login] %> </span>
+</h1>
 <p>
   <b>Twitter login:</b>
   <%=h @twitter_account.twitter_login %>
@@ -14,10 +17,13 @@
 </p>
 
 <%= link_to "Edit: #{h @twitter_account.twitter_login} if you want", edit_twitter_account_path(@twitter_account) %>
+
 <p>
-  <%=h @twitter_account.twitter_login %> is following =&gt; 
-<!--
-<a href="/twitter_accounts/query_following">These Twitter Accounts</a>
--->
+<%= link_to "#{h @twitter_account.twitter_login}", @twitter_account %> is following =&gt; 
 <%= link_to "These Twitter Accounts", :action => "query_friends", :id => @twitter_account %>
+</p>
+
+<p>
+<%= link_to "#{h @twitter_account.twitter_login}", @twitter_account %> has =&gt; 
+<%= link_to "These Followers", :action => "query_followers", :id => @twitter_account %>
 </p>

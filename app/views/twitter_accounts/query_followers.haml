@@ -1,9 +1,9 @@
-%h1 Friends
+%h1 Followers
 
 =link_to(@twitter_account.twitter_login, @twitter_account)
-is following these twitter accounts:
+has these followers:
 %table{:border => '1'}
-  - @friends.each do |f|
+  - @followers.each do |f|
     %tr
       %td
         http://twitter.com/
