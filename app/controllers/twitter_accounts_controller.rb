@@ -1,8 +1,8 @@
 class TwitterAccountsController < ApplicationController
   # bikle 2009-11-12
-  def query_following
+  def query_friends
     @twitter_account = TwitterAccount.find(params[:id])
-    @friends = @twitter_account.query_following.to_s
+    @friends = @twitter_account.query_friends # Gives me array of strings (twitter screen names)
   end
 
   # bikle 2009-11-12
