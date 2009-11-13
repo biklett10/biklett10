@@ -12,13 +12,15 @@ Feature: See alyankovic
     Given I am now "bobsmith"
     And I "bobsmith" own twitter accounts
     And I am on the "the homepage"
+    And I should see "not_logged_in"
     And I follow "Login"
     And I fill in "Login" wih "bobsmith"
     And I fill in "Password" wih "r1chbr0wn"
     And I press "Login"
+    And I should see "bobsmith"
+    And I should see "Login successful"
     And I follow "My Twitter Accounts"
     And I follow "eugene_dentist8"
     When I follow "These Twitter Accounts"
-    And saop
-    And debug
     Then I should see "alyankovic"
+    And debug
