@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # bikle 2009-11-12
   map.connect '/twitter_accounts/query_friends', :controller => 'twitter_accounts', :action => 'query_friends'
   map.connect '/twitter_accounts/query_followers', :controller => 'twitter_accounts', :action => 'query_followers'
+  map.connect '/twitter_accounts/query_detail', :controller => 'twitter_accounts', :action => 'query_detail'
   map.resources :twitter_accounts
   # bikle 2009-11-12
 

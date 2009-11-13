@@ -5,6 +5,7 @@ is following these twitter accounts:
 %table{:border => '1'}
   - @friends.each do |f|
     %tr
+      %td=link_to("Details of: #{f}", :action => "query_detail", :screen_name => f, :id => @twitter_account)
       %td
         http://twitter.com/
         %a{:href => "http://twitter.com/#{f}", :target => "t"}=f

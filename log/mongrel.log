@@ -1654,3 +1654,88 @@
 	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
 	from /pt/r1/bin/mongrel_rails:19:in `load'
 	from /pt/r1/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+/pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize_without_backlog': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `listener'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /pt/r1/bin/mongrel_rails:19:in `load'
+	from /pt/r1/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+/pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize_without_backlog': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `listener'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /pt/r1/bin/mongrel_rails:19:in `load'
+	from /pt/r1/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+/pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize_without_backlog': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `listener'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /pt/r1/bin/mongrel_rails:19:in `load'
+	from /pt/r1/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+/pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize_without_backlog': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `listener'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /pt/r1/bin/mongrel_rails:19:in `load'
+	from /pt/r1/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at /Users/maco/pt/customers3/thubten/tt11/tmp/pids/mongrel_selenium.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:3001
+/pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize_without_backlog': Address already in use - bind(2) (Errno::EADDRINUSE)
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/tcphack.rb:12:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:93:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:139:in `listener'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:99:in `cloaker_'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `call'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:50:in `initialize'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `new'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:84:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /pt/r1/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /pt/r1/bin/mongrel_rails:19:in `load'
+	from /pt/r1/bin/mongrel_rails:19

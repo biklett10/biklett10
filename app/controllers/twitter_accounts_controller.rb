@@ -12,6 +12,13 @@ class TwitterAccountsController < ApplicationController
     @twitter_account = TwitterAccount.find(params[:id])
     @followers = @twitter_account.query_followers # Gives me array of strings (twitter screen names)
   end # query_followers
+
+  # Use call to method in model to call twitter API to gain access to acct details like bio
+  def query_detail
+    @twitter_account = TwitterAccount.find(params[:id])
+    @query_detail = @twitter_account.query_detail(params[:screen_name])
+  end # query_detail
+
   # bikle 2009-11-12
 
   # GET /twitter_accounts
