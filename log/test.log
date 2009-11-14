@@ -19622,3 +19622,20 @@ Completed in 346ms (View: 3, DB: 0) | 200 OK [http://www.example.com/twitter_acc
   [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "messages";[0m
   [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "twitter_accounts";[0m
   [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDELETE FROM "users";[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 12:39:02) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 22ms (View: 19, DB: 12) | 200 OK [http://www.example.com/]
