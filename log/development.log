@@ -1051,3 +1051,392 @@ Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 2
 Rendering template within layouts/application
 Rendering twitter_accounts/query_detail
 Completed in 897ms (View: 8, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=alyankovic]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-13 22:56:48) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-13 22:56:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.6ms)[0m   [0mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 53ms (View: 45, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-13 22:56:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 45ms (View: 37, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-13 22:56:56) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Completed in 285ms (View: 25, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-13 22:57:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-13 22:57:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 22:57:23) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Completed in 443ms (View: 17, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-13 23:02:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (1.3ms)[0m   [0mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-13 23:02:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-13 23:02:06) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Completed in 153ms (View: 3, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:04:17) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 676ms (View: 41, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=timoreilly]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:31:09) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Completed in 522ms (View: 17, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:33:37) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Completed in 700ms (View: 11, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:35:22) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.1ms)
+Completed in 807ms (View: 116, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:36:21) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (8.0ms)
+Completed in 864ms (View: 16, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-13 23:38:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.6ms)[0m   [0mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-13 23:38:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-13 23:38:29) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (1.2ms)
+Completed in 119ms (View: 10, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-13 23:38:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.7ms)[0m   [0;1mSELECT * FROM "twitter_accounts" [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/twitter_accounts]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-13 23:38:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:38:44) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (8.2ms)
+Completed in 634ms (View: 99, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:47:11) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (8.0ms)
+Completed in 659ms (View: 12, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:47:13) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.screen_name):
+  app/controllers/twitter_accounts_controller.rb:20:in `query_detail'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:48:50) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (8.0ms)
+Completed in 716ms (View: 12, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:48:52) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-13 23:57:01) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.6ms)
+Completed in 857ms (View: 62, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_friends/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:57:05) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 6210ms (View: 25, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=timoreilly]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-13 23:58:06) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (0.9ms)
+Completed in 132ms (View: 9, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:58:09) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub) on line #39 of app/views/twitter_accounts/query_detail.haml:
+36:     %td Location
+37:     %td=@query_detail.location
+38:     %td
+39:       %a{:href => google_it(@query_detail.location), :target => "g"}Google This!
+40:     %td
+41:       %a{:href => map_it(@query_detail.location), :target => "m"}This, in Google Maps
+42:   %tr
+
+    app/helpers/application_helper.rb:16:in `google_it'
+    app/views/twitter_accounts/query_detail.haml:39:in `_run_haml_app47views47twitter_accounts47query_detail46haml'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (135.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-13 23:59:09) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (1.1ms)
+Completed in 117ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-13 23:59:11) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-14 00:06:53) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (3.9ms)
+Completed in 314ms (View: 177, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:06:55) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.gsub) on line #47 of app/views/twitter_accounts/query_detail.haml:
+44:     %td
+45:       %a{:href => @query_detail.url, :target => "u"}=@query_detail.url
+46:     %td
+47:       %a{:href => google_it(@query_detail.url), :target => "g"}Google This!
+48:     %td
+49:       %a{:href => "http://www.alexa.com/siteinfo/#{@query_detail.url}", :target => "a"}Alexa This!
+50: 
+
+    app/helpers/application_helper.rb:16:in `google_it'
+    app/views/twitter_accounts/query_detail.haml:47:in `_run_haml_app47views47twitter_accounts47query_detail46haml'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (55.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-14 00:12:40) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (1.0ms)
+Completed in 115ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:12:41) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 5834ms (View: 20, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=billx_thepilot8]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:16:10) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:16:42) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 796ms (View: 29, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=billx_thepilot8]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:25:21) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 1076ms (View: 9, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=timoreilly]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:25:38) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 729ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=billx_thepilot8]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:27:56) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"billx_thepilot8"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 827ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=billx_thepilot8]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:30:27) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 750ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=janis_cowgirl88]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:34:56) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 870ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=janis_cowgirl88]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 00:38:25) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 778ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=janis_cowgirl88]

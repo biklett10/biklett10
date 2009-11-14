@@ -13,57 +13,57 @@
     %td &nbsp;
   %tr
     %td screen_name
-    %td=@query_detail.screen_name
+    %td=(@query_detail.screen_name || "unknown")
     %td
-      %a{:href => "http://www.google.com/search?q=#{@query_detail.screen_name}", :target => "g"}Google This!
+      %a{:href => "http://www.google.com/search?q=#{(@query_detail.screen_name || "unknown")}", :target => "g"}Google This!
     %td
-      %a{:href => "http://twitter.com/#{@query_detail.screen_name}", :target => "t"}
-        ="http://twitter.com/#{@query_detail.screen_name}"
+      %a{:href => "http://twitter.com/#{(@query_detail.screen_name || "unknown")}", :target => "t"}
+        ="http://twitter.com/#{(@query_detail.screen_name || "unknown")}"
   %tr
     %td Name
-    %td=@query_detail.name
+    %td=(@query_detail.name || "unknown")
     %td
-      %a{:href => google_it(@query_detail.name), :target => "g"}Google This!
+      %a{:href => google_it((@query_detail.name || "unknown")), :target => "g"}Google This!
     %td
-      %a{:href => "http://www.spock.com/#{@query_detail.name}", :target => "s"}
-        ="http://www.spock.com/#{@query_detail.name}"
+      %a{:href => "http://www.spock.com/#{(@query_detail.name || "unknown")}", :target => "s"}
+        ="http://www.spock.com/#{(@query_detail.name || "unknown")}"
   %tr
     %td Description
-    %td=@query_detail.description
+    %td=(@query_detail.description || "unknown")
     %td &nbsp;
     %td &nbsp;
   %tr
     %td Location
-    %td=@query_detail.location
+    %td=(@query_detail.location || "unknown")
     %td
-      %a{:href => google_it(@query_detail.location), :target => "g"}Google This!
+      %a{:href => google_it((@query_detail.location || "unknown")), :target => "g"}Google This!
     %td
-      %a{:href => map_it(@query_detail.location), :target => "m"}This, in Google Maps
+      %a{:href => map_it((@query_detail.location || "unknown")), :target => "m"}This, in Google Maps
   %tr
     %td Web URL
     %td
-      %a{:href => @query_detail.url, :target => "u"}=@query_detail.url
+      %a{:href => (@query_detail.url || "unknown"), :target => "u"}=(@query_detail.url || "unknown")
     %td
-      %a{:href => google_it(@query_detail.url), :target => "g"}Google This!
+      %a{:href => google_it((@query_detail.url || "unknown")), :target => "g"}Google This!
     %td
-      %a{:href => "http://www.alexa.com/siteinfo/#{@query_detail.url}", :target => "a"}Alexa This!
+      %a{:href => "http://www.alexa.com/siteinfo/#{(@query_detail.url || "unknown")}", :target => "a"}Alexa This!
 
 %h2 Status:
 %table{:border => "1"}
   %tr
     %td Latest Status Timestamp (GMT)
-    %td=@query_detail.status.created_at
+    %td=(@query_detail.status.created_at || "unknown")
   %tr
     %td Status Text
-    %td=@query_detail.status.text
+    %td=(@query_detail.status.text || "unknown")
   %tr
     %td URLs:
-    %td=twitter_url_scan(@query_detail.status.text)
+    %td=twitter_url_scan((@query_detail.status.text || "unknown"))
   %tr
     %td Hash Tags
-    %td=twitter_tag_scan(@query_detail.status.text)
+    %td=twitter_tag_scan((@query_detail.status.text || "unknown"))
 
-%h2="List Memberships (#{@query_detail.screen_name} belongs to these lists):"
+%h2="List Memberships (#{(@query_detail.screen_name || "unknown")} belongs to these lists):"
 %table{:border => "1"}
   - @list_memberships.each do |lst|
     %tr

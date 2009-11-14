@@ -4,20 +4,21 @@ class TwitterAccountsController < ApplicationController
   # Use call to method in model to call twitter API to see my friends (those who I am following)
   def query_friends
     @twitter_account = TwitterAccount.find(params[:id])
-    @friends = @twitter_account.query_friends # Gives me array of strings (twitter screen names)
+    @screen_names = @twitter_account.query_friends # Gives me array of strings (twitter screen names)
   end # query_friends
 
   # Use call to method in model to call twitter API to see who is following me
   def query_followers
     @twitter_account = TwitterAccount.find(params[:id])
-    @followers = @twitter_account.query_followers # Gives me array of strings (twitter screen names)
+    @screen_names = @twitter_account.query_followers # Gives me array of strings (twitter screen names)
   end # query_followers
 
   # Use call to method in model to call twitter API to gain access to acct details like bio
   def query_detail
     @twitter_account = TwitterAccount.find(params[:id])
     @base = @twitter_account.get_base(params[:screen_name])
-    @base.friends.each{ |friend| @query_detail = friend if friend.screen_name == params[:screen_name] }
+    @them = @base.friends + @base.followers
+    @them.each{ |prsn| @query_detail = prsn if prsn.screen_name == params[:screen_name] }
     @list_memberships = @base.memberships(@query_detail.screen_name)["lists"]
   end # query_detail
 

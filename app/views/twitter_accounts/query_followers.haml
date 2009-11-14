@@ -3,11 +3,4 @@
 =link_to(@twitter_account.twitter_login, @twitter_account)
 has these followers:
 %table{:border => '1'}
-  - @followers.each do |f|
-    %tr
-      %td
-        http://twitter.com/
-        %a{:href => "http://twitter.com/#{f}", :target => "t"}=f
-      %td
-        http://www.google.com/search?q=
-        %a{:href => "http://www.google.com/search?q=http%3A%2F%2Ftwitter.com%2F#{f}", :target => "g"}="http://twitter.com/#{f}"
+  =render :partial => "screen_names"

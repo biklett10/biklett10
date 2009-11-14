@@ -1,0 +1,10 @@
+- @screen_names.each do |f|
+  %tr
+    %td=link_to("Details of: #{f}", :action => "query_detail", :screen_name => f, :id => @twitter_account)
+    %td
+      http://twitter.com/
+      %a{:href => "http://twitter.com/#{f}", :target => "t"}=f
+    %td
+      http://www.google.com/search?q=
+      %a{:href => "http://www.google.com/search?q=http%3A%2F%2Ftwitter.com%2F#{f}", :target => "g"}
+        ="http://twitter.com/#{f}"
