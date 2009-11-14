@@ -1,4 +1,10 @@
-%h1 query_detail
+=link_to(h(@twitter_account.twitter_login), @twitter_account)
+\=&gt;
+=link_to(session[:friend_or_follower], :action => session[:return_action], :id => @twitter_account)
+\=&gt;
+=(@query_detail.screen_name || "unknown")
+
+%h1="Details of: #{(@query_detail.screen_name || "unknown")}"
 
 %table{:border => "1"}
   %tr

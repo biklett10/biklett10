@@ -3,7 +3,7 @@
 %html{html_attrs('en-US')}
   %head
     %meta{ 'http-equiv' => 'content-type', :content => 'text/html;charset=UTF-8'}
-    %title Under Development
+    %title Bikle Twitter Tool (BTT)
   %body
     %table.main_table{:width => '98%', :border => '1'}
       %tr.main_tr
@@ -17,9 +17,20 @@
           %br/
           =link_to 'My Twitter Accounts', twitter_accounts_path
           %br/
+          %br/
+          =link_to(h(@twitter_account.twitter_login), @twitter_account) if @twitter_account
+          %br/
+          =link_to("Friends", :action => "query_friends", :id => @twitter_account) if @twitter_account
+          %br/
+          =link_to("Followers", :action => "query_followers", :id => @twitter_account) if @twitter_account
+          %br/
+          %hr/
           %a{:href => '/profile'}Profile
           %br/
           %a{:href => '/logout'}Logout
+          %br/
+          %br/
+          %br/
           %br/
           %a{:href => '/static/messages',:style => "color:white"}Messages
 

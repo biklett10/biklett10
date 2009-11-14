@@ -1,4 +1,4 @@
-<h1>A twitter account of 
+<h1><%=h @twitter_account.twitter_login %> is a twitter account of 
   <span style="color:green"> <%=h session[:login] %> </span>
 </h1>
 <p>
@@ -19,11 +19,11 @@
 <%= link_to "Edit: #{h @twitter_account.twitter_login} if you want", edit_twitter_account_path(@twitter_account) %>
 
 <p>
-<%= link_to "#{h @twitter_account.twitter_login}", @twitter_account %> is following =&gt; 
+<%= "#{h @twitter_account.twitter_login}"%> is following =&gt; 
 <%= link_to "These Twitter Accounts (Friends)", :action => "query_friends", :id => @twitter_account %>
 </p>
 
 <p>
-<%= link_to "#{h @twitter_account.twitter_login}", @twitter_account %> has =&gt; 
+<%= "#{h @twitter_account.twitter_login}"%>  has =&gt;
 <%= link_to "These Followers", :action => "query_followers", :id => @twitter_account %>
 </p>
