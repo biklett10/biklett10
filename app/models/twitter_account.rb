@@ -21,17 +21,9 @@ class TwitterAccount < ActiveRecord::Base
     @base.followers.map{|f| f.screen_name}
   end # query_followers
 
-  # Call twitter API to gain access to acct details like bio
-  def query_detail(screen_name)
+  # Expose @base to controller
+  def get_base(screen_name)
     twitter_base
-    # Return an AR-like-object with methods:
-    # followers_count
-    # screen_name
-    # name
-    # description
-    # location
-    # url
-    @base.friends.each{ |friend| return(friend) if friend.screen_name == screen_name }
-  end # query_detail
+  end # def get_base
 
 end # class

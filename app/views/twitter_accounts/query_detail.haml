@@ -3,7 +3,12 @@
 %table{:border => "1"}
   %tr
     %td Count of followers
-    %td=@query_detail.followers_count
+    %td=number_with_delimiter(@query_detail.followers_count, :delimiter => ',')
+    %td &nbsp;
+    %td &nbsp;
+  %tr
+    %td Count of friends
+    %td=number_with_delimiter(@query_detail.friends_count, :delimiter => ',')
     %td &nbsp;
     %td &nbsp;
   %tr
@@ -11,13 +16,17 @@
     %td=@query_detail.screen_name
     %td
       %a{:href => "http://www.google.com/search?q=#{@query_detail.screen_name}", :target => "g"}Google This!
-    %td &nbsp;
+    %td
+      %a{:href => "http://twitter.com/#{@query_detail.screen_name}", :target => "t"}
+        ="http://twitter.com/#{@query_detail.screen_name}"
   %tr
     %td Name
     %td=@query_detail.name
     %td
       %a{:href => google_it(@query_detail.name), :target => "g"}Google This!
-    %td &nbsp;
+    %td
+      %a{:href => "http://www.spock.com/#{@query_detail.name}", :target => "s"}
+        ="http://www.spock.com/#{@query_detail.name}"
   %tr
     %td Description
     %td=@query_detail.description
@@ -28,7 +37,8 @@
     %td=@query_detail.location
     %td
       %a{:href => google_it(@query_detail.location), :target => "g"}Google This!
-    %td &nbsp;
+    %td
+      %a{:href => map_it(@query_detail.location), :target => "m"}This, in Google Maps
   %tr
     %td Web URL
     %td
@@ -38,3 +48,26 @@
     %td
       %a{:href => "http://www.alexa.com/siteinfo/#{@query_detail.url}", :target => "a"}Alexa This!
 
+%h2 Status:
+%table{:border => "1"}
+  %tr
+    %td Latest Status Timestamp (GMT)
+    %td=@query_detail.status.created_at
+  %tr
+    %td Status Text
+    %td=@query_detail.status.text
+  %tr
+    %td URLs:
+    %td=twitter_url_scan(@query_detail.status.text)
+  %tr
+    %td Hash Tags
+    %td=twitter_tag_scan(@query_detail.status.text)
+
+%h2="List Memberships (#{@query_detail.screen_name} belongs to these lists):"
+%table{:border => "1"}
+  - @list_memberships.each do |lst|
+    %tr
+      %td=lst.name
+      %td
+        %a{:href => "http://twitter.com#{lst.uri}",:target => "lst"}
+          ="http://twitter.com#{lst.uri}"

@@ -16,7 +16,9 @@ class TwitterAccountsController < ApplicationController
   # Use call to method in model to call twitter API to gain access to acct details like bio
   def query_detail
     @twitter_account = TwitterAccount.find(params[:id])
-    @query_detail = @twitter_account.query_detail(params[:screen_name])
+    @base = @twitter_account.get_base(params[:screen_name])
+    @base.friends.each{ |friend| @query_detail = friend if friend.screen_name == params[:screen_name] }
+    @list_memberships = @base.memberships(@query_detail.screen_name)["lists"]
   end # query_detail
 
   # bikle 2009-11-12
