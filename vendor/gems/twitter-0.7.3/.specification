@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: twitter
 version: !ruby/object:Gem::Version 
-  version: 0.7.0
+  version: 0.7.3
 platform: ruby
 authors: 
 - John Nunemaker
@@ -10,7 +10,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-10-30 00:00:00 -07:00
+date: 2009-11-04 00:00:00 -08:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -19,7 +19,7 @@ dependencies:
   version_requirement: 
   version_requirements: !ruby/object:Gem::Requirement 
     requirements: 
-    - - ">="
+    - - ~>
       - !ruby/object:Gem::Version 
         version: 0.3.5
     version: 
@@ -29,7 +29,7 @@ dependencies:
   version_requirement: 
   version_requirements: !ruby/object:Gem::Requirement 
     requirements: 
-    - - "="
+    - - ~>
       - !ruby/object:Gem::Version 
         version: 0.0.3
     version: 
@@ -39,7 +39,7 @@ dependencies:
   version_requirement: 
   version_requirements: !ruby/object:Gem::Requirement 
     requirements: 
-    - - "="
+    - - ~>
       - !ruby/object:Gem::Version 
         version: 0.4.3
     version: 
@@ -54,7 +54,7 @@ dependencies:
         version: 2.10.1
     version: 
 - !ruby/object:Gem::Dependency 
-  name: jeremymcanally-matchy
+  name: jnunemaker-matchy
   type: :development
   version_requirement: 
   version_requirements: !ruby/object:Gem::Requirement 
@@ -121,13 +121,15 @@ files:
 - test/fixtures/follower_ids.json
 - test/fixtures/friend_ids.json
 - test/fixtures/friends_timeline.json
+- test/fixtures/friendship.json
 - test/fixtures/list.json
 - test/fixtures/list_statuses.json
+- test/fixtures/list_subscriptions.json
 - test/fixtures/list_users.json
 - test/fixtures/lists.json
 - test/fixtures/memberships.json
+- test/fixtures/mentions.json
 - test/fixtures/rate_limit_exceeded.json
-- test/fixtures/replies.json
 - test/fixtures/search.json
 - test/fixtures/search_from_jnunemaker.json
 - test/fixtures/status.json
