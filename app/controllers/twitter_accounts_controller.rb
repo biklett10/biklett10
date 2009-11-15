@@ -1,4 +1,8 @@
 class TwitterAccountsController < ApplicationController
+  before_filter :repel_em
+  def repel_em
+    (redirect_to("/");flash[:notice]="Please Login")if session[:login].nil?
+  end
 
   # bikle 2009-11-12
   # Use call to method in model to call twitter API to see my friends (those who I am following)
@@ -32,7 +36,6 @@ class TwitterAccountsController < ApplicationController
   # GET /twitter_accounts
   # GET /twitter_accounts.xml
   def index
-    (redirect_to("/"); flash[:notice] = "Please Login"; return)if session[:login].nil?
     @twitter_accounts = User.find_by_login(session[:login]).twitter_accounts
 
     respond_to do |format|

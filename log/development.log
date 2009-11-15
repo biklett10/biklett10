@@ -2354,3 +2354,38 @@ Processing StaticController#about (for 127.0.0.1 at 2009-11-14 03:51:04) [GET]
 Rendering template within layouts/application
 Rendering static/about
 Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 19:35:32) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 25ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 19:35:43) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=timoreilly]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 19:35:43) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 19:35:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/twitter_accounts]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 19:35:52) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
