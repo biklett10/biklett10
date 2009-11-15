@@ -21,7 +21,6 @@ class ActivationsController < ApplicationController
 
   # For testing
   def create_activation_instructions
-    debugger
     @host_with_port = request.host_with_port
     @me = User.find_by_login(params[:mylogin])
     email_txt = Notifier.create_activation_instructions(@me,@host_with_port)
