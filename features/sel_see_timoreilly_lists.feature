@@ -1,13 +1,13 @@
-# sel_see_timoreilly_tweets.feature
+# sel_see_timoreilly_lists.feature
 
-Feature: See timoreilly tweets
+Feature: See timoreilly lists
 
-  So that I can see details about timoreilly tweets
+  So that I can see details about timoreilly lists
   I want to authenticate as bobsmith on our-site
   and authenticate as eugene_dentist8 via twitter API
-  and then see timoreilly tweets
+  and then see timoreilly lists
 
-  Scenario: See timoreilly tweets
+  Scenario: See timoreilly lists
 
     Given I am now "bobsmith"
     And I "bobsmith" own twitter accounts
@@ -26,3 +26,5 @@ Feature: See timoreilly tweets
     When I follow "Details of: timoreilly"
     Then I should see "Sebastopol"
     And I should see "Status Text"
+    And I should see "Lists of timoreilly"
+    And I should see "data-visualization"

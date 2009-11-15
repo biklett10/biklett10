@@ -63,7 +63,7 @@
     %td Status Text
     %td=(@query_detail.status.text || "unknown")
   %tr
-    %td URLs:
+    %td URLs
     %td=twitter_url_scan((@query_detail.status.text || "unknown"))
   %tr
     %td Hash Tags
@@ -72,6 +72,15 @@
 %h2="List Memberships (#{(@query_detail.screen_name || "unknown")} belongs to these lists):"
 %table{:border => "1"}
   - @list_memberships.each do |lst|
+    %tr
+      %td=lst.name
+      %td
+        %a{:href => "http://twitter.com#{lst.uri}",:target => "lst"}
+          ="http://twitter.com#{lst.uri}"
+
+%h2="Lists of #{(@query_detail.screen_name || "unknown")}:"
+%table{:border => "1"}
+  - @screen_name_lists.each do |lst|
     %tr
       %td=lst.name
       %td

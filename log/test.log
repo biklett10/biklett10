@@ -22238,3 +22238,548 @@ Completed in 8ms (View: 5, DB: 1) | 200 OK [http://www.example.com/twitter_accou
   [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "messages";[0m
   [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
   [4;35;1mSQL (8.4ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (51.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."perishable_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('x', NULL, 'f', '2009-11-15 06:05:09', '99f17acbd213c868b29215482802daac14effffba9bca84a0bf315f136e9fa60256f40512dd584f619ae49fec598c930c35b94a3a63cdb8fa6f35820b7cc00c8', 'zC-9zbX08Rrk1OEfJpzp', '2009-11-15 06:05:09', 0, NULL, 'xk8G296HoQaVCQ9eXPf-', NULL, 'x', 0, NULL, 'bobsmith', NULL, 'bobsmith@hotmail.com', 't')[0m
+  [4;36;1mFolder Load (0.2ms)[0m   [0;1mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;35;1mFolder Create (0.2ms)[0m   [0mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-15 06:05:09', '2009-11-15 06:05:09', 206669308, NULL)[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.4ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist8', '2009-11-15 06:05:09', '2009-11-15 06:05:09', 206669308, 'ph1llynyfl', 'eugene_dentist86@hotmail.com')[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-15 06:05:09', "perishable_token" = 'dTsN1qYhgUHXHOqKCRgG' WHERE "id" = 206669308[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:05:09) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 12ms (View: 10, DB: 64) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-14 22:05:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-14 22:05:09) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-15 06:05:09', "perishable_token" = 'm_2IBAYat6Of7s8sIRjv', "last_request_at" = '2009-11-15 06:05:09', "current_login_at" = '2009-11-15 06:05:09' WHERE "id" = 206669308[0m
+Redirected to http://www.example.com/
+Completed in 210ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:05:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /twitter_accounts with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 22:05:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts".user_id = 206669308) [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://www.example.com/twitter_accounts]
+REQUESTING PAGE: GET /twitter_accounts/1015062206 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts"}
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 22:05:10) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062206", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062206) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/1015062206]
+REQUESTING PAGE: GET /twitter_accounts/query_friends/1015062206 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/1015062206"}
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-14 22:05:10) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062206", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062206) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (11.1ms)
+Completed in 808ms (View: 17, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_friends/1015062206]
+REQUESTING PAGE: GET /twitter_accounts/query_detail/1015062206?screen_name=timoreilly with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/query_friends/1015062206"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 22:05:11) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062206", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062206) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 5304ms (View: 17, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_detail/1015062206?screen_name=timoreilly]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (47.9ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."perishable_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('x', NULL, 'f', '2009-11-15 06:10:04', '99f17acbd213c868b29215482802daac14effffba9bca84a0bf315f136e9fa60256f40512dd584f619ae49fec598c930c35b94a3a63cdb8fa6f35820b7cc00c8', 'EAwbwfiU_lrjLObJue75', '2009-11-15 06:10:04', 0, NULL, 'xk8G296HoQaVCQ9eXPf-', NULL, 'x', 0, NULL, 'bobsmith', NULL, 'bobsmith@hotmail.com', 't')[0m
+  [4;36;1mFolder Load (0.1ms)[0m   [0;1mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;35;1mFolder Create (0.2ms)[0m   [0mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-15 06:10:04', '2009-11-15 06:10:04', 206669310, NULL)[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.4ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist8', '2009-11-15 06:10:04', '2009-11-15 06:10:04', 206669310, 'ph1llynyfl', 'eugene_dentist86@hotmail.com')[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-15 06:10:04', "perishable_token" = 'BJ0hGzt8Na-BxQOmIyBr' WHERE "id" = 206669310[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:10:04) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 11ms (View: 8, DB: 15) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-14 22:10:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-14 22:10:05) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-15 06:10:05', "perishable_token" = 'Qr_VjRmBPsdjNJdsygpj', "last_request_at" = '2009-11-15 06:10:05', "current_login_at" = '2009-11-15 06:10:05' WHERE "id" = 206669310[0m
+Redirected to http://www.example.com/
+Completed in 63ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:10:05) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /twitter_accounts with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 22:10:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts".user_id = 206669310) [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://www.example.com/twitter_accounts]
+REQUESTING PAGE: GET /twitter_accounts/1015062208 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts"}
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 22:10:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062208", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062208) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/1015062208]
+REQUESTING PAGE: GET /twitter_accounts/query_friends/1015062208 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/1015062208"}
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-14 22:10:05) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062208", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062208) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.5ms)
+Completed in 873ms (View: 16, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_friends/1015062208]
+REQUESTING PAGE: GET /twitter_accounts/query_detail/1015062208?screen_name=timoreilly with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/query_friends/1015062208"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 22:10:06) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062208", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062208) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 1078ms (View: 17, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_detail/1015062208?screen_name=timoreilly]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (5.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."perishable_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Create (1.0ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('x', NULL, 'f', '2009-11-15 06:17:15', '99f17acbd213c868b29215482802daac14effffba9bca84a0bf315f136e9fa60256f40512dd584f619ae49fec598c930c35b94a3a63cdb8fa6f35820b7cc00c8', 'UeeHxDL3afXa6x6xNz9q', '2009-11-15 06:17:15', 0, NULL, 'xk8G296HoQaVCQ9eXPf-', NULL, 'x', 0, NULL, 'bobsmith', NULL, 'bobsmith@hotmail.com', 't')[0m
+  [4;36;1mFolder Load (0.1ms)[0m   [0;1mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;35;1mFolder Create (0.2ms)[0m   [0mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-15 06:17:15', '2009-11-15 06:17:15', 206669311, NULL)[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.4ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist8', '2009-11-15 06:17:15', '2009-11-15 06:17:15', 206669311, 'ph1llynyfl', 'eugene_dentist86@hotmail.com')[0m
+  [4;36;1mUser Update (1.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-15 06:17:15', "perishable_token" = 'F1tSJkQq7jbdtkNYT6QF' WHERE "id" = 206669311[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:17:15) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 11ms (View: 8, DB: 21) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-14 22:17:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-14 22:17:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-15 06:17:16', "perishable_token" = '-npOK5-xBqwn5z8KVpxg', "last_request_at" = '2009-11-15 06:17:16', "current_login_at" = '2009-11-15 06:17:15' WHERE "id" = 206669311[0m
+Redirected to http://www.example.com/
+Completed in 94ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:17:16) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /twitter_accounts with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 22:17:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts".user_id = 206669311) [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://www.example.com/twitter_accounts]
+REQUESTING PAGE: GET /twitter_accounts/1015062209 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts"}
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 22:17:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062209", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062209) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/1015062209]
+REQUESTING PAGE: GET /twitter_accounts/query_friends/1015062209 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/1015062209"}
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-14 22:17:16) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062209", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062209) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.6ms)
+Completed in 826ms (View: 16, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_friends/1015062209]
+REQUESTING PAGE: GET /twitter_accounts/query_detail/1015062209?screen_name=timoreilly with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/query_friends/1015062209"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 22:17:17) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062209", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062209) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 1099ms (View: 17, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_detail/1015062209?screen_name=timoreilly]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."perishable_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('x', NULL, 'f', '2009-11-15 06:20:30', '99f17acbd213c868b29215482802daac14effffba9bca84a0bf315f136e9fa60256f40512dd584f619ae49fec598c930c35b94a3a63cdb8fa6f35820b7cc00c8', 'v4EF-xxwDCkXUp1dWk4f', '2009-11-15 06:20:30', 0, NULL, 'xk8G296HoQaVCQ9eXPf-', NULL, 'x', 0, NULL, 'bobsmith', NULL, 'bobsmith@hotmail.com', 't')[0m
+  [4;36;1mFolder Load (0.1ms)[0m   [0;1mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;35;1mFolder Create (0.1ms)[0m   [0mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-15 06:20:30', '2009-11-15 06:20:30', 206669312, NULL)[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.4ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist8', '2009-11-15 06:20:30', '2009-11-15 06:20:30', 206669312, 'ph1llynyfl', 'eugene_dentist86@hotmail.com')[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-15 06:20:30', "perishable_token" = 'hgWee86DrzLZZYbjRNMk' WHERE "id" = 206669312[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 11ms (View: 9, DB: 22) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-14 22:20:30) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-15 06:20:30', "perishable_token" = 'y3qm1ok4WEAIK2Zinqrj', "last_request_at" = '2009-11-15 06:20:30', "current_login_at" = '2009-11-15 06:20:30' WHERE "id" = 206669312[0m
+Redirected to http://www.example.com/
+Completed in 82ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /twitter_accounts with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts".user_id = 206669312) [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://www.example.com/twitter_accounts]
+REQUESTING PAGE: GET /twitter_accounts/1015062210 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts"}
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062210", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062210) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/1015062210]
+REQUESTING PAGE: GET /twitter_accounts/query_friends/1015062210 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/1015062210"}
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-14 22:20:30) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062210", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062210) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.4ms)
+Completed in 756ms (View: 15, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_friends/1015062210]
+REQUESTING PAGE: GET /twitter_accounts/query_detail/1015062210?screen_name=timoreilly with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/query_friends/1015062210"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 22:20:31) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062210", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062210) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 928ms (View: 21, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_detail/1015062210?screen_name=timoreilly]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."perishable_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'x') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'x') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('x', NULL, 'f', '2009-11-15 06:21:33', '99f17acbd213c868b29215482802daac14effffba9bca84a0bf315f136e9fa60256f40512dd584f619ae49fec598c930c35b94a3a63cdb8fa6f35820b7cc00c8', 'RW3MBXejYcDBrxkXJvar', '2009-11-15 06:21:33', 0, NULL, 'xk8G296HoQaVCQ9eXPf-', NULL, 'x', 0, NULL, 'bobsmith', NULL, 'bobsmith@hotmail.com', 't')[0m
+  [4;36;1mFolder Load (0.1ms)[0m   [0;1mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;35;1mFolder Create (0.1ms)[0m   [0mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-15 06:21:33', '2009-11-15 06:21:33', 206669313, NULL)[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+  [4;35;1mTwitterAccount Create (0.3ms)[0m   [0mINSERT INTO "twitter_accounts" ("twitter_login", "created_at", "updated_at", "user_id", "twitter_pass", "twitter_email") VALUES('eugene_dentist8', '2009-11-15 06:21:33', '2009-11-15 06:21:33', 206669313, 'ph1llynyfl', 'eugene_dentist86@hotmail.com')[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-11-15 06:21:33', "perishable_token" = 'x2Hw8ZiKRfzoxjCiSp_U' WHERE "id" = 206669313[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 11ms (View: 9, DB: 16) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /user_session with {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"r1chbr0wn", "login"=>"bobsmith"}} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-11-14 22:21:33) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "login"=>"bobsmith", "password"=>"[FILTERED]"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-11-15 06:21:33', "perishable_token" = 'XBeb0WvGU675_BSrt-Fq', "last_request_at" = '2009-11-15 06:21:33', "current_login_at" = '2009-11-15 06:21:33' WHERE "id" = 206669313[0m
+Redirected to http://www.example.com/
+Completed in 46ms (DB: 1) | 302 Found [http://www.example.com/user_session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/user_session"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /twitter_accounts with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TwitterAccountsController#index (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"twitter_accounts"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering twitter_accounts/index
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts".user_id = 206669313) [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://www.example.com/twitter_accounts]
+REQUESTING PAGE: GET /twitter_accounts/1015062211 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts"}
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062211", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062211) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/1015062211]
+REQUESTING PAGE: GET /twitter_accounts/query_friends/1015062211 with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/1015062211"}
+
+
+Processing TwitterAccountsController#query_friends (for 127.0.0.1 at 2009-11-14 22:21:33) [GET]
+  Parameters: {"action"=>"query_friends", "id"=>"1015062211", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062211) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_friends
+Rendered twitter_accounts/_screen_names (10.7ms)
+Completed in 474ms (View: 16, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_friends/1015062211]
+REQUESTING PAGE: GET /twitter_accounts/query_detail/1015062211?screen_name=timoreilly with {} and HTTP headers {"HTTP_REFERER"=>"/twitter_accounts/query_friends/1015062211"}
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 22:21:34) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062211", "controller"=>"twitter_accounts", "screen_name"=>"timoreilly"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062211) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_detail
+Completed in 897ms (View: 21, DB: 0) | 200 OK [http://www.example.com/twitter_accounts/query_detail/1015062211?screen_name=timoreilly]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "twitter_accounts";[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mDELETE FROM "users";[0m

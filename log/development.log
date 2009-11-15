@@ -2510,3 +2510,8 @@ Completed in 1424ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts
 Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 20:19:31) [GET]
   Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
   [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 20:36:46) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m

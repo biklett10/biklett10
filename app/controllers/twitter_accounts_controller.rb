@@ -29,6 +29,7 @@ class TwitterAccountsController < ApplicationController
     @them = @base.friends + @base.followers
     @them.each{ |prsn| @query_detail = prsn if prsn.screen_name == params[:screen_name] }
     @list_memberships = @base.memberships(@query_detail.screen_name)["lists"]
+    @screen_name_lists = @base.lists(@query_detail.screen_name)["lists"]
   end # query_detail
 
   # bikle 2009-11-12
