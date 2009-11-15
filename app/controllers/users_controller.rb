@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     # auto-login which can't happen here because
     # the User has not yet been activated
     if @user.save_without_session_maintenance
-      @user.deliver_activation_instructions!
+      @user.deliver_activation_instructions!(request.host_with_port)
       flash[:notice] = "Your account has been created. Please check your e-mail"
       redirect_to "/static/check_email"
     else

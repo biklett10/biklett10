@@ -12,6 +12,7 @@ Feature: Create Activation Instructions
     Given that I have just created an account
     Then I should see an activation link
     And I can use that link to activate
+    And debug
     And I should not be logged in yet
     And I go to the login page
     And I fill in "Login" with "bobsmith"

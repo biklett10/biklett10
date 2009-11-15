@@ -47,14 +47,14 @@ class User < ActiveRecord::Base
   # step 5
   # http://github.com/matthooks/authlogic-activation-tutorial
   # added to app/models/user.rb
-  def deliver_activation_instructions!
+  def deliver_activation_instructions!(host_with_port)
     reset_perishable_token!
-    Notifier.deliver_activation_instructions(self)
+    Notifier.deliver_activation_instructions(self,host_with_port)
   end
 
-  def deliver_activation_confirmation!
+  def deliver_activation_confirmation!(host_with_port)
     reset_perishable_token!
-    Notifier.deliver_activation_confirmation(self)
+    Notifier.deliver_activation_confirmation(self,host_with_port)
   end
 
   # step 8 http://github.com/matthooks/authlogic-activation-tutorial

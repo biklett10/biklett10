@@ -12,7 +12,7 @@ class ActivationsController < ApplicationController
     raise Exception if @user.active?
 
     if @user.activate!
-      @user.deliver_activation_confirmation!
+      @user.deliver_activation_confirmation!(request.host_with_port)
       redirect_to "/"
     else
       render :action => :new
@@ -21,8 +21,10 @@ class ActivationsController < ApplicationController
 
   # For testing
   def create_activation_instructions
+    debugger
+    @host_with_port = request.host_with_port
     @me = User.find_by_login(params[:mylogin])
-    email_txt = Notifier.create_activation_instructions(@me)
+    email_txt = Notifier.create_activation_instructions(@me,@host_with_port)
     render(:text => "<pre>" + email_txt.encoded + "</pre>") 
   end # def create_activation_instructions
 
