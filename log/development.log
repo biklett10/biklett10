@@ -2479,3 +2479,34 @@ Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 1
 Rendering template within layouts/application
 Rendering twitter_accounts/query_detail
 Completed in 819ms (View: 8, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_detail/1015062183?screen_name=janis_cowgirl88]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-14 20:19:16) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.3ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (0.9ms)
+Completed in 1422ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#show (for 127.0.0.1 at 2009-11-14 20:19:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;36;1mTwitterAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/twitter_accounts/1015062183]
+
+
+Processing TwitterAccountsController#query_followers (for 127.0.0.1 at 2009-11-14 20:19:24) [GET]
+  Parameters: {"action"=>"query_followers", "id"=>"1015062183", "controller"=>"twitter_accounts"}
+  [4;35;1mTwitterAccount Load (0.4ms)[0m   [0mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
+Rendering template within layouts/application
+Rendering twitter_accounts/query_followers
+Rendered twitter_accounts/_screen_names (1.1ms)
+Completed in 1424ms (View: 6, DB: 0) | 200 OK [http://localhost/twitter_accounts/query_followers/1015062183]
+
+
+Processing TwitterAccountsController#query_detail (for 127.0.0.1 at 2009-11-14 20:19:31) [GET]
+  Parameters: {"action"=>"query_detail", "id"=>"1015062183", "controller"=>"twitter_accounts", "screen_name"=>"janis_cowgirl88"}
+  [4;36;1mTwitterAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "twitter_accounts" WHERE ("twitter_accounts"."id" = 1015062183) [0m
