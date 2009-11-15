@@ -32,7 +32,7 @@ class TwitterAccountsController < ApplicationController
   # GET /twitter_accounts
   # GET /twitter_accounts.xml
   def index
-    @twitter_accounts = TwitterAccount.all
+    @twitter_accounts = User.find_by_login(session[:login]).twitter_accounts
 
     respond_to do |format|
       format.html # index.html.erb
@@ -70,7 +70,7 @@ class TwitterAccountsController < ApplicationController
   # POST /twitter_accounts.xml
   def create
     @twitter_account = TwitterAccount.new(params[:twitter_account])
-
+    @twitter_account.user = User.find_by_login(session[:login])
     respond_to do |format|
       if @twitter_account.save
         flash[:notice] = 'TwitterAccount was successfully created.'

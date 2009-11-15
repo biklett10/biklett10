@@ -30,6 +30,12 @@ Feature: Associate current_user
     And I activate "dan"
     And I login "dan" with "thubnine"
     And I should see "Login successful"
-    And debug
     And I follow "My Twitter Accounts"
+    And I follow "New twitter_account"
+    And I fill in "twitter_account_twitter_login" with "billx_thepilot8"
+    And I fill in "twitter_account_twitter_pass" with "r3n0nvtx"
+    And I press "Create"
+    And I should see "TwitterAccount was successfully created"
+    And I follow "My Twitter Accounts"
+    And I should see "billx_thepilot8"
     Then I should not see "eugene_dentist8"
