@@ -15,7 +15,7 @@
           Logged in as:
           %p{:style => "color:green"}=(session[:login]||"not_logged_in")
           %br/
-          =link_to 'My Twitter Accounts', twitter_accounts_path
+          =link_to('My Twitter Accounts', twitter_accounts_path) unless session[:login].nil?
           %br/
           %br/
           =link_to(h(@twitter_account.twitter_login), @twitter_account) if @twitter_account

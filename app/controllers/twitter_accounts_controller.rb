@@ -32,6 +32,7 @@ class TwitterAccountsController < ApplicationController
   # GET /twitter_accounts
   # GET /twitter_accounts.xml
   def index
+    (redirect_to("/"); flash[:notice] = "Please Login"; return)if session[:login].nil?
     @twitter_accounts = User.find_by_login(session[:login]).twitter_accounts
 
     respond_to do |format|

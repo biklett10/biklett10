@@ -17,6 +17,9 @@ module NavigationHelpers
     when /the login page/
       '/login'
 
+    when /my twitter accounts page/
+      '/twitter_accounts'
+
     # Add more mappings here.
     # Here is a more fancy example:
     #

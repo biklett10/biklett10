@@ -7,8 +7,12 @@ Feature: Login security
 
   Scenario: Login security
 
-    Given I am not logged in
-    And  I am on the "the homepage"
-    When I follow "My Twitter Accounts"
+    Given I am on the "the homepage"
+    And I should see "not_logged_in"
+    And I should see "Welcome"
+    And I should not see "My Twitter"
+    When I go to "my twitter accounts page"
     Then I should see "Please Login"
+    And I should see "not_logged_in"
+    And I should see "Welcome"
     And I should be on "the homepage"
