@@ -1,7 +1,7 @@
 class TwitterAccountsController < ApplicationController
   before_filter :repel_em
   def repel_em
-    (redirect_to("/");flash[:notice]="Please Login")if session[:login].nil?
+    (redirect_to("/");flash[:notice]="Please Login")if (session[:login].nil? || session[:login] == "not_logged_in")
   end
 
   # bikle 2009-11-12
