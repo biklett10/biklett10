@@ -15,11 +15,15 @@ test: &TEST
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
-
 cucumber:
   <<: *TEST
+
+selenium:
+  <<: *TEST
+
+production:
+  adapter: mysql
+  database: btt
+  username: btt11
+  password: btt
+  socket: /var/lib/mysql/mysql.sock
