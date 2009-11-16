@@ -21,7 +21,7 @@ Feature: Send Message
     Then I should see "Message sent"
     And I should see "Sent Messages"
     And I should see "less than a minute ago"
-    And You inspect the currently loaded page
+    And saop
 
 
 
