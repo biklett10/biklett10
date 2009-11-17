@@ -4,7 +4,7 @@
 
   <p>
     To:<br />
-    <%= checklist "message[to][]", User.find(:all), :id, :login, @message.to %>
+    <%= checklist User.find(:all), :id, :login, @message.to %>
   </p>
 
   <p>Subject: <%= f.text_field :subject %></p>
