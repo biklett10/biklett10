@@ -16,8 +16,8 @@ class SentController < ApplicationController
     @message = current_user.sent_messages.build(params[:message])
     # Get a list of recipients
     logins = params.keys - ["commit", "action", "controller", "message"]
-    # Attach them to the @message
-    logins.each{ |login| @message.recipients << User.find_by_login(login) }
+    # Attach them to the @message-to-list
+    @message.to = logins.map{ |login| User.find_by_login(login) }
     if @message.save
       flash[:notice] = "Message sent."
       redirect_to :action => "index"

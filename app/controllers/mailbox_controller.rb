@@ -1,6 +1,6 @@
 class MailboxController < ApplicationController
   def index
-    redirect_to new_session_path and return unless logged_in?
+    redirect_to new_session_path and return if (session[:login].nil? || session[:login] == "not_logged_in")
     @folder = current_user.inbox
     show
     render :action => "show"

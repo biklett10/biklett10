@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :mailbox, :collection => { :trash => :get }
   map.resources :messages, :member => { :reply => :get, :forward => :get, :reply_all => :get, :undelete => :put }
   # Home route leads to inbox
-  map.inbox '', :controller => "mailbox", :action => "index"
+  map.inbox '/mailbox', :controller => "mailbox", :action => "index"
   # bikle 2009-11-05 http://www.novawave.net/public/rails_messaging_tutorial.html
 
   # The priority is based upon order of creation: first created -> highest priority.

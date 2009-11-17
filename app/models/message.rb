@@ -9,7 +9,6 @@ class Message < ActiveRecord::Base
   
   def prepare_copies
     return if to.blank?
-    
     to.each do |recipient|
       recipient = User.find(recipient)
       message_copies.build(:recipient_id => recipient.id, :folder_id => recipient.inbox.id)
