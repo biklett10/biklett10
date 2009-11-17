@@ -16,7 +16,6 @@ Feature: Send Messages
     And I login "bobsmith" with "r1chbr0wn"
     And I follow "Messages"
     And I follow "Compose"
-    And debug    
     And I check "bobsmith"
     And I check "richbrown"
     And I fill in "message_subject" with "Hello Bob"
@@ -24,6 +23,7 @@ Feature: Send Messages
     And I press "Send"
     Then I should see "Message sent"
     And I should see "Sent Messages"
+    And I should see "bobsmith and richbrown"
     And I should see "less than a minute ago"
 
 
