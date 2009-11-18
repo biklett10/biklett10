@@ -1,5 +1,5 @@
 class SentController < ApplicationController
-
+  before_filter :repel_em
   def index
     @messages = current_user.sent_messages.paginate :per_page => 10, :page => params[:page], :order => "created_at DESC"
   end
@@ -13,7 +13,6 @@ class SentController < ApplicationController
   end
   
   def create
-    debugger
     @message = current_user.sent_messages.build(params[:message])
     # Get a list of recipients
     logins = params.keys - ["authenticity_token","commit", "action", "controller", "message"]

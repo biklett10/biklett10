@@ -50,4 +50,8 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+
+    def repel_em
+      (redirect_to("/");flash[:notice]="Please Login")if (session[:login].nil? || session[:login] == "not_logged_in")
+    end
 end
