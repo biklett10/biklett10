@@ -13,9 +13,10 @@ class SentController < ApplicationController
   end
   
   def create
+    debugger
     @message = current_user.sent_messages.build(params[:message])
     # Get a list of recipients
-    logins = params.keys - ["commit", "action", "controller", "message"]
+    logins = params.keys - ["authenticity_token","commit", "action", "controller", "message"]
     # Attach them to the @message-to-list
     @message.to = logins.map{ |login| User.find_by_login(login) }
     if @message.save
