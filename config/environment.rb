@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'webrat', :version => '0.4.4'
   config.gem 'nokogiri', :version => '1.4.0'
   config.gem 'authlogic', :version => '2.1.2'
-  config.gem 'haml', :version => '2.0.9'
+  config.gem 'haml', :version => '2.2.14'
   config.gem 'hpricot', :version => '0.8.1'
   config.gem 'will_paginate', :version => '2.3.11'
   # bikle
