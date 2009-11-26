@@ -7875,3 +7875,511 @@ Rendering template within layouts/application
 Rendering sent/show
   [4;35;1mUser Load (0.7ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "message_copies" ON "users".id = "message_copies".recipient_id WHERE (("message_copies".message_id = 32)) [0m
 Completed in 16ms (View: 3, DB: 2) | 200 OK [http://localhost/sent/32]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 00:59:37) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 00:59:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 00:59:37) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0a542c5a9b52283d867e8b29028b7ef88c5f009c8f74d97facf70c29a075f293f6ea29397b405d58d5d8c9b19c80266f08e9ad17f4e9e0428976e5ec69f28b32') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'GM-141t6XMHKkY70Qf3k') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('GM-141t6XMHKkY70Qf3k', NULL, 'f', '2009-11-26 08:59:37', '6812db430d7bab314101cf15807581590e2e6bb5f62e928c22f90f9de0e98af228f5a8c40dba1c47bad92432dc48f6fa5e65216bf35c467a59e838730e5ce444', 'cohmNnq23_NwcFzSxbuY', '2009-11-26 08:59:37', 0, NULL, 'e_XLMZHIaABa9OTzHp_q', NULL, '0a542c5a9b52283d867e8b29028b7ef88c5f009c8f74d97facf70c29a075f293f6ea29397b405d58d5d8c9b19c80266f08e9ad17f4e9e0428976e5ec69f28b32', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.2ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.3ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 08:59:37', '2009-11-26 08:59:37', 93, NULL)[0m
+  [4;35;1mUser Update (100.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 08:59:37', "perishable_token" = 'B2pkS5WGdYmO0Rc7zQSh' WHERE "id" = 93[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 00:59:37 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/B2pkS5WGdYmO0Rc7zQSh
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 219ms (DB: 103) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 00:59:37) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 00:59:37) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (17.9ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (13.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:00:37) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:02:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.2ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 01:03:20) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ac00ace56f051d070de61a3ecf7c6f005abba1abbf3441e58f162f8197e32e1bd1456f37ad4c50df048920c964d3bb67627a504282f6aa6f3bd8610f20ce2e5f') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'UqYxpLp6b0L2jQolMIZh') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('UqYxpLp6b0L2jQolMIZh', NULL, 'f', '2009-11-26 09:03:20', '5cd8d500fe4dd772bc8b52d4f56ba9c55572a272feeb223ebceabd4b79b9577154b34954d7cd507eea551979f50053baeaf70f4c5a506a107c2781791ccb319c', 'KJ_BVJkJa79eSJHAtbEu', '2009-11-26 09:03:20', 0, NULL, 'IH7whNHhVNVa3l__whH8', NULL, 'ac00ace56f051d070de61a3ecf7c6f005abba1abbf3441e58f162f8197e32e1bd1456f37ad4c50df048920c964d3bb67627a504282f6aa6f3bd8610f20ce2e5f', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.1ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 09:03:20', '2009-11-26 09:03:20', 94, NULL)[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 09:03:20', "perishable_token" = 'cZrvwoxkJY3HZclVA0P6' WHERE "id" = 94[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 01:03:20 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/cZrvwoxkJY3HZclVA0P6
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 108ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 01:03:20) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:03:20) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:04:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/register]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:09:17) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:09:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 01:09:24) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ad9bef7bf1ab3201cedd491e46d619ddd63cfb496f921eab10ed165a33678053832ac979dbda08479d5fd94529048077821c6ce0418c2e6e31399d54a79d5ae3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'nf1SnNc3nSc63owTCiXX') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('nf1SnNc3nSc63owTCiXX', NULL, 'f', '2009-11-26 09:09:24', '47c55eac71aee78df70b65e003497f3eff5f8d1b92095eab65caaa972dc2055932234633d41438fa4e6dafc52cb581326ed18422e23642447c2b2d681505a0d9', 'eh45FIoOiPt7kUrqbqxk', '2009-11-26 09:09:24', 0, NULL, 'haaCgyWV9Bhiocy-D7bz', NULL, 'ad9bef7bf1ab3201cedd491e46d619ddd63cfb496f921eab10ed165a33678053832ac979dbda08479d5fd94529048077821c6ce0418c2e6e31399d54a79d5ae3', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 09:09:24', '2009-11-26 09:09:24', 95, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 09:09:24', "perishable_token" = '78W7CvA2VV6HC_zx1Fny' WHERE "id" = 95[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 01:09:24 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/78W7CvA2VV6HC_zx1Fny
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 31ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 01:09:24) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:09:24) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:12:18) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:12:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 01:12:52) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0cc248e462d0031c28a2fa5ddc8c3a7668b5d81f6c7d88ff32bf63b2a114978999fbb18b65d2368f0ee840232e5e1dc3d78a2223d1d60eb822c443ac619a620c') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '_atAKrQvLxlz4iAwVUPj') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('_atAKrQvLxlz4iAwVUPj', NULL, 'f', '2009-11-26 09:12:52', '90bfb634d55490995aade487879a4051eac1cb2d69fb73a990ebeba7720ed333f76f88afee01411a0d194932026e5ad80a199ffbadb9e7c683ec7058b9f8d8da', 'cVOXU4kSC-8V57kbHzrY', '2009-11-26 09:12:52', 0, NULL, 'PzynB_pM6ph3Lt3v6xEX', NULL, '0cc248e462d0031c28a2fa5ddc8c3a7668b5d81f6c7d88ff32bf63b2a114978999fbb18b65d2368f0ee840232e5e1dc3d78a2223d1d60eb822c443ac619a620c', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 09:12:52', '2009-11-26 09:12:52', 96, NULL)[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 09:12:52', "perishable_token" = 'owIZWoofgQN41C3z1Z6_' WHERE "id" = 96[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 01:12:52 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/owIZWoofgQN41C3z1Z6_
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 25ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 01:12:52) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:12:52) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:13:17) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:13:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:14:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.2ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 01:14:14) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '8a1ce554856cdf5bd1a046bed1c27567e1e71eb5378e7d64ec1f2bc1e4827aa79d077b0c5dcb09a8db421e355e6febcfaa4d9ba26823f0b0488f001e7f6f21bc') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'CryD6GdXbclEzXoE-4-P') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('CryD6GdXbclEzXoE-4-P', NULL, 'f', '2009-11-26 09:14:14', '36e01296974d06250b8f4bf022e86858c0b3d3d8e64a5569ed90bfe29199664b1619b223984a710780525dfa09a6e2b4a0b794775892897bbca5d0289e265a7d', 'QoEed_ElaMXoKzHgjk3s', '2009-11-26 09:14:14', 0, NULL, 'nD0_ZsO0XBRwspDK6iXO', NULL, '8a1ce554856cdf5bd1a046bed1c27567e1e71eb5378e7d64ec1f2bc1e4827aa79d077b0c5dcb09a8db421e355e6febcfaa4d9ba26823f0b0488f001e7f6f21bc', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 09:14:14', '2009-11-26 09:14:14', 97, NULL)[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 09:14:14', "perishable_token" = 'wwNZxfswb4v7MWc5dJt4' WHERE "id" = 97[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 01:14:14 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/wwNZxfswb4v7MWc5dJt4
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 24ms (DB: 2) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 01:14:14) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:14:14) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (59.9ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mDELETE FROM "users";[0m
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:15:11) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-26 01:15:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-26 01:15:11) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"bobsmith", "email"=>"bobsmith2009@hotmail.com"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith2009@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '874611c45fd4f455eeee79140f628bcbd3933b2c7baedc60eefadacd51fbb52d5182a3333b5e16890626a117396f8f8ff361e7ca6bcd46e13ee0487c46a186e3') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Kt7JPKs7it3bzfBd94jE') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("single_access_token", "last_request_at", "boolean", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "active") VALUES('Kt7JPKs7it3bzfBd94jE', NULL, 'f', '2009-11-26 09:15:11', '8db9b49962d1732c6695d4bcd1019865250a8061bf7a2394af21be9740bca57ec9894f75399f4459a85a9ca907d73e5ce35df12f8f9c96f250e7617888bb800d', 'IFPnu-jleKQPqHTHfPTH', '2009-11-26 09:15:11', 0, NULL, '597fofYip4ciDGSLMwSG', NULL, '874611c45fd4f455eeee79140f628bcbd3933b2c7baedc60eefadacd51fbb52d5182a3333b5e16890626a117396f8f8ff361e7ca6bcd46e13ee0487c46a186e3', 0, NULL, 'bobsmith', NULL, 'bobsmith2009@hotmail.com', 'f')[0m
+  [4;35;1mFolder Load (0.1ms)[0m   [0mSELECT * FROM "folders" WHERE ("folders".user_id = NULL) [0m
+  [4;36;1mFolder Create (0.2ms)[0m   [0;1mINSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-11-26 09:15:11', '2009-11-26 09:15:11', 98, NULL)[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-11-26 09:15:11', "perishable_token" = 'Kfg6NyrD43ZzsPvPg57g' WHERE "id" = 98[0m
+Sent mail to bobsmith2009@hotmail.com
+
+Date: Thu, 26 Nov 2009 01:15:11 -0800
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: bobsmith2009@hotmail.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+<!-- app/views/notifier/activation_instructions.erb --> 
+  Thank you for creating an account! Click the url below to activate your account!
+
+  http://x.com/register/Kfg6NyrD43ZzsPvPg57g
+
+  If the above URL does not work try copying and pasting it into your browser. If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3001/static/check_email
+Completed in 29ms (DB: 3) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#check_email (for 127.0.0.1 at 2009-11-26 01:15:11) [GET]
+  Parameters: {"action"=>"check_email", "controller"=>"static"}
+Redirected to http://localhost:3001/
+Filter chain halted as [:repel_em] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/static/check_email]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-11-26 01:15:11) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mDELETE FROM "folders";[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM "message_copies";[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDELETE FROM "messages";[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM "users";[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mDELETE FROM "folders";[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDELETE FROM "message_copies";[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM "messages";[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "users";[0m
