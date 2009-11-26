@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
   config.gem 'rspec', :lib => false, :version => '1.2.7'
   config.gem 'cucumber', :version => '0.3.11'
   config.gem 'webrat', :version => '0.4.4'
-  config.gem 'nokogiri', :version => '1.3.3'
+  config.gem 'nokogiri', :version => '1.4.0'
   config.gem 'authlogic', :version => '2.1.2'
   config.gem 'haml', :version => '2.0.9'
   config.gem 'hpricot', :version => '0.8.1'
