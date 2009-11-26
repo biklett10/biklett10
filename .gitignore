@@ -59,4 +59,5 @@ vendor/gems/hpricot-0.8.1/lib/hpricot_scan.so
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/gem_make.out
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/nokogiri.so
 vendor/gems/nokogiri-1.4.0/lib/nokogiri/nokogiri.so
-
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/Makefile
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/mkmf.log
