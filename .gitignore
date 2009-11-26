@@ -52,4 +52,11 @@ vendor/gems/nokogiri-1.4.0/ext/nokogiri/xml_text.o
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/xml_xpath.o
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/xml_xpath_context.o
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/xslt_stylesheet.o
+vendor/gems/hpricot-0.8.1/ext/fast_xs/fast_xs.so
+vendor/gems/hpricot-0.8.1/ext/hpricot_scan/hpricot_scan.so
+vendor/gems/hpricot-0.8.1/lib/fast_xs.so
+vendor/gems/hpricot-0.8.1/lib/hpricot_scan.so
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/gem_make.out
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/nokogiri.so
+vendor/gems/nokogiri-1.4.0/lib/nokogiri/nokogiri.so
 
