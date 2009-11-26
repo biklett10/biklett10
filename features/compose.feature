@@ -18,4 +18,4 @@ Feature: See Compose UI
     And I should see "To:"
     And I should see "Subject:"
     And I should see "Body:"
-    And You inspect the currently loaded page
+
