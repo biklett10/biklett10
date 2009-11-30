@@ -61,3 +61,7 @@ vendor/gems/nokogiri-1.4.0/ext/nokogiri/nokogiri.so
 vendor/gems/nokogiri-1.4.0/lib/nokogiri/nokogiri.so
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/Makefile
 vendor/gems/nokogiri-1.4.0/ext/nokogiri/mkmf.log
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/conftest.dSYM/Contents/Resources/DWARF/conftest
+vendor/gems/nokogiri-1.4.0/ext/nokogiri/nokogiri.bundle
+vendor/gems/nokogiri-1.4.0/lib/nokogiri/nokogiri.bundle
+
