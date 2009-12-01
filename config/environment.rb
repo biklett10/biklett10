@@ -14,6 +14,8 @@ Hpricot.buffer_size = 262144
 
 Rails::Initializer.run do |config|
   # bikle
+  # keeps AR messages in my log files and server console more clean
+  config.active_record.colorize_logging = false
   config.gem 'rspec-rails', :lib => false, :version => '1.2.7.1'
   config.gem 'rspec', :lib => false, :version => '1.2.7'
   config.gem 'cucumber', :version => '0.3.11'
