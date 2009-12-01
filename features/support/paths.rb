@@ -7,10 +7,32 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-    
+
     when /the home\s?page/
-      '/'
-    
+      root_path
+    when /the login page/
+      login_path
+    when /the logout page/
+      logout_path
+    when /the account page/
+      account_path
+    when /the account editing page/
+      edit_account_path
+
+    when /the singup page/
+      signup_path
+    when /the registration form/
+      signup_path
+    when /the activation form/
+      register_path
+    when /the confirm page with bad token/
+      register_path
+
+    when /the reset password page/
+      new_password_reset_path
+    when /the change password form with bad token/
+      edit_password_reset_path('bad')
+
     # Add more mappings here.
     # Here is a more fancy example:
     #
