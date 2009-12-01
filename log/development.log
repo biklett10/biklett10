@@ -451,3 +451,11 @@ Rendering template within layouts/application
 Rendering home/index
 Rendered users/_pannel (4.5ms)
 Completed in 27ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-01 05:13:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered users/_pannel (6.3ms)
+Completed in 171ms (View: 36, DB: 0) | 200 OK [http://localhost/]
