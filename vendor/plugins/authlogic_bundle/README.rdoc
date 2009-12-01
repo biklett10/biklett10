@@ -1,0 +1,113 @@
+= Authlogic Bundle
+
+This plugin will help you build up an authentication/authorization system easily. You can also customize it by rails built-in engines' way.
+
+This plugin uses work flow of registration as:
+
+1. The new user registers his/her login and email
+2. System sends activation instructions mail to the user
+3. The user follows up activation url in mail
+4. The user chooses authentication type (password / Open ID)
+5. System sends registration completion mail to the user
+6. The user is been instantly logged in
+
+The user using password authentication can also reset his/her password.
+
+1. The user fills in his/her email in forgot password page
+2. System sends password reset instruction mail to the user
+3. The user follows up password reset url in mail
+4. The user chooses new password
+5. The user can log in with new password
+
+The Role-Based Access Control (RBAC) is introduced, and you can design the authorization rules (DSL) in first place. Here gives sample rules.
+
+1. The anonymous (guest role) can create a new user (customer role).
+2. The logged-in user (customer role) can show and update his/her account.
+3. A special user "admin" (admin role) can manage all users.
+
+The internationalization of interface and messages are built-in with english and chinese (zh-TW/zh-CN).
+
+== Requirements
+
+1. rails gem (2.3.4+)
+2. bcrypt-ruby gem
+3. authlogic gem
+4. ruby-openid gem
+5. open_id_authentication plugin
+6. authlogic_oid gem
+7. declarative_authorization gem
+8. ssl_requirement plugin
+9. i18n_label plugin
+
+for testing:
+1. rspec gem
+2. rspec-rails gem
+3. cucumber gem
+4. webrat gem
+5. bmabey-email_spec gem
+
+== Installation
+
+If you start up a new rails application, you can
+
+  $ rails <your-app> -m http://github.com/tsechingho/authlogic_bundle/raw/master/templates/remote.rb
+
+If you have an existing rails application, you can
+
+  $ cd <your-app>
+  $ git submodule add git://github.com/tsechingho/authlogic_bundle.git vendor/plugins/authlogic_bundle
+  $ rake rails:template LOCATION=vendor/plugins/authlogic_bundle/templates/base.rb SCM=git
+
+If rails version >= 2.3.4, there are default data sets imported by
+
+  $ rake db:seed
+
+And you can login with root/root (login/password).
+
+== Configuration
+
+SSL will turn on in production mode and turn off in development/test mode automatically. If you want to switch manually, please set ENV['SSL'] = 'on' in environment.rb or start server with SSL variable like
+
+  $ SSL=on script/server
+
+== Customization
+
+If you prepare to customize your own User model, please start by
+
+  $ cp vendor/plugins/authlogic_bundle/app/models/user.rb app/models
+  $ cp vendor/plugins/authlogic_bundle/app/models/user_session.rb app/models
+
+Otherwise you will encounter "TypeError (can't dup NilClass)" and "ApplicationHelper" error messages.
+
+For complicated needs, please fork and modify the whole plugin.
+
+== Testing
+
+If you want to run the cucumber features, you can
+
+  $ rake authlogic_bundle:features
+
+== Upgrades
+
+It's supposed you should modify your existing codes by yourself with newer version of authlogic_bundle or accessory plugins if this step is needed.
+
+If you want to update the authlogic_bundle, you can
+
+  $ cd <your-app>/vendor/plugins/authlogic_bundle
+  $ git pull origin master
+  $ cd ../../..
+  $ git add vendor/plugins/authlogic_bundle
+  $ git commit -m 'update authlogic_bundle submodule'
+
+If you want to update all plugins into edge, you can
+
+  $ cd <your-app>
+  $ rake rails:template LOCATION=vendor/plugins/authlogic_bundle/templates/update.rb
+
+If you want to update all gems, you can
+
+  $ sudo gem update
+
+== License
+
+Copyright (c) 2009 Tse-Ching Ho, released under the MIT license
