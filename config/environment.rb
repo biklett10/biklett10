@@ -13,6 +13,10 @@ Hpricot.buffer_size = 262144
 # bikle
 
 Rails::Initializer.run do |config|
+  # bikle 2009-11-30 step 3 of http://github.com/binarylogic/authlogic_openid
+  config.gem "authlogic-oid", :lib => "authlogic_openid"
+  # bikle 2009-11-30 step 3 of http://github.com/binarylogic/authlogic_openid
+
   # bikle
   # keeps AR messages in my log files and server console more clean
   config.active_record.colorize_logging = false
