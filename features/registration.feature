@@ -16,7 +16,6 @@ Feature: Registration
     When I go to the registration form
     And I fill in "login" with "sharon"
     And I fill in "email" with "sharon@example.com"
-    And debug
     And I press "Register"
     Then I should have a successful registration
 
