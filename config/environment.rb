@@ -7,6 +7,13 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+
+  # bikle 2009-12-01
+  config.gem 'selenium-client', :lib => false, :version => '1.2.17'
+  config.gem 'Selenium', :lib => false, :version => '1.1.14'
+  config.gem 'database_cleaner', :version => '0.2.3'
+  # bikle 2009-12-01
+
   # bikle 2009-11-30
   config.gem 'bmabey-email_spec', :lib => 'email_spec'
   config.gem 'rspec-rails', :lib => false

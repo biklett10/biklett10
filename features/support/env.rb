@@ -20,6 +20,9 @@ require 'cucumber/rails/world'
 # subsequent scenarios. If you do this, we recommend you create a Before
 # block that will explicitly put your database in a known state.
 Cucumber::Rails::World.use_transactional_fixtures = true
+# bikle 2009-12-01 selenium
+Cucumber::Rails::World.use_transactional_fixtures = false
+# bikle 2009-12-01 selenium
 
 # If you set this to false, any error raised from within your app will bubble 
 # up to your step definition and out to cucumber unless you catch it somewhere
@@ -44,6 +47,16 @@ Webrat.configure do |config|
   config.mode = :rails
   config.open_error_files = false # Set to true if you want error pages to pop up in the browser
 end
+# bikle 2009-12-01 selenium
+Webrat.configure do |config|
+  case ENV["RAILS_ENV"]
+    when "selenium"
+      config.mode = :selenium
+    else
+      config.mode = :rails
+  end # case
+end # Webrat.configure 
+# bikle 2009-12-01 selenium
 
 require 'email_spec/cucumber'
 
@@ -51,6 +64,14 @@ require 'email_spec/cucumber'
 require 'authlogic/test_case'
 include Authlogic::TestCase
 #setup :activate_authlogic
+
+# bikle 2009-12-01 selenium
+class ActiveSupport::TestCase
+  setup do |session|
+    session.host! "localhost:3001"
+  end
+end
+# bikle 2009-12-01 selenium
 
 # http://www.tzi.org/~sbartsch/declarative_authorization/master/classes/Authorization/Maintenance.html
 require 'declarative_authorization/maintenance'
@@ -95,3 +116,20 @@ require 'authlogic_bundle/test_case/session_helper'
 #     mocha_teardown
 #   end
 # end
+
+# bikle 2009-12-01 selenium
+require 'database_cleaner' 
+require 'database_cleaner/cucumber' 
+DatabaseCleaner.clean_with :truncation # clean once to ensure clean slate
+DatabaseCleaner.strategy = :truncation
+ 
+# tools-episode-2-webrat-selenium.mov:
+ 
+Before do
+  DatabaseCleaner.start
+end
+ 
+After do
+  DatabaseCleaner.clean
+end
+# bikle 2009-12-01 selenium
