@@ -1,6 +1,0 @@
-/pt/m2/TSE.txt
-
-This file marks a git branch named TSE.
-
-I am using this branch to study this software:
-  - http://github.com/tsechingho/authlogic_bundle

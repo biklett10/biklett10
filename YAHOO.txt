@@ -1,0 +1,16 @@
+/pt/m2/YAHOO.txt
+
+This file marks a git branch named YAHOO.
+
+I am using this branch to study this software:
+  - http://github.com/tsechingho/authlogic_bundle
+
+I am using this branch to focus on this feature:
+  - new branch YAHOO
+  - follow register
+  - should only see 1 field: e-mail
+  - enter yahoo email
+  - submit
+  - authenticate user via openid
+  - send registration and activation 
+  - ask for personal info
