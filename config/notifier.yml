@@ -24,6 +24,9 @@ test: &TEST
 cucumber:
   <<: *TEST
 
+selenium:
+  <<: *TEST
+
 production:
   notifier:
     host: www.example.com
