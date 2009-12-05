@@ -9,6 +9,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   # bikle 2009-12-01
+  # keeps AR messages in my log files and server console more clean
+  config.active_record.colorize_logging = false
   config.gem 'selenium-client', :lib => false, :version => '1.2.17'
   config.gem 'Selenium', :lib => false, :version => '1.1.14'
   config.gem 'database_cleaner', :version => '0.2.3'
