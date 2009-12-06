@@ -6,7 +6,19 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+# bikle
+require 'hpricot'
+require 'ruby-debug'
+Hpricot.buffer_size = 262144
+# bikle
+
 Rails::Initializer.run do |config|
+
+  # bikle 2009-12-05
+  config.gem 'haml', :version => '2.2.14'
+  config.gem 'hpricot', :version => '0.8.1'
+  config.gem 'will_paginate', :version => '2.3.11'
+  # bikle 2009-12-05
 
   # bikle 2009-12-01
   # keeps AR messages in my log files and server console more clean
