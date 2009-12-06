@@ -1,9 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+
+  # bikle 2009-1205
+  # map.root :controller => 'home', :action => 'index'
+  map.root :controller => "static", :action => "about"
+  # bikle 2009-1205
+
   map.resources :roles
 
   map.resources :users
 
-  map.root :controller => 'home', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

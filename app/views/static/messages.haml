@@ -1,0 +1,6 @@
+%p= link_to "Compose", new_sent_path
+%p Mailboxes
+%ul
+  %li= link_to "Inbox", inbox_path
+  %li= link_to "Sent", :controller => "sent", :action => "index"
+  %li= link_to "Trash", trash_mailbox_path

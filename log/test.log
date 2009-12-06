@@ -11044,3 +11044,264 @@ Completed in 137ms (View: 16, DB: 2) | 200 OK [http://www.example.com/password_r
   [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "sessions";[0m
   [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "user_roles";[0m
   [4;36;1mSQL (1.8ms)[0m   [0;1mDELETE FROM "users";[0m
+SQL (2.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.4ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.5ms)  DELETE FROM "preferences";
+SQL (1.6ms)  DELETE FROM "roles";
+SQL (4.9ms)  DELETE FROM "sessions";
+SQL (2.1ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.7ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.0ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:18:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered users/_pannel (25.3ms)
+Completed in 120ms (View: 66, DB: 19) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (1.8ms)  DELETE FROM "roles";
+SQL (1.7ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (2.7ms)  DELETE FROM "users";
+SQL (0.8ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.1ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (3.0ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:28:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered users/_pannel (7.9ms)
+Completed in 122ms (View: 27, DB: 19) | 200 OK [http://www.example.com/]
+SQL (1.8ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.6ms)  DELETE FROM "preferences";
+SQL (1.7ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.1ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (2.0ms)  DELETE FROM "roles";
+SQL (1.7ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:29:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Rendered users/_pannel (9.0ms)
+Completed in 125ms (View: 29, DB: 14) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.5ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.0ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (3.1ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (1.6ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.0ms)  DELETE FROM "sessions";
+SQL (2.0ms)  DELETE FROM "user_roles";
+SQL (2.7ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:34:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 116ms (View: 20, DB: 17) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.6ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.7ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.5ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (1.7ms)  DELETE FROM "sessions";
+SQL (1.9ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.7ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.7ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.0ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:34:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 114ms (View: 20, DB: 18) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.6ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (2.0ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.5ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.2ms)  DELETE FROM "sessions";
+SQL (2.7ms)  DELETE FROM "user_roles";
+SQL (2.2ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-05 22:54:08) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 109ms (View: 9, DB: 17) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.7ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.4ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (1.8ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
