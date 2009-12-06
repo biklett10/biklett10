@@ -1,0 +1,8 @@
+<% title t('activations.titles.new') %>
+
+<% form_for @user, :url => activate_path(@user), :html => { :method => :post } do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.submit t('activations.actions.activate') %>
+  </p>
+<% end %>
