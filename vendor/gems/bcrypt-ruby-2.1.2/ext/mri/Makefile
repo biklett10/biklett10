@@ -96,8 +96,8 @@ STATIC_LIB =
 
 BINDIR        = $(bindir)
 RUBYCOMMONDIR = $(sitedir)$(target_prefix)
-RUBYLIBDIR = /Users/maco/pt/customers3/marc_bandt/tse/vendor/gems/bcrypt-ruby-2.1.2/lib$(target_prefix)
-RUBYARCHDIR = /Users/maco/pt/customers3/marc_bandt/tse/vendor/gems/bcrypt-ruby-2.1.2/lib$(target_prefix)
+RUBYLIBDIR = /Users/maco/pt/customers3/marc_bandt/m2/vendor/gems/bcrypt-ruby-2.1.2/lib$(target_prefix)
+RUBYARCHDIR = /Users/maco/pt/customers3/marc_bandt/m2/vendor/gems/bcrypt-ruby-2.1.2/lib$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
 CLEANLIBS     = $(TARGET).bundle $(TARGET).il? $(TARGET).tds $(TARGET).map
