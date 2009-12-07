@@ -8,7 +8,8 @@ require "authlogic_bundle/maintenance"
 include AuthlogicBundle::Maintenance
 
   def register
-
+  end
+  def login
   end
 
   def post_register
@@ -22,13 +23,11 @@ include AuthlogicBundle::Maintenance
     redirect_to root_url  
   end
 
-  def activate
-  end
-
-  def login
-    richard= User.find_by_login "richbrown"
-    session[:user_credentials]= richard.persistence_token
-    session[:user_credentials_id]= richard.id
+  def post_login
+    a_login= params[:a_login]
+    a_user= User.find_by_login a_login
+    session[:user_credentials]= a_user.persistence_token
+    session[:user_credentials_id]= a_user.id
     redirect_to root_url  
   end
 
