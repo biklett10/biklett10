@@ -23,13 +23,6 @@ Given /^I am not logged in$/ do
   raise("I am logged in") unless defined?(current_user).nil?
 end
 
-# When I go to the homepage
-
-Then /^I should see a page with 2 columns$/ do
-  doc = Hpricot(response.body)
-  (doc/"body/table.main_table/tr.main_tr/td.lhs/../td").size.should == 2
-end
-
 Then /^the LHS column should be relatively narrow$/ do
   # I dont know how to compare the width of LHS with RHS.
   # So just look at it.
@@ -48,4 +41,29 @@ end
 
 Then /^the RHS should only contain the word Welcome$/ do
   response.should have_selector("html/body/table.main_table/tr.main_tr/td.rhs/h1", :content => "Welcome") 
+end
+
+
+Given /^I am "([^\"]*)" an anonymous user$/ do |arg1|
+  visit '/logout'
+end
+
+When /^the form should have 1 field named email$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^the form should have a submit button named submit$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^when I fill in email with "([^\"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I press submit$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should get redirected away$/ do
+  pending # express the regexp above with the code you wish you had
 end
