@@ -22,5 +22,6 @@
           %a{:href => '/logout'}Logout
 
         %td.rhs{:valign => 'top'}
-          %p{:style => "color:green"}= flash[:notice]
+          -if flash[:notice]
+            %p{:style => "color:green"}= flash[:notice]
           =yield
