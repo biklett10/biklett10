@@ -11372,3 +11372,1126 @@ Processing HomeController#index (for 127.0.0.1 at 2009-12-05 22:32:52) [GET]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 195ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:40:14) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 146ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:40:35) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:48:26) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:48:33) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:48:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 125ms (View: 14, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:48:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 35ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:59:54) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 30ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 13:02:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://localhost:3000/
+Completed in 93ms (DB: 1) | 302 Found [http://localhost/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 13:02:06) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 32ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 13:02:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 43ms (View: 11, DB: 1) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 14:05:44) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Association Destroy (0.4ms)  DELETE FROM "open_id_authentication_associations" WHERE "id" = 1
+WARNING: making https request to https://open.login.yahooapis.com/openid/op/auth without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Delete all (1.1ms)  DELETE FROM "open_id_authentication_associations" WHERE (server_url = 'https://open.login.yahooapis.com/openid/op/auth' AND handle = 'oJMszbr8L7TD7RaGR1gSy3g.BXp0hu6qIUFpgUyD_LCnGrVfbutYuXiOhfEbHpTsyfhx0YVroDjjhP289IWH.R1akmOGfwCz87sPO9XQ6vDrU1DZShEUO5RT0J3lcIyd') 
+OpenIdAuthentication::Association Create (0.3ms)  INSERT INTO "open_id_authentication_associations" ("lifetime", "handle", "server_url", "issued", "assoc_type", "secret") VALUES(14400, 'oJMszbr8L7TD7RaGR1gSy3g.BXp0hu6qIUFpgUyD_LCnGrVfbutYuXiOhfEbHpTsyfhx0YVroDjjhP289IWH.R1akmOGfwCz87sPO9XQ6vDrU1DZShEUO5RT0J3lcIyd', 'https://open.login.yahooapis.com/openid/op/auth', 1260137145, 'HMAC-SHA1', '™ ™πË|†ù≥<í€ﬁ	 YØ©')
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication oJMszbr8L7TD7RaGR1gSy3g.BXp0hu6qIUFpgUyD_LCnGrVfbutYuXiOhfEbHpTsyfhx0YVroDjjhP289IWH.R1akmOGfwCz87sPO9XQ6vDrU1DZShEUO5RT0J3lcIyd
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=oJMszbr8L7TD7RaGR1gSy3g.BXp0hu6qIUFpgUyD_LCnGrVfbutYuXiOhfEbHpTsyfhx0YVroDjjhP289IWH.R1akmOGfwCz87sPO9XQ6vDrU1DZShEUO5RT0J3lcIyd&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Faccount%3Ffor_model%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.sreg.optional=fullname%2Cdob%2Cgender%2Cpostcode%2Ccountry%2Clanguage%2Ctimezone&openid.sreg.required=nickname%2Cemail
+Completed in 955ms (DB: 3) | 302 Found [http://localhost/account]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 14:32:46) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 32ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 14:33:51) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 116ms (View: 85, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 14:33:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 36ms (View: 3, DB: 1) | 200 OK [http://localhost/signup]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 18:36:53) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 57ms (View: 1, DB: 24) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:09:02) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 135ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:09:33) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 121ms (View: 7, DB: 1) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:12:08) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:12:08) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 35ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:13:54) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 100ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:13:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:16:05) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:16:05) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 115ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:16:54) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:16:54) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 49ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:17:02) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.8ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 140ms (View: 1, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:17:52) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.4ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 44ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:18:01) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:18:01) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:18:07) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (14.7ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 57ms (View: 2, DB: 16) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:20:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 123ms (View: 88, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:20:14) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:21:10) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:21:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 124ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:23:03) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.4ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 36ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:23:08) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:23:08) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:23:49) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 36ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:23:55) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as [:root_if_production] rendered_or_redirected.
+Completed in 98ms (DB: 1) | 302 Found [http://localhost/fortests/register]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:23:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:24:16) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 19:28:58) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 76ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 19:29:06) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 16752ms (View: 7, DB: 1) | 200 OK [http://localhost/fortests/register]
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" 
+User Load (0.3ms)  SELECT * FROM "users" WHERE ("users"."login" = 'bobby') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobby@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobby') LIMIT 1
+User Load (10.8ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '63fbbc40c0afde81e2e0523c2087a337f09915e5f6daead37e6c61f2a58e7d13ddf53ef324be47f60ede378d71bad2a08639f7388e91f409ce996d901a738a22') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '_tIsVICla0ARd7cQPnrT') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('_tIsVICla0ARd7cQPnrT', NULL, '2009-12-07 04:48:25', NULL, 'llV7OnRghxfz7PRPh8m_', '2009-12-07 04:48:25', 0, NULL, NULL, NULL, NULL, '63fbbc40c0afde81e2e0523c2087a337f09915e5f6daead37e6c61f2a58e7d13ddf53ef324be47f60ede378d71bad2a08639f7388e91f409ce996d901a738a22', 0, NULL, 'bobby', NULL, 'bobby@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 3) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-07 04:48:25', '2009-12-07 04:48:25', NULL, 3, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.4ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 3)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '683ce4ced89993d5b53a7769de0f9457d11556a903fae815caf8fef257b50d12ba54c05af736a9761aa45006560b8014749d07266fda104fd339404bf9fc8b20' AND "users".id <> 3) LIMIT 1
+User Update (0.9ms)  UPDATE "users" SET "persistence_token" = '683ce4ced89993d5b53a7769de0f9457d11556a903fae815caf8fef257b50d12ba54c05af736a9761aa45006560b8014749d07266fda104fd339404bf9fc8b20', "updated_at" = '2009-12-07 04:48:25', "perishable_token" = 'EvbsQw89PX0fvFoL2iKd', "state" = 'active', "password_salt" = 'h58GCUHnMBy3cWeN0iBg', "crypted_password" = '$2a$10$.7lZxq1j2XrId4MeZroTb.FRuhfLgLjuZxEeaRfM0YDhMN.v.CdIi' WHERE "id" = 3
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (7, 3)
+User Load (0.7ms)  SELECT * FROM "users" 
+User Load (0.7ms)  SELECT * FROM "users" 
+User Load (0.7ms)  SELECT * FROM "users" 
+Role Load (0.3ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 20:57:33) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 150ms (View: 34, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 20:57:39) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 21:00:35) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 21:01:45) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.3ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richbrown@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'richbrown') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'fdd9423d6551a3451e6885b30dc8ea31837fcf65eea38caa6170ec6e540ae956690f656400892decd1484e5bdfb50a300c5c88b95a1dbb581e7dc04e206d2ae0') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'arxZ2CxQeImWAJjzK3pE') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('arxZ2CxQeImWAJjzK3pE', NULL, '2009-12-07 05:01:59', NULL, 'aF9UpwjoOdaqgU3ZP10O', '2009-12-07 05:01:59', 0, NULL, NULL, NULL, NULL, 'fdd9423d6551a3451e6885b30dc8ea31837fcf65eea38caa6170ec6e540ae956690f656400892decd1484e5bdfb50a300c5c88b95a1dbb581e7dc04e206d2ae0', 0, NULL, 'richbrown', NULL, 'richbrown@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 4) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-07 05:01:59', '2009-12-07 05:01:59', NULL, 4, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 4)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '87872b7c3348ea2af4329f014369f66f944a68654394d9e58d52e739fb286c1bc89470f47c9ec895c913e1156fe8040fdd929096d0969011b4e8f9eefb390e46' AND "users".id <> 4) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+User Update (2.0ms)  UPDATE "users" SET "login_count" = 1, "persistence_token" = '87872b7c3348ea2af4329f014369f66f944a68654394d9e58d52e739fb286c1bc89470f47c9ec895c913e1156fe8040fdd929096d0969011b4e8f9eefb390e46', "current_login_ip" = '127.0.0.1', "updated_at" = '2009-12-07 05:01:59', "perishable_token" = 'VW94TriBHHDwd0S1vFZH', "last_request_at" = '2009-12-07 05:01:59', "state" = 'active', "current_login_at" = '2009-12-07 05:01:59', "password_salt" = 'E5J5G-lkJT3fP-HUcxO6', "crypted_password" = '$2a$10$0fC3mkPxqX0jcYHdL4itlub9owopuus76krUnD/b6ftisTATgTNNK' WHERE "id" = 4
+Role Load (0.5ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 4)
+User Load (0.3ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'richardbrown@yahoo.com' AND "users".id <> 4) LIMIT 1
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:02:04', "email" = 'richardbrown@yahoo.com', "perishable_token" = 'SSrnP3wTH491YlOyNwKf' WHERE "id" = 4
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 22385ms (View: 45, DB: 10) | 200 OK [http://localhost/fortests/register]
+User Load (1.2ms)  SELECT * FROM "users" 
+User Load (0.9ms)  SELECT * FROM "users" 
+User Load (0.8ms)  SELECT * FROM "users" 
+User Load (0.9ms)  SELECT * FROM "users" 
+User Load (1.1ms)  SELECT * FROM "users" 
+User Load (0.9ms)  SELECT * FROM "users" 
+User Load (0.9ms)  SELECT * FROM "users" 
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 21:10:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 4 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:10:11', "perishable_token" = 'dRbB9xgwkKxDg1BaSIsf', "last_request_at" = '2009-12-07 05:10:11' WHERE "id" = 4
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 4) LIMIT 1
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 62ms (DB: 28) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-06 21:10:11) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 4 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:10:12', "perishable_token" = '3mTpLuuadYRIcPCOICWk', "last_request_at" = '2009-12-07 05:10:12' WHERE "id" = 4
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 4) LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Completed in 171ms (View: 11, DB: 3) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 21:10:25) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 4 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:10:25', "perishable_token" = 'SgCzRojpqzKOZ6ks5ITv', "last_request_at" = '2009-12-07 05:10:25' WHERE "id" = 4
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 4) LIMIT 1
+Redirected to http://localhost:3000/login
+Completed in 37ms (DB: 3) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 21:10:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 44ms (View: 14, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-06 21:10:37) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "openid_identifier"=>"ashokcingla4455@yahoo.com"}, "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"user_sessions"}
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Association Destroy (11.3ms)  DELETE FROM "open_id_authentication_associations" WHERE "id" = 2
+WARNING: making https request to https://open.login.yahooapis.com/openid/op/auth without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Delete all (0.8ms)  DELETE FROM "open_id_authentication_associations" WHERE (server_url = 'https://open.login.yahooapis.com/openid/op/auth' AND handle = 'VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF') 
+OpenIdAuthentication::Association Create (0.3ms)  INSERT INTO "open_id_authentication_associations" ("lifetime", "handle", "server_url", "issued", "assoc_type", "secret") VALUES(14400, 'VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF', 'https://open.login.yahooapis.com/openid/op/auth', 1260162638, 'HMAC-SHA1', '‡s§1æJ ıW6”D≠ ·o±hh')
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26remember_me%3Dtrue%26_method%3Dpost%26open_id_complete%3D1
+Completed in 859ms (DB: 14) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-06 21:10:42) [POST]
+  Parameters: {"remember_me"=>"true", "openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:3000/user_session?for_session=1&remember_me=true&_method=post&open_id_complete=1", "openid.op_endpoint"=>"https://open.login.yahooapis.com/openid/op/auth", "openid.sig"=>"7ll2cPvcDyt4IwFmUWpNMKdTtQI=", "openid.response_nonce"=>"2009-12-07T05:10:42ZvJfLdosRdTrV1m32UHtZvsyY3NfVEmm.PA--", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"create", "for_session"=>"1", "_method"=>"post", "openid.identity"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--", "openid.assoc_handle"=>"VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF", "openid.signed"=>"assoc_handle,claimed_id,identity,mode,ns,op_endpoint,response_nonce,return_to,signed,pape.auth_level.nist", "controller"=>"user_sessions", "openid.realm"=>"http://localhost:3000/", "open_id_complete"=>"1", "openid.claimed_id"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487", "openid.pape.auth_level.nist"=>"0"}
+Error attempting to use stored discovery information: OpenID::TypeURIMismatch
+Attempting discovery to verify endpoint
+Performing discovery on https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487
+WARNING: making https request to https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw-- without verifying server certificate; no CA path was specified.
+WARNING: making https request to https://open.login.yahooapis.com/openid20/user_profile/xrds without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."handle" = 'VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF' AND "open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Nonce Load (0.2ms)  SELECT * FROM "open_id_authentication_nonces" WHERE ("open_id_authentication_nonces"."timestamp" = 1260162642 AND "open_id_authentication_nonces"."salt" = 'vJfLdosRdTrV1m32UHtZvsyY3NfVEmm.PA--' AND "open_id_authentication_nonces"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') LIMIT 1
+OpenIdAuthentication::Nonce Create (0.4ms)  INSERT INTO "open_id_authentication_nonces" ("salt", "server_url", "timestamp") VALUES('vJfLdosRdTrV1m32UHtZvsyY3NfVEmm.PA--', 'https://open.login.yahooapis.com/openid/op/auth', 1260162642)
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "login_count" = 2, "updated_at" = '2009-12-07 05:10:42', "perishable_token" = 'YUx5ZaniD3hF2XuCS85b', "last_request_at" = '2009-12-07 05:10:42', "last_login_at" = '2009-12-05 22:07:47', "last_login_ip" = '127.0.0.1', "current_login_at" = '2009-12-07 05:10:42' WHERE "id" = 2
+Redirected to http://localhost:3000/account
+Completed in 266ms (DB: 4) | 302 Found [http://localhost/user_session?for_session=1&remember_me=true&_method=post&open_id_complete=1&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26remember_me%3Dtrue%26_method%3Dpost%26open_id_complete%3D1&openid.claimed_id=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--%232c487&openid.identity=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--&openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.response_nonce=2009-12-07T05%3A10%3A42ZvJfLdosRdTrV1m32UHtZvsyY3NfVEmm.PA--&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Csigned%2Cpape.auth_level.nist&openid.op_endpoint=https%3A%2F%2Fopen.login.yahooapis.com%2Fopenid%2Fop%2Fauth&openid.pape.auth_level.nist=0&openid.sig=7ll2cPvcDyt4IwFmUWpNMKdTtQI%3D]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-06 21:10:43) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:10:43', "perishable_token" = '1XxqNnLBjTrlE3tl-bNX', "last_request_at" = '2009-12-07 05:10:43' WHERE "id" = 2
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Completed in 58ms (View: 4, DB: 3) | 200 OK [http://localhost/account]
+User Load (0.9ms)  SELECT * FROM "users" 
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 21:43:00) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 05:43:00', "perishable_token" = 'i7a5iE66J-kCj1u5aJZM', "last_request_at" = '2009-12-07 05:43:00' WHERE "id" = 2
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+Redirected to http://localhost:3000/login
+Completed in 61ms (DB: 27) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 21:43:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 123ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 21:43:12) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 63ms (View: 29, DB: 1) | 200 OK [http://localhost/fortests/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-06 21:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/fortests/users/show/4" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing FortestsController#users (for 127.0.0.1 at 2009-12-06 21:44:22) [GET]
+  Parameters: {"action"=>"users", "id"=>"show", "controller"=>"fortests"}
+
+ActionController::UnknownAction (No action responded to users. Actions: activate, authorization_rules, authorization_rules=, create_roles_from_rule_file, create_user_by_login, delete_user_by_login, languages_available, login, merge_authorization_rules, register, root_if_production, set_language, speak, speak=, ssl_required?, with_user, and without_access_control):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing FortestsController#users (for 127.0.0.1 at 2009-12-06 21:44:28) [GET]
+  Parameters: {"action"=>"users", "controller"=>"fortests"}
+
+ActionController::UnknownAction (No action responded to users. Actions: activate, authorization_rules, authorization_rules=, create_roles_from_rule_file, create_user_by_login, delete_user_by_login, languages_available, login, merge_authorization_rules, register, root_if_production, set_language, speak, speak=, ssl_required?, with_user, and without_access_control):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing FortestsController#account (for 127.0.0.1 at 2009-12-06 21:44:46) [GET]
+  Parameters: {"action"=>"account", "controller"=>"fortests"}
+
+ActionController::UnknownAction (No action responded to account. Actions: activate, authorization_rules, authorization_rules=, create_roles_from_rule_file, create_user_by_login, delete_user_by_login, languages_available, login, merge_authorization_rules, register, root_if_production, set_language, speak, speak=, ssl_required?, with_user, and without_access_control):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-06 21:45:02) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 21:45:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 34ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 21:55:51) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 61717ms (View: 2, DB: 1) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 21:56:58) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 21:57:24) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 147041ms (View: 29, DB: 1) | 200 OK [http://localhost/fortests/login]
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:11)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:12)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /Users/maco/pt/customers3/marc_bandt/m2/app/controllers/application_controller.rb:12)
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 22:36:24) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 6562ms (View: 14, DB: 2) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#index (for 127.0.0.1 at 2009-12-06 22:37:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+
+ActionController::UnknownAction (No action responded to index. Actions: activate, authorization_rules, authorization_rules=, create_roles_from_rule_file, create_user_by_login, delete_user_by_login, find_the_user, languages_available, login, merge_authorization_rules, register, root_if_production, set_language, speak, speak=, ssl_required?, with_user, and without_access_control):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 22:37:28) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 40ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 22:38:16) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 34ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 22:57:51) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 76ms (DB: 27) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 22:57:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 137ms (View: 99, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:03:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 37ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:04:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 173ms (View: 42, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:04:36) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:04:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:04:46) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:04:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 40ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:04:59) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 33613ms (View: 6, DB: 2) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:05:33) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 37ms (View: 1, DB: 2) | 200 OK [http://localhost/fortests/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:05:38) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:05:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 40ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:06:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 39ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:07:02) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/user_sessions_controller.rb:29:in `destroy'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (47.1ms)
+Rendered rescues/_request_and_response (27.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:08:12) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:08:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 38ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:08:22) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 35ms (View: 1, DB: 1) | 200 OK [http://localhost/fortests/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:08:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 39ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:08:36) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:08:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 37ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:08:43) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 34ms (View: 1, DB: 1) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:08:48) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 114ms (View: 1, DB: 2) | 200 OK [http://localhost/fortests/login]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:08:58) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:08:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 36ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:09:09) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 112ms (View: 1, DB: 1) | 200 OK [http://localhost/fortests/login]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 23:09:15) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 58ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 23:09:59) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 23:09:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 115ms (View: 6, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-06 23:10:09) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/fortests/login]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 23:10:09) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 33ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 23:15:54) [GET]
+  Parameters: {"a_login"=>"jetsmith", "action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'jetsmith') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'jetsmith@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'jetsmith') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'a90da682d792c34073174c227da9cd7512702f684d393057ff4ab8328ad19c3ff3fbfe4a56486836903eec136f0efaa8c419d01c21e61e4bc34d75572dc4ef1f') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'K0n8cVvuYY2mVeYyakXZ') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('K0n8cVvuYY2mVeYyakXZ', NULL, '2009-12-07 07:15:54', NULL, 'RgaWjpt37IKCgAmJ6bIO', '2009-12-07 07:15:54', 0, NULL, NULL, NULL, NULL, 'a90da682d792c34073174c227da9cd7512702f684d393057ff4ab8328ad19c3ff3fbfe4a56486836903eec136f0efaa8c419d01c21e61e4bc34d75572dc4ef1f', 0, NULL, 'jetsmith', NULL, 'jetsmith@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+Preference Create (0.3ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-07 07:15:54', '2009-12-07 07:15:54', NULL, 5, NULL)
+Role Load (0.3ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 5)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'bf263368dfd4dc9433a70904fa24cb11b4bdcf334c4196f73eeea99381f7fa669fa6d9e49f4db68d877812192c4487ef5b573b445958a2a7424a8f27853b411c' AND "users".id <> 5) LIMIT 1
+User Update (0.8ms)  UPDATE "users" SET "login_count" = 1, "persistence_token" = 'bf263368dfd4dc9433a70904fa24cb11b4bdcf334c4196f73eeea99381f7fa669fa6d9e49f4db68d877812192c4487ef5b573b445958a2a7424a8f27853b411c', "current_login_ip" = '127.0.0.1', "updated_at" = '2009-12-07 07:15:55', "perishable_token" = 'o_9zJiLG-M2O1KYIhcod', "last_request_at" = '2009-12-07 07:15:55', "state" = 'active', "current_login_at" = '2009-12-07 07:15:54', "password_salt" = 'NHyrLRWtCGwUqmAyELQd', "crypted_password" = '$2a$10$6GQSX34Hvg6qabEL.z0WKO49mVfEmEXURv9R0nyJjYiOrccrxrD4i' WHERE "id" = 5
+Role Load (0.4ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 5)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'jetsmith@yahoo.com' AND "users".id <> 5) LIMIT 1
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:15:55', "email" = 'jetsmith@yahoo.com', "perishable_token" = 'LjKXfiuDDXYVc8cNtik_' WHERE "id" = 5
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 791ms (View: 42, DB: 9) | 200 OK [http://localhost/fortests/register?a_login=jetsmith]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 23:25:24) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:25:24', "perishable_token" = 'e06JRhdKeIvtuzsdTMov', "last_request_at" = '2009-12-07 07:25:24' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 310ms (View: 17, DB: 3) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 23:25:39) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:25:39', "perishable_token" = '4LSqS-c8m-Evj3u0WRCP', "last_request_at" = '2009-12-07 07:25:39' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 54ms (View: 1, DB: 3) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 23:27:57) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.9ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:27:57', "perishable_token" = 'lf9kqretZep2l5VSKBPy', "last_request_at" = '2009-12-07 07:27:57' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 291ms (View: 17, DB: 3) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#post_register (for 127.0.0.1 at 2009-12-06 23:28:19) [GET]
+  Parameters: {"action"=>"post_register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:28:19', "perishable_token" = 'kqr7W1BPPNZgrFG-UKQ5', "last_request_at" = '2009-12-07 07:28:19' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.6ms)  SELECT * FROM "roles" 
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.tr):
+  app/controllers/fortests_controller.rb:18:in `post_register'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (48.9ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FortestsController#r (for 127.0.0.1 at 2009-12-06 23:30:28) [GET]
+  Parameters: {"action"=>"r", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:28', "perishable_token" = 'ceX6g7KEDAI9GScrHlVv', "last_request_at" = '2009-12-07 07:30:28' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+
+ActionController::UnknownAction (No action responded to r. Actions: activate, authorization_rules, authorization_rules=, create_roles_from_rule_file, create_user_by_login, delete_user_by_login, find_the_user, languages_available, login, merge_authorization_rules, post_register, register, root_if_production, set_language, speak, speak=, ssl_required?, with_user, and without_access_control):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-06 23:30:34) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:34', "perishable_token" = 'puYqetu_qo49QV3TsK_G', "last_request_at" = '2009-12-07 07:30:34' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 150ms (View: 15, DB: 3) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#post_register (for 127.0.0.1 at 2009-12-06 23:30:38) [GET]
+  Parameters: {"a_login"=>"bobbb", "action"=>"post_register", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:38', "perishable_token" = 'sN9GwdAzMAnlADdj80pX', "last_request_at" = '2009-12-07 07:30:38' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'bobbb') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobbb@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobbb') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '771de129ce46e9bf581edc64f2c7ecee7444a49750dc4a64e35538a52b84afc84153df8cb72637aa29d67d6d59227e0a4ded854274548e5cff1705636665b1a5') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'xEuRIMtkdWVq4VdGNLi8') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('xEuRIMtkdWVq4VdGNLi8', NULL, '2009-12-07 07:30:39', NULL, 'JE88jlmKmONYhcQ2wgsI', '2009-12-07 07:30:39', 0, NULL, NULL, NULL, NULL, '771de129ce46e9bf581edc64f2c7ecee7444a49750dc4a64e35538a52b84afc84153df8cb72637aa29d67d6d59227e0a4ded854274548e5cff1705636665b1a5', 0, NULL, 'bobbb', NULL, 'bobbb@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 6) LIMIT 1
+Preference Create (0.1ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-07 07:30:39', '2009-12-07 07:30:39', NULL, 6, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 6)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '27213771a3bbecff9a4c229b09a08722751fb984dc418b55569be8214d2092619690631d79dd2e413ec3d71f7894697a40b89fa66a426cfff02d90cc0d58e0e1' AND "users".id <> 6) LIMIT 1
+User Load (0.4ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:39', "perishable_token" = 'aGhkq4gB-ONSqUL7Ej2L', "last_request_at" = '2009-12-07 07:30:39' WHERE "id" = 5
+User Update (0.3ms)  UPDATE "users" SET "persistence_token" = '27213771a3bbecff9a4c229b09a08722751fb984dc418b55569be8214d2092619690631d79dd2e413ec3d71f7894697a40b89fa66a426cfff02d90cc0d58e0e1', "updated_at" = '2009-12-07 07:30:39', "perishable_token" = 'AkvMoHTlJchqbcXmTao1', "state" = 'active', "password_salt" = 'Hz3EdYc7nsg0k-FfltQz', "crypted_password" = '$2a$10$2vjpsLmdFXjF.rHzVfvYI.Bst1waUmc8v/A.hFZMHvXr.8eq3YKCq' WHERE "id" = 6
+Role Load (0.5ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 6)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobbb@yahoo.com' AND "users".id <> 6) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:39', "email" = 'bobbb@yahoo.com', "perishable_token" = 'eMQ9ZM4DuCyfkN19Tlyk' WHERE "id" = 6
+Redirected to http://localhost:3000/
+Completed in 404ms (DB: 12) | 302 Found [http://localhost/fortests/post_register?a_login=bobbb]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 23:30:39) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 07:30:39', "perishable_token" = 'w3XoP0EKQBHO2mHTqNzk', "last_request_at" = '2009-12-07 07:30:39' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 148ms (View: 6, DB: 4) | 200 OK [http://localhost/]

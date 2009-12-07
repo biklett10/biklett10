@@ -11305,3 +11305,1107 @@ SQL (2.1ms)  DELETE FROM "roles";
 SQL (2.1ms)  DELETE FROM "sessions";
 SQL (1.8ms)  DELETE FROM "user_roles";
 SQL (1.9ms)  DELETE FROM "users";
+SQL (2.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.0ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.7ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 11:44:29) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 88ms (View: 23, DB: 19) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.3ms)  DELETE FROM "sessions";
+SQL (2.7ms)  DELETE FROM "user_roles";
+SQL (2.5ms)  DELETE FROM "users";
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.8ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.0ms)  DELETE FROM "preferences";
+SQL (1.8ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (1.6ms)  DELETE FROM "user_roles";
+SQL (1.7ms)  DELETE FROM "users";
+SQL (1.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.4ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (3.0ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.9ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (1.8ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (3.2ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (3.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.0ms)  DELETE FROM "preferences";
+SQL (1.7ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.7ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.9ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.0ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.6ms)  DELETE FROM "preferences";
+SQL (1.5ms)  DELETE FROM "roles";
+SQL (3.1ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (1.8ms)  DELETE FROM "users";
+SQL (2.9ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (23.8ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.6ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:50:01) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 42) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:50:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:50:01) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 12:50:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://www.example.com/
+Completed in 7ms (DB: 1) | 302 Found [http://www.example.com/register]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:50:01) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.6ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.8ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (2.1ms)  DELETE FROM "user_roles";
+SQL (2.2ms)  DELETE FROM "users";
+SQL (1.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.7ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.6ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:52:39) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 25ms (DB: 20) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:52:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:53:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.5ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.5ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (2.0ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:54:03) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 18) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:54:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:54:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 12:54:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://www.example.com/
+Completed in 8ms (DB: 1) | 302 Found [http://www.example.com/register]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:54:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.8ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (1.6ms)  DELETE FROM "roles";
+SQL (1.4ms)  DELETE FROM "sessions";
+SQL (1.6ms)  DELETE FROM "user_roles";
+SQL (1.5ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.2ms)  DELETE FROM "preferences";
+SQL (1.2ms)  DELETE FROM "roles";
+SQL (1.5ms)  DELETE FROM "sessions";
+SQL (1.8ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.5ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.6ms)  DELETE FROM "preferences";
+SQL (2.6ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (1.9ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:55:25) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 18) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:55:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:55:35) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 12:55:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://www.example.com/
+Completed in 7ms (DB: 1) | 302 Found [http://www.example.com/register]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:55:35) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.6ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.6ms)  DELETE FROM "preferences";
+SQL (1.5ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (1.9ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.8ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.8ms)  DELETE FROM "preferences";
+SQL (1.9ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (1.6ms)  DELETE FROM "user_roles";
+SQL (2.0ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 12:56:30) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 14) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 12:56:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:58:51) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 12:58:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://www.example.com/
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/register]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 12:58:51) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.2ms)  DELETE FROM "preferences";
+SQL (1.1ms)  DELETE FROM "roles";
+SQL (1.4ms)  DELETE FROM "sessions";
+SQL (1.4ms)  DELETE FROM "user_roles";
+SQL (1.7ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.2ms)  DELETE FROM "preferences";
+SQL (1.1ms)  DELETE FROM "roles";
+SQL (1.3ms)  DELETE FROM "sessions";
+SQL (2.0ms)  DELETE FROM "user_roles";
+SQL (1.5ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (54.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.4ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (3.1ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 13:00:27) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 25ms (DB: 69) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 13:00:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 13:00:31) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /register with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-06 13:00:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"activations"}
+Redirected to http://www.example.com/
+Completed in 8ms (DB: 1) | 302 Found [http://www.example.com/register]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/register"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 13:00:31) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.6ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.9ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.5ms)  DELETE FROM "preferences";
+SQL (1.8ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (1.9ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+SQL (2.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (24.6ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 14:46:22) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 42ms (DB: 42) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 14:46:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 70ms (View: 64, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 14:46:22) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 14:46:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.4ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (2.8ms)  DELETE FROM "user_roles";
+SQL (2.5ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.5ms)  DELETE FROM "preferences";
+SQL (3.1ms)  DELETE FROM "roles";
+SQL (5.5ms)  DELETE FROM "sessions";
+SQL (2.1ms)  DELETE FROM "user_roles";
+SQL (1.8ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.6ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (1.7ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 14:48:04) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 24ms (DB: 17) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 14:48:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 14:48:04) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 14:48:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (1.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.7ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.7ms)  DELETE FROM "preferences";
+SQL (1.8ms)  DELETE FROM "roles";
+SQL (12.0ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (2.2ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:01:04) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 25ms (DB: 26) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:01:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:01:04) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:01:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (1.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.6ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (1.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:09:26) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 24ms (DB: 18) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:09:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:09:26) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:09:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.7ms)  DELETE FROM "roles";
+SQL (2.7ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (3.1ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (2.0ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.9ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (1.9ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:11:59) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 24ms (DB: 16) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:11:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:11:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:11:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:13:03) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 19) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:13:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:13:03) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:13:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.0ms)  DELETE FROM "sessions";
+SQL (2.0ms)  DELETE FROM "user_roles";
+SQL (1.9ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:15:00) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 26ms (DB: 17) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:15:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:15:00) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:15:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.4ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.3ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:16:09) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 26ms (DB: 19) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:16:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:16:09) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:16:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 15:16:10) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ff077626e50ac775813f19e037194587379294764dacda0e5e78bfaddb4f33a56090625f4e81a336c19642cfb3196ab492873fbe344b60d9f893cf4bb02ac18b') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '37t4_gMm-vIoD44Ts-xb') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('37t4_gMm-vIoD44Ts-xb', NULL, '2009-12-06 23:16:10', NULL, 'pM9IHtu9pQPf7_3cCvE3', '2009-12-06 23:16:10', 0, NULL, 'http://yahoo.com/', NULL, NULL, 'ff077626e50ac775813f19e037194587379294764dacda0e5e78bfaddb4f33a56090625f4e81a336c19642cfb3196ab492873fbe344b60d9f893cf4bb02ac18b', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 108) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-06 23:16:10', '2009-12-06 23:16:10', NULL, 108, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-06 23:16:10', 'Customer', '2009-12-06 23:16:10', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (113, 108)
+User Update (0.5ms)  UPDATE "users" SET "updated_at" = '2009-12-06 23:16:10', "perishable_token" = 'EGvo3s3jVPpXFZmUZ2yU' WHERE "id" = 108
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Sun, 6 Dec 2009 15:16:10 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/EGvo3s3jVPpXFZmUZ2yU">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 372ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:16:10) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (1.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.5ms)  DELETE FROM "roles";
+SQL (2.1ms)  DELETE FROM "sessions";
+SQL (3.1ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:20:48) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 18) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:20:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:20:48) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:20:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 15:20:48) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c01e188b2e77cd26b1d0992d0a1cba5a65169f4b1beee2846e45a7c78a33417340fb601ef6efa71753bcd066e66e4a4dc9fa56f6884e767ff5e9341c8cc918f8') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'MGl81pxDAoLiuHcJGaiG') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('MGl81pxDAoLiuHcJGaiG', NULL, '2009-12-06 23:20:48', NULL, '_pa5BgPky4DXyaN44Uqx', '2009-12-06 23:20:48', 0, NULL, 'http://yahoo.com/', NULL, NULL, 'c01e188b2e77cd26b1d0992d0a1cba5a65169f4b1beee2846e45a7c78a33417340fb601ef6efa71753bcd066e66e4a4dc9fa56f6884e767ff5e9341c8cc918f8', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 109) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-06 23:20:48', '2009-12-06 23:20:48', NULL, 109, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-06 23:20:48', 'Customer', '2009-12-06 23:20:48', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (114, 109)
+User Update (0.8ms)  UPDATE "users" SET "updated_at" = '2009-12-06 23:20:48', "perishable_token" = 'p8U5IojTWmUR-EkJ03nT' WHERE "id" = 109
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Sun, 6 Dec 2009 15:20:48 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/p8U5IojTWmUR-EkJ03nT">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 296ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:20:48) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (3.0ms)  DELETE FROM "roles";
+SQL (2.6ms)  DELETE FROM "sessions";
+SQL (2.6ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.8ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (1.8ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  DELETE FROM "open_id_authentication_associations";
+SQL (1.9ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.9ms)  DELETE FROM "preferences";
+SQL (2.0ms)  DELETE FROM "roles";
+SQL (2.0ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-06 15:22:24) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 16) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/login with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-06 15:22:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/login"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:22:24) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-06 15:22:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-06 15:22:25) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cf79015bea569ac5e3241373c8ad664e73f27a3f68196b5cc58a739c19e6455672d78899016ce668d191b7deeed47cb3e4ca1794d066ab2c109aaae16be46e33') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'tX5aY7rb-MLyaaN4DfwG') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('tX5aY7rb-MLyaaN4DfwG', NULL, '2009-12-06 23:22:25', NULL, 'LvpV8NKO_mbpNYl46v9X', '2009-12-06 23:22:25', 0, NULL, 'http://yahoo.com/', NULL, NULL, 'cf79015bea569ac5e3241373c8ad664e73f27a3f68196b5cc58a739c19e6455672d78899016ce668d191b7deeed47cb3e4ca1794d066ab2c109aaae16be46e33', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 110) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-06 23:22:25', '2009-12-06 23:22:25', NULL, 110, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-06 23:22:25', 'Customer', '2009-12-06 23:22:25', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (115, 110)
+User Update (0.8ms)  UPDATE "users" SET "updated_at" = '2009-12-06 23:22:25', "perishable_token" = 'QHtgEiblmvcHRWO5gL9o' WHERE "id" = 110
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Sun, 6 Dec 2009 15:22:25 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/QHtgEiblmvcHRWO5gL9o">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 298ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:22:25) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
