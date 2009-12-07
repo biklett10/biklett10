@@ -26,8 +26,8 @@ include AuthlogicBundle::Maintenance
   def post_login
     a_login= params[:a_login]
     a_user= User.find_by_login a_login
-    session[:user_credentials]= a_user.persistence_token
-    session[:user_credentials_id]= a_user.id
+    session["user_credentials"]= a_user.persistence_token
+    session["user_credentials_id"]= a_user.id
     redirect_to root_url  
   end
 

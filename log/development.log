@@ -12495,3 +12495,502 @@ CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4)
 Rendering template within layouts/application
 Rendering static/about
 Completed in 148ms (View: 6, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-07 00:16:13) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:16:13', "perishable_token" = 'pGGb4QDTF-CqTs3xJ3WN', "last_request_at" = '2009-12-07 08:16:13' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+
+Errno::ENOENT (No such file or directory - /Users/maco/pt/customers3/marc_bandt/m2/app/views/fortests/login.html.erb):
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (149.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-07 00:16:39) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (60.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:16:40', "perishable_token" = 'n4ULK5g2BqPwUND19zgo', "last_request_at" = '2009-12-07 08:16:40' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 446ms (View: 16, DB: 63) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#post_login (for 127.0.0.1 at 2009-12-07 00:16:49) [GET]
+  Parameters: {"a_login"=>"bobbb", "action"=>"post_login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:16:49', "perishable_token" = 'RfLwnHRQedc1TaMC4Y45', "last_request_at" = '2009-12-07 08:16:49' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."login" = 'bobbb') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 40ms (DB: 4) | 302 Found [http://localhost/fortests/post_login?a_login=bobbb]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 00:16:49) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:16:49', "perishable_token" = 'pshfhrlh52HDxxWG4KjP', "last_request_at" = '2009-12-07 08:16:49' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 136ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#login (for 127.0.0.1 at 2009-12-07 00:17:10) [GET]
+  Parameters: {"action"=>"login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:17:10', "perishable_token" = 'f31fFtBZlvmgMO3wTscj', "last_request_at" = '2009-12-07 08:17:10' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+Rendering template within layouts/application
+Rendering fortests/login
+Completed in 54ms (View: 1, DB: 3) | 200 OK [http://localhost/fortests/login]
+
+
+Processing FortestsController#post_login (for 127.0.0.1 at 2009-12-07 00:17:16) [GET]
+  Parameters: {"a_login"=>"richbrown", "action"=>"post_login", "controller"=>"fortests"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:17:16', "perishable_token" = 'GX0ik0J6Gb4RCUGM1NML', "last_request_at" = '2009-12-07 08:17:16' WHERE "id" = 5
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 6) 
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."login" = 'richbrown') LIMIT 1
+Redirected to http://localhost:3000/
+Completed in 115ms (DB: 4) | 302 Found [http://localhost/fortests/post_login?a_login=richbrown]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 00:17:16) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:17:16', "perishable_token" = '_Eh2GoC8CZAlDF19F1YH', "last_request_at" = '2009-12-07 08:17:16' WHERE "id" = 5
+Preference Load (0.3ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 53ms (View: 1, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-07 00:19:43) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '5') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 5 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:19:43', "perishable_token" = 'pvVw_PgHu5ueJ-Q1r7Rc', "last_request_at" = '2009-12-07 08:19:43' WHERE "id" = 5
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 5) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 4) 
+Redirected to http://localhost:3000/login
+Completed in 37ms (DB: 3) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-07 00:19:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 44ms (View: 11, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 00:19:50) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "openid_identifier"=>"ashokcingla4455@yahoo.com"}, "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"user_sessions"}
+OpenIdAuthentication::Association Load (0.3ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1
+Completed in 230ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 00:19:55) [POST]
+  Parameters: {"openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:3000/user_session?for_session=1&_method=post&open_id_complete=1", "openid.op_endpoint"=>"https://open.login.yahooapis.com/openid/op/auth", "openid.sig"=>"/n9U6yw1xsOG1xoFSTxp37Cjv2M=", "openid.response_nonce"=>"2009-12-07T08:19:55Za4XmUAbdi5JWikDTLY4AJtgVmM400cmHOw--", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"create", "for_session"=>"1", "_method"=>"post", "openid.identity"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--", "openid.assoc_handle"=>"VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF", "openid.signed"=>"assoc_handle,claimed_id,identity,mode,ns,op_endpoint,response_nonce,return_to,signed,pape.auth_level.nist", "controller"=>"user_sessions", "openid.realm"=>"http://localhost:3000/", "open_id_complete"=>"1", "openid.claimed_id"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487", "openid.pape.auth_level.nist"=>"0"}
+Error attempting to use stored discovery information: OpenID::TypeURIMismatch
+Attempting discovery to verify endpoint
+Performing discovery on https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487
+WARNING: making https request to https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw-- without verifying server certificate; no CA path was specified.
+WARNING: making https request to https://open.login.yahooapis.com/openid20/user_profile/xrds without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."handle" = 'VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF' AND "open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Nonce Load (0.2ms)  SELECT * FROM "open_id_authentication_nonces" WHERE ("open_id_authentication_nonces"."timestamp" = 1260173995 AND "open_id_authentication_nonces"."salt" = 'a4XmUAbdi5JWikDTLY4AJtgVmM400cmHOw--' AND "open_id_authentication_nonces"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') LIMIT 1
+OpenIdAuthentication::Nonce Create (0.4ms)  INSERT INTO "open_id_authentication_nonces" ("salt", "server_url", "timestamp") VALUES('a4XmUAbdi5JWikDTLY4AJtgVmM400cmHOw--', 'https://open.login.yahooapis.com/openid/op/auth', 1260173995)
+User Load (0.8ms)  SELECT * FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "login_count" = 3, "updated_at" = '2009-12-07 08:19:55', "perishable_token" = '_40vFF5G5yia1ABv90wm', "last_request_at" = '2009-12-07 08:19:55', "last_login_at" = '2009-12-07 05:10:42', "current_login_at" = '2009-12-07 08:19:55' WHERE "id" = 2
+Redirected to http://localhost:3000/account
+Completed in 348ms (DB: 4) | 302 Found [http://localhost/user_session?for_session=1&_method=post&open_id_complete=1&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.claimed_id=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--%232c487&openid.identity=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--&openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.response_nonce=2009-12-07T08%3A19%3A55Za4XmUAbdi5JWikDTLY4AJtgVmM400cmHOw--&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Csigned%2Cpape.auth_level.nist&openid.op_endpoint=https%3A%2F%2Fopen.login.yahooapis.com%2Fopenid%2Fop%2Fauth&openid.pape.auth_level.nist=0&openid.sig=%2Fn9U6yw1xsOG1xoFSTxp37Cjv2M%3D]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-07 00:19:55) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:19:55', "perishable_token" = '2gNl76KmzN86xBTJ9I8u', "last_request_at" = '2009-12-07 08:19:55' WHERE "id" = 2
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Completed in 64ms (View: 10, DB: 3) | 200 OK [http://localhost/account]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 00:21:55) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.4ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:21:55', "perishable_token" = 'bPHdMJcFsMK_9k6hi19f', "last_request_at" = '2009-12-07 08:21:55' WHERE "id" = 2
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 134ms (View: 1, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 00:22:36) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:22:36', "perishable_token" = 'Cn5lgyRnY0pQXXrC3f9o', "last_request_at" = '2009-12-07 08:22:36' WHERE "id" = 2
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 00:36:50) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (60.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:36:50', "perishable_token" = 'euOUlNtYLwPrRQwCOPiX', "last_request_at" = '2009-12-07 08:36:50' WHERE "id" = 2
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 21871ms (View: 16, DB: 63) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-07 00:37:28) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:37:28', "perishable_token" = 'ush0fbf0gss0wI64saeO', "last_request_at" = '2009-12-07 08:37:28' WHERE "id" = 2
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+Redirected to http://localhost:3000/login
+Completed in 7467ms (DB: 3) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-07 00:37:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 3100ms (View: 20, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 00:37:50) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "openid_identifier"=>"ashokcingla4455@yahoo.com"}, "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"user_sessions"}
+OpenIdAuthentication::Association Load (0.3ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1
+Completed in 4501ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 00:37:58) [POST]
+  Parameters: {"openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:3000/user_session?for_session=1&_method=post&open_id_complete=1", "openid.op_endpoint"=>"https://open.login.yahooapis.com/openid/op/auth", "openid.sig"=>"nerjkJJsbQ8+bfRZxHoq7YPT5w4=", "openid.response_nonce"=>"2009-12-07T08:37:58ZeegLLvyKHTOhCAXnRtX6STE0Mv5RKq.KPg--", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"create", "for_session"=>"1", "_method"=>"post", "openid.identity"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--", "openid.assoc_handle"=>"VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF", "openid.signed"=>"assoc_handle,claimed_id,identity,mode,ns,op_endpoint,response_nonce,return_to,signed,pape.auth_level.nist", "controller"=>"user_sessions", "openid.realm"=>"http://localhost:3000/", "open_id_complete"=>"1", "openid.claimed_id"=>"https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487", "openid.pape.auth_level.nist"=>"0"}
+Error attempting to use stored discovery information: OpenID::TypeURIMismatch
+Attempting discovery to verify endpoint
+Performing discovery on https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--#2c487
+WARNING: making https request to https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw-- without verifying server certificate; no CA path was specified.
+WARNING: making https request to https://open.login.yahooapis.com/openid20/user_profile/xrds without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."handle" = 'VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF' AND "open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Nonce Load (0.2ms)  SELECT * FROM "open_id_authentication_nonces" WHERE ("open_id_authentication_nonces"."timestamp" = 1260175078 AND "open_id_authentication_nonces"."salt" = 'eegLLvyKHTOhCAXnRtX6STE0Mv5RKq.KPg--' AND "open_id_authentication_nonces"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') LIMIT 1
+OpenIdAuthentication::Nonce Create (0.4ms)  INSERT INTO "open_id_authentication_nonces" ("salt", "server_url", "timestamp") VALUES('eegLLvyKHTOhCAXnRtX6STE0Mv5RKq.KPg--', 'https://open.login.yahooapis.com/openid/op/auth', 1260175078)
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/RROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.6ms)  UPDATE "users" SET "login_count" = 4, "updated_at" = '2009-12-07 08:38:02', "perishable_token" = '0KD-7Edn5DKcerQJJYh0', "last_request_at" = '2009-12-07 08:38:02', "last_login_at" = '2009-12-07 08:19:55', "current_login_at" = '2009-12-07 08:38:02' WHERE "id" = 2
+Redirected to http://localhost:3000/account
+Completed in 4116ms (DB: 3) | 302 Found [http://localhost/user_session?for_session=1&_method=post&open_id_complete=1&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.claimed_id=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--%232c487&openid.identity=https%3A%2F%2Fme.yahoo.com%2Fa%2FRROJT.EHrpHmLSgfSmfMv4Da5CExKjCnurY3Bw--&openid.assoc_handle=VihbswYJi7TAu3I0IcytrHfmKsb0ChyWwGnPKAre2Ihe6YKGJwlctWk1SXTLZmZVl8pJbrt69BiunenZV8PllbxRtZND1dRzH7a8O8ForyiOxT4on9A40hDsx9lQGopF&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.response_nonce=2009-12-07T08%3A37%3A58ZeegLLvyKHTOhCAXnRtX6STE0Mv5RKq.KPg--&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Csigned%2Cpape.auth_level.nist&openid.op_endpoint=https%3A%2F%2Fopen.login.yahooapis.com%2Fopenid%2Fop%2Fauth&openid.pape.auth_level.nist=0&openid.sig=nerjkJJsbQ8%2BbfRZxHoq7YPT5w4%3D]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-07 00:38:03) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.5ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:38:03', "perishable_token" = '0C_4hXDMzn6I5-dHTeM6', "last_request_at" = '2009-12-07 08:38:03' WHERE "id" = 2
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+Rendering template within layouts/application
+Rendering users/show
+Completed in 2051ms (View: 13, DB: 4) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-07 00:39:03) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 2 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 08:39:03', "perishable_token" = '_usYxu-4e2_wDAkiCGbL', "last_request_at" = '2009-12-07 08:39:03' WHERE "id" = 2
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 2) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 2) 
+Redirected to http://localhost:3000/login
+Completed in 171ms (DB: 3) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-07 00:39:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 136ms (View: 102, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-07 01:08:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 153ms (View: 63, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 01:08:56) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 133ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-07 01:08:59) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://login.yahoo.com/config/login?logout=1
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-07 01:15:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 465ms (View: 403, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-07 01:15:21) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"users", "user"=>{"email"=>"c611c611@yahoo.com"}}
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Association Destroy (0.7ms)  DELETE FROM "open_id_authentication_associations" WHERE "id" = 3
+WARNING: making https request to https://open.login.yahooapis.com/openid/op/auth without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Delete all (0.8ms)  DELETE FROM "open_id_authentication_associations" WHERE (server_url = 'https://open.login.yahooapis.com/openid/op/auth' AND handle = '7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.') 
+OpenIdAuthentication::Association Create (0.4ms)  INSERT INTO "open_id_authentication_associations" ("lifetime", "handle", "server_url", "issued", "assoc_type", "secret") VALUES(14400, '7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.', 'https://open.login.yahooapis.com/openid/op/auth', 1260177322, 'HMAC-SHA1', '„X#-SÆrõ[µ…Õ%25IQ')
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication 7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Faccount%3Ffor_model%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.sreg.optional=fullname%2Cdob%2Cgender%2Cpostcode%2Ccountry%2Clanguage%2Ctimezone&openid.sreg.required=nickname%2Cemail
+Completed in 844ms (DB: 6) | 302 Found [http://localhost/account]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-07 01:15:40) [POST]
+  Parameters: {"openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:3000/account?for_model=1&_method=post&open_id_complete=1", "openid.op_endpoint"=>"https://open.login.yahooapis.com/openid/op/auth", "openid.sig"=>"zzSnOtvgb9NWWcVJTSo3Ou6P8yE=", "openid.response_nonce"=>"2009-12-07T09:15:39ZavrHPOPSIkR6oT76bTaL8Wb5cAjfzSCZWA--", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"create", "_method"=>"post", "openid.identity"=>"https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit", "openid.assoc_handle"=>"7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.", "openid.signed"=>"assoc_handle,claimed_id,identity,mode,ns,op_endpoint,response_nonce,return_to,signed,pape.auth_level.nist", "controller"=>"users", "openid.realm"=>"http://localhost:3000/", "for_model"=>"1", "open_id_complete"=>"1", "openid.claimed_id"=>"https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit#0089d", "openid.pape.auth_level.nist"=>"0"}
+WARNING: Can't mass-assign these protected attributes: state
+Error attempting to use stored discovery information: OpenID::TypeURIMismatch
+Attempting discovery to verify endpoint
+Performing discovery on https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit#0089d
+WARNING: making https request to https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit without verifying server certificate; no CA path was specified.
+WARNING: making https request to https://open.login.yahooapis.com/openid20/user_profile/xrds without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."handle" = '7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.' AND "open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Nonce Load (0.2ms)  SELECT * FROM "open_id_authentication_nonces" WHERE ("open_id_authentication_nonces"."timestamp" = 1260177339 AND "open_id_authentication_nonces"."salt" = 'avrHPOPSIkR6oT76bTaL8Wb5cAjfzSCZWA--' AND "open_id_authentication_nonces"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') LIMIT 1
+OpenIdAuthentication::Nonce Create (0.7ms)  INSERT INTO "open_id_authentication_nonces" ("salt", "server_url", "timestamp") VALUES('avrHPOPSIkR6oT76bTaL8Wb5cAjfzSCZWA--', 'https://open.login.yahooapis.com/openid/op/auth', 1260177339)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'c611c611@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'c611c611') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '810d2b95fbc33bc9c097031d289b0ad0bb067d5b44610e6675fb6e4190273e388d5f1a6bb4bfe8552b1260b975d43b415bd3d568e31f1609a6bb0785182faa32') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'zvvjHS15BrtDdJBdV6yf') LIMIT 1
+User Create (0.7ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('zvvjHS15BrtDdJBdV6yf', NULL, '2009-12-07 09:15:40', NULL, 'iMAD6B1KsGTDXzVK3oPu', '2009-12-07 09:15:40', 0, NULL, 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit', NULL, NULL, '810d2b95fbc33bc9c097031d289b0ad0bb067d5b44610e6675fb6e4190273e388d5f1a6bb4bfe8552b1260b975d43b415bd3d568e31f1609a6bb0785182faa32', 0, NULL, 'c611c611', NULL, 'c611c611@yahoo.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.2ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 7) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-07 09:15:40', '2009-12-07 09:15:40', NULL, 7, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.2ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 7)
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:15:40', "perishable_token" = '1RUJJSTduaRLgqxS7GZD' WHERE "id" = 7
+Sent mail to c611c611@yahoo.com
+
+Date: Mon, 7 Dec 2009 01:15:40 -0800
+From: User Notifier <noreply@example.com>
+To: c611c611@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://localhost:3000/register/1RUJJSTduaRLgqxS7GZD">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3000/
+Completed in 915ms (DB: 5) | 302 Found [http://localhost/account?for_model=1&_method=post&open_id_complete=1&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Faccount%3Ffor_model%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.claimed_id=https%3A%2F%2Fme.yahoo.com%2Fa%2FAsHzHAxml8nzx68v7rf1X5pdeFit%230089d&openid.identity=https%3A%2F%2Fme.yahoo.com%2Fa%2FAsHzHAxml8nzx68v7rf1X5pdeFit&openid.assoc_handle=7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.response_nonce=2009-12-07T09%3A15%3A39ZavrHPOPSIkR6oT76bTaL8Wb5cAjfzSCZWA--&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Csigned%2Cpape.auth_level.nist&openid.op_endpoint=https%3A%2F%2Fopen.login.yahooapis.com%2Fopenid%2Fop%2Fauth&openid.pape.auth_level.nist=0&openid.sig=zzSnOtvgb9NWWcVJTSo3Ou6P8yE%3D]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 01:15:41) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 140ms (View: 101, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2009-12-07 01:43:44) [GET]
+  Parameters: {"activation_code"=>"1RUJJSTduaRLgqxS7GZD", "action"=>"new", "controller"=>"activations"}
+User Load (0.8ms)  SELECT * FROM "users" WHERE (perishable_token = '1RUJJSTduaRLgqxS7GZD' and updated_at > '2009-11-30 09:43:44') LIMIT 1
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 219ms (View: 90, DB: 2) | 200 OK [http://localhost/register/1RUJJSTduaRLgqxS7GZD]
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2009-12-07 01:43:48) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "id"=>"c611c611", "controller"=>"activations"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."login" = 'c611c611') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit' AND "users".id <> 7) LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit' AND "users".id <> 7) LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:43:48', "perishable_token" = '9t5RxQlpsE48gKTL0ZHR', "state" = 'active' WHERE "id" = 7
+User Update (0.7ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:43:48', "perishable_token" = 'AYJ3oZamJlk4e5mz-jHd' WHERE "id" = 7
+Sent mail to c611c611@yahoo.com
+
+Date: Mon, 7 Dec 2009 01:43:48 -0800
+From: User Notifier <noreply@example.com>
+To: c611c611@yahoo.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Your account has been activated.
+
+<a href="http://localhost:3000/">http://localhost:3000/</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3000/account/edit
+Completed in 63ms (DB: 4) | 302 Found [http://localhost/activate/c611c611]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-07 01:43:48) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+Redirected to http://localhost:3000/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/account/edit]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-07 01:43:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 46ms (View: 13, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 01:44:29) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "openid_identifier"=>"c611c611@yahoo.com"}, "action"=>"create", "authenticity_token"=>"3vY79f4CBvEkcvMvMXrvgkyuJmc5OXXrhDYo4vgNvMU=", "controller"=>"user_sessions"}
+OpenIdAuthentication::Association Load (0.4ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+Generated checkid_setup request to https://open.login.yahooapis.com/openid/op/auth with assocication 7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.
+Redirected to https://open.login.yahooapis.com/openid/op/auth?openid.assoc_handle=7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.&openid.ax.mode=fetch_request&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1
+Completed in 394ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-07 01:44:32) [POST]
+  Parameters: {"openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:3000/user_session?for_session=1&_method=post&open_id_complete=1", "openid.op_endpoint"=>"https://open.login.yahooapis.com/openid/op/auth", "openid.sig"=>"0BQwxvEha2OJYp2ZzKLn05ZcsLA=", "openid.response_nonce"=>"2009-12-07T09:44:32ZdQBEv55YzlgyvQfAmt3ysepRURaF.fbGgA--", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"create", "for_session"=>"1", "_method"=>"post", "openid.identity"=>"https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit", "openid.assoc_handle"=>"7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.", "openid.signed"=>"assoc_handle,claimed_id,identity,mode,ns,op_endpoint,response_nonce,return_to,signed,pape.auth_level.nist", "controller"=>"user_sessions", "openid.realm"=>"http://localhost:3000/", "open_id_complete"=>"1", "openid.claimed_id"=>"https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit#0089d", "openid.pape.auth_level.nist"=>"0"}
+Error attempting to use stored discovery information: OpenID::TypeURIMismatch
+Attempting discovery to verify endpoint
+Performing discovery on https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit#0089d
+WARNING: making https request to https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit without verifying server certificate; no CA path was specified.
+WARNING: making https request to https://open.login.yahooapis.com/openid20/user_profile/xrds without verifying server certificate; no CA path was specified.
+OpenIdAuthentication::Association Load (0.5ms)  SELECT * FROM "open_id_authentication_associations" WHERE ("open_id_authentication_associations"."handle" = '7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.' AND "open_id_authentication_associations"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') 
+OpenIdAuthentication::Nonce Load (0.3ms)  SELECT * FROM "open_id_authentication_nonces" WHERE ("open_id_authentication_nonces"."timestamp" = 1260179072 AND "open_id_authentication_nonces"."salt" = 'dQBEv55YzlgyvQfAmt3ysepRURaF.fbGgA--' AND "open_id_authentication_nonces"."server_url" = 'https://open.login.yahooapis.com/openid/op/auth') LIMIT 1
+OpenIdAuthentication::Nonce Create (0.5ms)  INSERT INTO "open_id_authentication_nonces" ("salt", "server_url", "timestamp") VALUES('dQBEv55YzlgyvQfAmt3ysepRURaF.fbGgA--', 'https://open.login.yahooapis.com/openid/op/auth', 1260179072)
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."openid_identifier" = 'https://me.yahoo.com/a/AsHzHAxml8nzx68v7rf1X5pdeFit') LIMIT 1
+Role Load (9.2ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.8ms)  UPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2009-12-07 09:44:33', "perishable_token" = 'SgQ0wovzpCDLtf0g_R1q', "last_request_at" = '2009-12-07 09:44:33', "current_login_at" = '2009-12-07 09:44:33' WHERE "id" = 7
+Redirected to http://localhost:3000/account/edit
+Completed in 355ms (DB: 13) | 302 Found [http://localhost/user_session?for_session=1&_method=post&open_id_complete=1&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fuser_session%3Ffor_session%3D1%26_method%3Dpost%26open_id_complete%3D1&openid.claimed_id=https%3A%2F%2Fme.yahoo.com%2Fa%2FAsHzHAxml8nzx68v7rf1X5pdeFit%230089d&openid.identity=https%3A%2F%2Fme.yahoo.com%2Fa%2FAsHzHAxml8nzx68v7rf1X5pdeFit&openid.assoc_handle=7pmTANjuwrSycU9ZOrxMRiyGxZX9oZn0GsSBP1XwF0lKaOTjJCk4e2UvNVxb3KiKhdpqqiqP0dBR7HbKFNQy8.MIM65wrzllEVA6JdiaT75COITMZBDM2t2Smtc7Vdy.&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.response_nonce=2009-12-07T09%3A44%3A32ZdQBEv55YzlgyvQfAmt3ysepRURaF.fbGgA--&openid.signed=assoc_handle%2Cclaimed_id%2Cidentity%2Cmode%2Cns%2Cop_endpoint%2Cresponse_nonce%2Creturn_to%2Csigned%2Cpape.auth_level.nist&openid.op_endpoint=https%3A%2F%2Fopen.login.yahooapis.com%2Fopenid%2Fop%2Fauth&openid.pape.auth_level.nist=0&openid.sig=0BQwxvEha2OJYp2ZzKLn05ZcsLA%3D]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-12-07 01:44:33) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '7') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:44:33', "perishable_token" = 'Cb91WUCbae89waswS-Wv', "last_request_at" = '2009-12-07 09:44:33' WHERE "id" = 7
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 7) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 197ms (View: 130, DB: 3) | 200 OK [http://localhost/account/edit]
+
+
+Processing StaticController#messages (for 127.0.0.1 at 2009-12-07 01:44:48) [GET]
+  Parameters: {"action"=>"messages", "controller"=>"static"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '7') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:44:48', "perishable_token" = 'oTr4SEbo3wUkwbcY6GUy', "last_request_at" = '2009-12-07 09:44:48' WHERE "id" = 7
+Preference Load (0.4ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 7) LIMIT 1
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+Rendering template within layouts/application
+Rendering static/messages
+
+ActionView::TemplateError (undefined local variable or method `new_sent_path' for #<ActionView::Base:0x3eb44a4>) on line #1 of app/views/static/messages.haml:
+1: %p= link_to "Compose", new_sent_path
+2: %p Mailboxes
+3: %ul
+4:   %li= link_to "Inbox", inbox_path
+
+    app/views/static/messages.haml:1:in `_run_haml_app47views47static47messages46haml'
+    haml (2.2.14) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) [v] lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (175.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 01:44:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.7ms)  SELECT * FROM "users" WHERE ("users"."id" = '7') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.9ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:44:59', "perishable_token" = 'qr5jM_y8jjZyiQsBvwyE', "last_request_at" = '2009-12-07 09:44:59' WHERE "id" = 7
+Preference Load (0.3ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 7) LIMIT 1
+User Load (0.8ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 59ms (View: 1, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 01:45:19) [GET]
+
+ActionController::RoutingError (No route matches "/profile" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-07 01:45:24) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '7') LIMIT 1
+Role Load (0.4ms)  SELECT * FROM "roles" INNER JOIN "user_roles" ON "roles".id = "user_roles".role_id WHERE ("user_roles".user_id = 7 ) 
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-07 09:45:24', "perishable_token" = '9lHbU8nZQplGvEpaVuDQ', "last_request_at" = '2009-12-07 09:45:24' WHERE "id" = 7
+Preference Load (0.5ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 7) LIMIT 1
+User Load (0.9ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 7) 
+Rendering template within layouts/application
+Rendering static/about
+Completed in 65ms (View: 2, DB: 4) | 200 OK [http://localhost/]

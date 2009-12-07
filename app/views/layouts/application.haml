@@ -24,4 +24,6 @@
         %td.rhs{:valign => 'top'}
           -if flash[:notice]
             %p{:style => "color:green"}= flash[:notice]
+          -if flash[:success]
+            %p{:style => "color:green"}= flash[:success]
           =yield

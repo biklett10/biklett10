@@ -34,6 +34,7 @@ class UserSessionsController < ApplicationController
     session[:user_credentials]= nil
     session[:user_credentials_id]= nil
     # bikle 2009-12-06
-    redirect_back_or_default login_url
+    # redirect_to "http://login.yahoo.com/config/login?logout=1"
+    redirect_to root_url
   end
 end
