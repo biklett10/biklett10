@@ -13,7 +13,7 @@
           %a{:href => '/signup'}Register
           %br/
           Logged in as:
-          %p{:style => "color:green"}=(session[:login]||"not_logged_in")
+          %p{:style => "color:green"}=@the_user
           %br/
           %a{:href => '/static/messages'}Messages
           %br/
