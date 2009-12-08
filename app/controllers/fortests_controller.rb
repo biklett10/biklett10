@@ -1,11 +1,11 @@
 class FortestsController < ApplicationController
   before_filter :root_if_production
 
-require "declarative_authorization/maintenance"
-include Authorization::Maintenance
+  require "declarative_authorization/maintenance"
+  include Authorization::Maintenance
 
-require "authlogic_bundle/maintenance"
-include AuthlogicBundle::Maintenance
+  require "authlogic_bundle/maintenance"
+  include AuthlogicBundle::Maintenance
 
   def register
   end
