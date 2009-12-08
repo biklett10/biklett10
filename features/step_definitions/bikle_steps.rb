@@ -48,22 +48,18 @@ Given /^I am "([^\"]*)" an anonymous user$/ do |arg1|
   visit '/logout'
 end
 
-When /^the form should have 1 field named email$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-When /^the form should have a submit button named submit$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-When /^when I fill in email with "([^\"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When /^I press submit$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
 Then /^I should get redirected away$/ do
-  pending # express the regexp above with the code you wish you had
+  # debugger
+  # study response
+  # study   URI.parse(current_url).path.should == path_to(page_name)
+  p "hello"
 end
+
+Given /^I am logged in as bobsmith$/ do
+  visit '/fortests/register'
+  fill_in("a_login", :with => "bobsmith")
+debugger
+  click_button("submit")
+  # submit_form
+end
+

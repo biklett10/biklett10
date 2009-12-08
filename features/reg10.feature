@@ -13,8 +13,7 @@ Feature: Registration
     And I should see a "form" named "new_user" with 1 "input" named "user_email"
     And I should see a "form" named "new_user" with 1 "input" named "user_submit"
     And I fill in "user_email" with "ashokcingla4455@yahoo.com"
-    And I press "user_submit"
     And debug
-    And when I fill in email with "ashokcingla4455@yahoo.com"
-    And I press submit
+    And I press "user_submit"
     Then I should get redirected away
+    And debug
