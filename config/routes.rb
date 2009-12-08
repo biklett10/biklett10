@@ -1,5 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
 
+
+  # bikle 2009-1208 http://www.novawave.net/public/rails_messaging_tutorial.html
+  map.resources :sent
+  map.resources :mailbox, :collection => { :trash => :get }
+  map.resources :messages, :member => { :reply => :get, :forward => :get, :reply_all => :get, :undelete => :put }
+  # Home route leads to inbox
+  map.inbox '/mailbox', :controller => "mailbox", :action => "index"
+  # bikle 2009-1208 http://www.novawave.net/public/rails_messaging_tutorial.html
+
+
   # bikle 2009-1205
   # map.root :controller => 'home', :action => 'index'
   map.root :controller => "static", :action => "about"
