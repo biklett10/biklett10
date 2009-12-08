@@ -22,6 +22,13 @@ class ApplicationController < ActionController::Base
   end
   # bikle 2009-12-06
 
+  # bikle 2009-12-08
+  def repel_em
+    (redirect_to("/");flash[:notice]="Please Login")if (session[:login].nil? || session[:login] == "not_logged_in")
+  end
+  # bikle 2009-12-08
+
+
   def ssl_required?
     return ENV['SSL'] == 'on' ? true : false if defined? ENV['SSL']
     return false if local_request?
