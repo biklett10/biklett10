@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
   include AuthlogicBundle::Localization
   include SslRequirement
 
+  helper :all # include all helpers, all the time
+
+  # Scrub sensitive parameters from your log
+  filter_parameter_logging :password
+
   # bikle 2009-12-06
   before_filter :find_the_user
   def find_the_user
@@ -36,9 +41,4 @@ class ApplicationController < ActionController::Base
     super
   end
 
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
 end
