@@ -12409,3 +12409,433 @@ Processing StaticController#about (for 127.0.0.1 at 2009-12-06 15:22:25) [GET]
 Rendering template within layouts/application
 Rendering static/about
 Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (3.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.4ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.3ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (1.8ms)  DELETE FROM "preferences";
+SQL (1.6ms)  DELETE FROM "roles";
+SQL (1.7ms)  DELETE FROM "sessions";
+SQL (1.7ms)  DELETE FROM "user_roles";
+SQL (2.4ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.5ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (1.9ms)  DELETE FROM "roles";
+SQL (1.8ms)  DELETE FROM "sessions";
+SQL (2.3ms)  DELETE FROM "user_roles";
+SQL (2.0ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-08 09:00:20) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/
+Completed in 84ms (DB: 16) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:20) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:20) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 09:00:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-08 09:00:20) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '95b610edbac34c327b98dea636c0191cabeca8238c3281d01d6c515fdc40df115d19244e0ad88c1c5bfb5aef22e270dbc5d40fdfc88a70f3b451c957fff280fc') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'oTllKLYiyOheavB4XKSQ') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('oTllKLYiyOheavB4XKSQ', NULL, '2009-12-08 17:00:20', NULL, 'lZZTG8c-gYVGtewbCjYU', '2009-12-08 17:00:20', 0, NULL, 'http://yahoo.com/', NULL, NULL, '95b610edbac34c327b98dea636c0191cabeca8238c3281d01d6c515fdc40df115d19244e0ad88c1c5bfb5aef22e270dbc5d40fdfc88a70f3b451c957fff280fc', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 111) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-08 17:00:20', '2009-12-08 17:00:20', NULL, 111, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-08 17:00:20', 'Customer', '2009-12-08 17:00:20', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (116, 111)
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-08 17:00:20', "perishable_token" = 'nAUOlNEtKcymmG0NPGom' WHERE "id" = 111
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Tue, 8 Dec 2009 09:00:21 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/nAUOlNEtKcymmG0NPGom">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 348ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:21) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.1ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (3.0ms)  DELETE FROM "sessions";
+SQL (2.7ms)  DELETE FROM "user_roles";
+SQL (2.8ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (4.1ms)  DELETE FROM "sessions";
+SQL (2.6ms)  DELETE FROM "user_roles";
+SQL (2.3ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.3ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.0ms)  DELETE FROM "sessions";
+SQL (2.0ms)  DELETE FROM "user_roles";
+SQL (2.1ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-08 09:00:40) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/
+Completed in 24ms (DB: 17) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:40) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:40) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 09:00:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-08 09:00:40) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '18527831c7442b916c3368994c26399af2585b6cdbd7eb8b03aa9329e5198d098b4fd64bcf7bb66accb0c784b6e649ae9769e155987c76dc3801548441d048db') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Y57dXNL783eeQ-SCefhM') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('Y57dXNL783eeQ-SCefhM', NULL, '2009-12-08 17:00:40', NULL, 'BJbvsN7j-nGpwSCEoNNF', '2009-12-08 17:00:40', 0, NULL, 'http://yahoo.com/', NULL, NULL, '18527831c7442b916c3368994c26399af2585b6cdbd7eb8b03aa9329e5198d098b4fd64bcf7bb66accb0c784b6e649ae9769e155987c76dc3801548441d048db', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 112) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-08 17:00:41', '2009-12-08 17:00:41', NULL, 112, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-08 17:00:41', 'Customer', '2009-12-08 17:00:41', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (117, 112)
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-08 17:00:41', "perishable_token" = 'QgVcy_UAPOBT1N9X14lo' WHERE "id" = 112
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Tue, 8 Dec 2009 09:00:41 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/QgVcy_UAPOBT1N9X14lo">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 286ms (DB: 3) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:00:41) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.0ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.1ms)  DELETE FROM "roles";
+SQL (2.5ms)  DELETE FROM "sessions";
+SQL (2.5ms)  DELETE FROM "user_roles";
+SQL (2.6ms)  DELETE FROM "users";
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.1ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.2ms)  DELETE FROM "preferences";
+SQL (2.2ms)  DELETE FROM "roles";
+SQL (2.3ms)  DELETE FROM "sessions";
+SQL (3.4ms)  DELETE FROM "user_roles";
+SQL (2.2ms)  DELETE FROM "users";
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.3ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (1.9ms)  DELETE FROM "sessions";
+SQL (2.2ms)  DELETE FROM "user_roles";
+SQL (1.8ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-08 09:11:52) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/
+Completed in 24ms (DB: 18) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:11:52) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:11:52) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 5ms (View: 1, DB: 115) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 09:11:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-08 09:11:52) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '9f1a8ecf2ece2494ecce739dae53ff13a242701a1e7bc053c6804696575812e5d01537b25f6ac575a38d7f6b1f6d8b2efb8053dd5d5866fc94958e85af543bd4') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'TjVNeHVCKZJt8Ine1uBq') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('TjVNeHVCKZJt8Ine1uBq', NULL, '2009-12-08 17:11:52', NULL, '-zAkQGrvOIs_h_Cdvv1a', '2009-12-08 17:11:52', 0, NULL, 'http://yahoo.com/', NULL, NULL, '9f1a8ecf2ece2494ecce739dae53ff13a242701a1e7bc053c6804696575812e5d01537b25f6ac575a38d7f6b1f6d8b2efb8053dd5d5866fc94958e85af543bd4', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 113) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-08 17:11:52', '2009-12-08 17:11:52', NULL, 113, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-08 17:11:52', 'Customer', '2009-12-08 17:11:52', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (118, 113)
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-08 17:11:52', "perishable_token" = '1khAr2sLa7XQXtvYkoXw' WHERE "id" = 113
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Tue, 8 Dec 2009 09:11:53 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/1khAr2sLa7XQXtvYkoXw">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 286ms (DB: 3) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:11:53) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+SQL (1.0ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.1ms)  DELETE FROM "open_id_authentication_associations";
+SQL (2.2ms)  DELETE FROM "open_id_authentication_nonces";
+SQL (2.3ms)  DELETE FROM "preferences";
+SQL (2.4ms)  DELETE FROM "roles";
+SQL (2.7ms)  DELETE FROM "sessions";
+SQL (2.4ms)  DELETE FROM "user_roles";
+SQL (2.7ms)  DELETE FROM "users";
+REQUESTING PAGE: GET /logout with {} and HTTP headers {}
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-08 09:12:15) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+Redirected to http://www.example.com/
+Completed in 25ms (DB: 19) | 302 Found [http://www.example.com/logout]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/logout"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:12:15) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:12:15) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 09:12:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: POST /account with {"commit"=>"Register", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-08 09:12:15) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"email"=>"ashokcingla4455@yahoo.com"}}
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+CACHE (0.0ms)  SELECT "users".id FROM "users" WHERE ("users"."openid_identifier" = 'http://yahoo.com/') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ashokcingla4455@yahoo.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ashokcingla4455') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'aea5f4831acd04f19de3d11f3e456dbace9e325d05b2d79ed0cbc309fbf558ca12ba47a330b7e9684582172e49d675730c9aa7044b8d89efc0fa2c615ff6b44a') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Tu2M8f0DHQAw3xaY4ekf') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('Tu2M8f0DHQAw3xaY4ekf', NULL, '2009-12-08 17:12:16', NULL, 'RbR7A9asZKjNCvXCVZY-', '2009-12-08 17:12:16', 0, NULL, 'http://yahoo.com/', NULL, NULL, 'aea5f4831acd04f19de3d11f3e456dbace9e325d05b2d79ed0cbc309fbf558ca12ba47a330b7e9684582172e49d675730c9aa7044b8d89efc0fa2c615ff6b44a', 0, NULL, 'ashokcingla4455', NULL, 'ashokcingla4455@yahoo.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 114) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-08 17:12:16', '2009-12-08 17:12:16', NULL, 114, NULL)
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.1ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-08 17:12:16', 'Customer', '2009-12-08 17:12:16', NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (119, 114)
+User Update (0.5ms)  UPDATE "users" SET "updated_at" = '2009-12-08 17:12:16', "perishable_token" = 'AtRa0heZrD4-2t7z2-Q9' WHERE "id" = 114
+Sent mail to ashokcingla4455@yahoo.com
+
+Date: Tue, 8 Dec 2009 09:12:16 -0800
+From: User Notifier <noreply@example.com>
+To: ashokcingla4455@yahoo.com
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+Thank you for creating an account! Click the url below to activate your account!
+
+<a href="http://www.example.com/register/AtRa0heZrD4-2t7z2-Q9">activate your account!</a>
+
+If the above URL does not work, try copying and pasting it into your browser.
+If you continue to have problem, please feel free to contact us.
+Redirected to http://www.example.com/
+Completed in 289ms (DB: 4) | 302 Found [http://www.example.com/account]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/account"}
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 09:12:16) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://www.example.com/]

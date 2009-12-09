@@ -1,0 +1,79 @@
+8
+
+dir
+32
+http://scope-out-rails.googlecode.com/svn/trunk/test
+http://scope-out-rails.googlecode.com/svn
+
+
+
+2007-10-25T20:13:58.103674Z
+32
+john.m.andrews
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+989f1391-8826-0410-af3e-2dcdec30785d
+
+test_helper.rb
+file
+
+
+
+
+2009-11-05T07:31:32.000000Z
+f70c6e735e3b6ad654bc3b266c539e17
+2007-01-17T13:53:52.882744Z
+7
+john.m.andrews
+
+scope_out_test.rb
+file
+
+
+
+
+2009-11-05T07:31:32.000000Z
+6729d73530eca7e12853f2ea0ecca0ca
+2007-10-25T20:13:58.103674Z
+32
+john.m.andrews
+
+schema.rb
+file
+
+
+
+
+2009-11-05T07:31:32.000000Z
+e547638fb40e5bdfe232f78c282655df
+2007-10-24T23:49:08.491303Z
+30
+john.m.andrews
+
+database.yml
+file
+
+
+
+
+2009-11-05T07:31:32.000000Z
+5edbb1634b52eda96202a1468d6e9398
+2007-01-10T16:45:20.267198Z
+3
+john.m.andrews
+
+fixtures
+dir
+

@@ -12994,3 +12994,2073 @@ CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = 7)
 Rendering template within layouts/application
 Rendering static/about
 Completed in 65ms (View: 2, DB: 4) | 200 OK [http://localhost/]
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.1ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.7ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.0ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.0ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.0ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.8ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.5ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.7ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.2ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.8ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.7ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)  SELECT version FROM "schema_migrations"
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070611')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070622')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070631')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.0ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (1.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 00:45:59', 'Customer', '2009-12-09 00:45:59', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 00:45:59', 'Agent', '2009-12-09 00:45:59', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 00:45:59', 'Supplier', '2009-12-09 00:45:59', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 00:45:59', 'Employee', '2009-12-09 00:45:59', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 00:45:59', 'Shareholder', '2009-12-09 00:45:59', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 00:45:59', 'Manager', '2009-12-09 00:45:59', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 00:45:59', 'Administrator', '2009-12-09 00:45:59', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.3ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd75b177ff7d1036fa215c559c97c0dfb4b6ffc8b5544a2557e8797864b5d28ed1eb68100265df5d56ab477a2703c3f583a03ef7eb7d70d07ab8ed170bdd925d5') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'TbsW697UWr8kELYS2_BF') LIMIT 1
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.1ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.2ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.9ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.8ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.7ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.6ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.0ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.0ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (1.9ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (1.8ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.7ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070611')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070622')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091105070631')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 01:08:55', 'Customer', '2009-12-09 01:08:55', 'The default role for customer')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 01:08:55', 'Agent', '2009-12-09 01:08:55', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 01:08:55', 'Supplier', '2009-12-09 01:08:55', 'The default role for supplier')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 01:08:55', 'Employee', '2009-12-09 01:08:55', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 01:08:55', 'Shareholder', '2009-12-09 01:08:55', 'The default role for shareholder')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 01:08:55', 'Manager', '2009-12-09 01:08:55', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 01:08:55', 'Administrator', '2009-12-09 01:08:55', 'The default role for administrator')
+Role Load (0.8ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'f092a38e489ec34adc1d13b0a4e25f6e3a949644370ac8566ebea5b0a128422ae563d921d2cd79e3a9d3dbc47c009cbbe69e48e12c2a55e2661f6d6f9d112eb6') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'QEIjQR6mkgfEMseh44gO') LIMIT 1
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (4.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.6ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.4ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.4ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.4ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.8ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.4ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.6ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.4ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (3.2ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.0ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (1.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120210')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120212')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120214')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 01:14:02', 'Customer', '2009-12-09 01:14:02', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 01:14:02', 'Agent', '2009-12-09 01:14:02', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 01:14:02', 'Supplier', '2009-12-09 01:14:02', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.3ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 01:14:02', 'Employee', '2009-12-09 01:14:02', 'The default role for employee')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 01:14:02', 'Shareholder', '2009-12-09 01:14:02', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 01:14:02', 'Manager', '2009-12-09 01:14:02', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 01:14:02', 'Administrator', '2009-12-09 01:14:02', 'The default role for administrator')
+Role Load (0.6ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '1d3d7840626e5db2139a7b177acc9f7e20d74261c944251e4a2b06631653b7d3433f675e396584ab5d0981f68c73e9ec5d091905aef49be0a1cbf84e1ff42363') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'pMElgIJHkQ1pJX2igQYv') LIMIT 1
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (1.6ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (1.5ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.4ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.3ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (3.2ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.1ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (1.8ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.0ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.5ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (3.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.1ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.1ms)  SELECT version FROM "schema_migrations"
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.8ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120210')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120212')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('2009120214')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 01:15:04', 'Customer', '2009-12-09 01:15:04', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 01:15:04', 'Agent', '2009-12-09 01:15:04', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 01:15:04', 'Supplier', '2009-12-09 01:15:04', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 01:15:04', 'Employee', '2009-12-09 01:15:04', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 01:15:05', 'Shareholder', '2009-12-09 01:15:05', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 01:15:05', 'Manager', '2009-12-09 01:15:05', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 01:15:05', 'Administrator', '2009-12-09 01:15:05', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cad616b966806c1e8219a28173d424b8dff812b1c07266891c03f696422620c79113f5fbb8fd526fff3ed6cf5f1ae91be6a94ab6eaa0cc6e930c4d477a8ea086') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'MeJCo9NxkjJswZ3utI0Y') LIMIT 1
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.3ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.9ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.0ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.3ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (1.8ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.6ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (1.8ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (1.7ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.9ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (3.0ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.6ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.3ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 01:18:04', 'Customer', '2009-12-09 01:18:04', 'The default role for customer')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 01:18:04', 'Agent', '2009-12-09 01:18:04', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 01:18:04', 'Supplier', '2009-12-09 01:18:04', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 01:18:04', 'Employee', '2009-12-09 01:18:04', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 01:18:04', 'Shareholder', '2009-12-09 01:18:04', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 01:18:04', 'Manager', '2009-12-09 01:18:04', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 01:18:04', 'Administrator', '2009-12-09 01:18:04', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '32fb703e77aec8b803c9f02a9979bf855f84bb423adb259e3a095927480d0d49f393f16480346a0921aa009459e7cda44aae9bd6ee36c1dfc1768474060083e0') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'fsM9woeX0idOdVjt38Xe') LIMIT 1
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  select sqlite_version(*)
+SQL (3.5ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.3ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+Migrating to CreateUsers (20091201053748)
+SQL (0.6ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053748')
+Migrating to AddOpenIdToUsers (20091201053750)
+SQL (0.6ms)  ALTER TABLE "users" ADD "openid_identifier" varchar(255)
+SQL (0.2ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.8ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.4ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.2ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.4ms)  DROP TABLE "users"
+SQL (0.3ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.2ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.3ms)  DROP TABLE "users"
+SQL (0.2ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.2ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.5ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.3ms)  DROP TABLE "users"
+SQL (0.3ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.4ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.2ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.2ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053750')
+Migrating to AddOpenIdAuthenticationTables (20091201053752)
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.5ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053752')
+Migrating to CreateRoles (20091201053754)
+SQL (0.5ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053754')
+Migrating to CreatePreferences (20091201053756)
+SQL (0.5ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053756')
+Migrating to CreateSessions (20091201081358)
+SQL (0.6ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (0.1ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('20091201081358')
+Migrating to CreateFolders (20091202101234)
+SQL (0.5ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)  INSERT INTO schema_migrations (version) VALUES ('20091202101234')
+Migrating to CreateMessages (20091202121234)
+SQL (0.5ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091202121234')
+Migrating to CreateMessagesCopies (20091202141234)
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  select sqlite_version(*)
+SQL (3.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.1ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM schema_migrations
+Migrating to CreateUsers (20091201053748)
+SQL (0.6ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053748')
+Migrating to AddOpenIdToUsers (20091201053750)
+SQL (0.6ms)  ALTER TABLE "users" ADD "openid_identifier" varchar(255)
+SQL (0.2ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.8ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.4ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.4ms)  DROP TABLE "users"
+SQL (0.3ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.2ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.3ms)  DROP TABLE "users"
+SQL (0.4ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.2ms)  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.3ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_openid_identifier" ON "altered_users" ("openid_identifier")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_single_access_token" ON "altered_users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "temp_index_altered_users_on_state" ON "altered_users" ("state")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")
+SQL (0.2ms)  CREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")
+SQL (0.3ms)  DROP TABLE "users"
+SQL (0.2ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (0.4ms)  PRAGMA index_list("altered_users")
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_login')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('temp_index_altered_users_on_openid_identifier')
+SQL (0.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (0.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (0.1ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.1ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (0.1ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (0.2ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (0.3ms)  DROP TABLE "altered_users"
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053750')
+Migrating to AddOpenIdAuthenticationTables (20091201053752)
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.4ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053752')
+Migrating to CreateRoles (20091201053754)
+SQL (0.5ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053754')
+Migrating to CreatePreferences (20091201053756)
+SQL (0.6ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201053756')
+Migrating to CreateSessions (20091201081358)
+SQL (0.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (0.1ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091201081358')
+Migrating to CreateFolders (20091202101234)
+SQL (0.5ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091202101234')
+Migrating to CreateMessages (20091202121234)
+SQL (0.6ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091202121234')
+Migrating to CreateMessageCopies (20091202141234)
+SQL (0.6ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.1ms)  INSERT INTO schema_migrations (version) VALUES ('20091202141234')
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.3ms)  SELECT version FROM schema_migrations
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.0ms)  PRAGMA index_list("folders")
+SQL (0.0ms)  PRAGMA index_list("message_copies")
+SQL (0.0ms)  PRAGMA index_list("messages")
+SQL (0.0ms)  PRAGMA index_list("open_id_authentication_associations")
+SQL (0.0ms)  PRAGMA index_list("open_id_authentication_nonces")
+SQL (0.0ms)  PRAGMA index_list("preferences")
+SQL (0.0ms)  PRAGMA index_list("roles")
+SQL (0.1ms)  PRAGMA index_list("sessions")
+SQL (0.1ms)  PRAGMA index_info('index_sessions_on_updated_at')
+SQL (0.1ms)  PRAGMA index_info('index_sessions_on_session_id')
+SQL (0.0ms)  PRAGMA index_list("user_roles")
+SQL (0.3ms)  PRAGMA index_list("users")
+SQL (0.1ms)  PRAGMA index_info('index_users_on_openid_identifier')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_last_request_at')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_single_access_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_perishable_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_persistence_token')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_state')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_email')
+SQL (0.1ms)  PRAGMA index_info('index_users_on_login')
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.6ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.5ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.6ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.5ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.4ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.6ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.7ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.4ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.8ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.2ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (1.9ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.2ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.0ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (1.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (1.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (1.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (1.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (1.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 01:21:44', 'Customer', '2009-12-09 01:21:44', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 01:21:44', 'Agent', '2009-12-09 01:21:44', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 01:21:44', 'Supplier', '2009-12-09 01:21:44', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 01:21:44', 'Employee', '2009-12-09 01:21:44', 'The default role for employee')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 01:21:44', 'Shareholder', '2009-12-09 01:21:44', 'The default role for shareholder')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 01:21:44', 'Manager', '2009-12-09 01:21:44', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 01:21:44', 'Administrator', '2009-12-09 01:21:44', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cfea99c9e0b99099fdebe176aa302eafa148bc8210420cabf325b8e7569f257a83cd3995ce7f5024bedae93acde526ac562b8b9b0dde1baca382106f56169cc3') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '1pqAgUvipRuUv6K6Myff') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('1pqAgUvipRuUv6K6Myff', NULL, '2009-12-09 01:21:44', NULL, 'QwyRPX1Smia4zLkXW1fA', '2009-12-09 01:21:44', 0, NULL, NULL, NULL, NULL, 'cfea99c9e0b99099fdebe176aa302eafa148bc8210420cabf325b8e7569f257a83cd3995ce7f5024bedae93acde526ac562b8b9b0dde1baca382106f56169cc3', 0, NULL, 'root', NULL, 'root@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 1) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-09 01:21:44', '2009-12-09 01:21:44', NULL, 1, NULL)
+Folder Load (0.1ms)  SELECT * FROM "folders" WHERE ("folders".user_id = NULL) 
+Folder Create (0.1ms)  INSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-12-09 01:21:44', '2009-12-09 01:21:44', 1, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c95a7c5423a01a0078916d5595223cdf5f21d3fd1ca45ddd39015aa011b9214c7b2d84e28ea07508c931063ce7a92478fbeb39d9e8cbc44dc88bf2482aaa9799' AND "users".id <> 1) LIMIT 1
+User Update (0.5ms)  UPDATE "users" SET "persistence_token" = 'c95a7c5423a01a0078916d5595223cdf5f21d3fd1ca45ddd39015aa011b9214c7b2d84e28ea07508c931063ce7a92478fbeb39d9e8cbc44dc88bf2482aaa9799', "updated_at" = '2009-12-09 01:21:44', "perishable_token" = 'aRRR08uD0lFCMMSyGFD3', "state" = 'active', "password_salt" = 'EU3f3vTvc8AjadTrj5Bm', "crypted_password" = '$2a$10$RXjbOcuDogCr0cIzGIDnu.Js5Tvsd1LfitOpBDKbywgSpN7tc2JP2' WHERE "id" = 1
+Role Load (0.4ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (7, 1)
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.3ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.0ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (1.9ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.9ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (1.8ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.2ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.3ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.6ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.4ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (1.9ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.3ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.7ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (1.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (1.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (1.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (1.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (1.8ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 17:32:08) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 180ms (View: 85, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-08 17:32:27) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (49.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 21:44:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 363ms (View: 143, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing FortestsController#register (for 127.0.0.1 at 2009-12-08 21:45:12) [GET]
+  Parameters: {"action"=>"register", "controller"=>"fortests"}
+Rendering template within layouts/application
+Rendering fortests/register
+Completed in 92ms (View: 54, DB: 1) | 200 OK [http://localhost/fortests/register]
+
+
+Processing FortestsController#post_register (for 127.0.0.1 at 2009-12-08 21:46:02) [GET]
+  Parameters: {"a_login"=>"bobsmith", "action"=>"post_register", "controller"=>"fortests"}
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 05:46:02', 'Customer', '2009-12-09 05:46:02', 'The default role for customer')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 05:46:02', 'Agent', '2009-12-09 05:46:02', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 05:46:02', 'Supplier', '2009-12-09 05:46:02', 'The default role for supplier')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 05:46:02', 'Employee', '2009-12-09 05:46:02', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 05:46:02', 'Shareholder', '2009-12-09 05:46:02', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 05:46:02', 'Manager', '2009-12-09 05:46:02', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 05:46:02', 'Administrator', '2009-12-09 05:46:02', 'The default role for administrator')
+Role Load (0.9ms)  SELECT * FROM "roles" 
+User Load (0.3ms)  SELECT * FROM "users" WHERE ("users"."login" = 'bobsmith') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bobsmith') LIMIT 1
+User Load (18.9ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c7a313a9a9374a9b3e5efcdace7d7a709316be264da39effe68cf597c74f4e3c46e88c77b94ffc050e6bebb9ab554be3ca806d430278fbf3f2446748e85dec1a') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '7BaiOLwl6ptr7M3SNmxR') LIMIT 1
+User Create (0.6ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('7BaiOLwl6ptr7M3SNmxR', NULL, '2009-12-09 05:46:02', NULL, 'PCKiYqg8YL5arhfVL1XZ', '2009-12-09 05:46:02', 0, NULL, NULL, NULL, NULL, 'c7a313a9a9374a9b3e5efcdace7d7a709316be264da39effe68cf597c74f4e3c46e88c77b94ffc050e6bebb9ab554be3ca806d430278fbf3f2446748e85dec1a', 0, NULL, 'bobsmith', NULL, 'bobsmith@example.com', 'passive')
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 1) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-09 05:46:02', '2009-12-09 05:46:02', NULL, 1, NULL)
+Folder Load (0.1ms)  SELECT * FROM "folders" WHERE ("folders".user_id = NULL) 
+Folder Create (0.1ms)  INSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-12-09 05:46:02', '2009-12-09 05:46:02', 1, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '57cd3ef963444a18eaa324ffc0c276c94f5cb79333c17845ce731dc29f9cb79c1f39240b5ee76067682626590dd491a931226048615797d186f490faf595cd71' AND "users".id <> 1) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "login_count" = 1, "persistence_token" = '57cd3ef963444a18eaa324ffc0c276c94f5cb79333c17845ce731dc29f9cb79c1f39240b5ee76067682626590dd491a931226048615797d186f490faf595cd71', "current_login_ip" = '127.0.0.1', "updated_at" = '2009-12-09 05:46:03', "perishable_token" = 'LPXsQppWcq5X4HMDASg9', "last_request_at" = '2009-12-09 05:46:03', "state" = 'active', "current_login_at" = '2009-12-09 05:46:02', "password_salt" = 'pflNr3XsoTeOIuVrZeRi', "crypted_password" = '$2a$10$IBhiu1W27tf2P172PTKXYO/BrunfeUxJ.1XfJCwqhx8adnxDPw.2i' WHERE "id" = 1
+Role Load (0.5ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bobsmith@yahoo.com' AND "users".id <> 1) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "updated_at" = '2009-12-09 05:46:03', "email" = 'bobsmith@yahoo.com', "perishable_token" = 'm6LgykIVvP49SWAQck0w' WHERE "id" = 1
+Redirected to http://localhost:3000/
+Completed in 966ms (DB: 31) | 302 Found [http://localhost/fortests/post_register?a_login=bobsmith]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 21:46:04) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (71.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 21:50:46) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 21:50:56) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (158.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.5ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.7ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.9ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.4ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.6ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.9ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.6ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.4ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.8ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:02:29', 'Customer', '2009-12-09 06:02:29', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:02:29', 'Agent', '2009-12-09 06:02:29', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:02:29', 'Supplier', '2009-12-09 06:02:29', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:02:29', 'Employee', '2009-12-09 06:02:29', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:02:29', 'Shareholder', '2009-12-09 06:02:29', 'The default role for shareholder')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:02:29', 'Manager', '2009-12-09 06:02:29', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:02:29', 'Administrator', '2009-12-09 06:02:29', 'The default role for administrator')
+Role Load (0.6ms)  SELECT * FROM "roles" 
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 22:02:59) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering static/about
+Completed in 65ms (View: 13, DB: 0) | 200 OK [http://localhost/static/about]
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 22:03:19) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (49.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-08 22:03:30) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (141.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.3ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.6ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (3.2ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.4ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.6ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.5ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.6ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.5ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.4ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.5ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:11:05', 'Customer', '2009-12-09 06:11:05', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:11:05', 'Agent', '2009-12-09 06:11:05', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:11:05', 'Supplier', '2009-12-09 06:11:05', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:11:05', 'Employee', '2009-12-09 06:11:05', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:11:05', 'Shareholder', '2009-12-09 06:11:05', 'The default role for shareholder')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:11:05', 'Manager', '2009-12-09 06:11:05', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:11:05', 'Administrator', '2009-12-09 06:11:05', 'The default role for administrator')
+Role Load (0.6ms)  SELECT * FROM "roles" 
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:11:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 124ms (View: 62, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:11:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (67.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:11:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (157.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.3ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (3.0ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.7ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.6ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (3.2ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.7ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.2ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.5ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (3.0ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.1ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.2ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:13:26', 'Customer', '2009-12-09 06:13:26', 'The default role for customer')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:13:26', 'Agent', '2009-12-09 06:13:26', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:13:26', 'Supplier', '2009-12-09 06:13:26', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:13:26', 'Employee', '2009-12-09 06:13:26', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:13:26', 'Shareholder', '2009-12-09 06:13:26', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:13:26', 'Manager', '2009-12-09 06:13:26', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:13:26', 'Administrator', '2009-12-09 06:13:26', 'The default role for administrator')
+Role Load (0.6ms)  SELECT * FROM "roles" 
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:13:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.3ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 97ms (View: 36, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:13:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (68.4ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.9ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.6ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.5ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.9ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.6ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (1.8ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (1.9ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.6ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.3ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.5ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.5ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.0ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.5ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.9ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.8ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.9ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:18:11', 'Customer', '2009-12-09 06:18:11', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:18:11', 'Agent', '2009-12-09 06:18:11', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:18:11', 'Supplier', '2009-12-09 06:18:11', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:18:11', 'Employee', '2009-12-09 06:18:11', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:18:11', 'Shareholder', '2009-12-09 06:18:11', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:18:11', 'Manager', '2009-12-09 06:18:11', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.3ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:18:11', 'Administrator', '2009-12-09 06:18:11', 'The default role for administrator')
+Role Load (0.6ms)  SELECT * FROM "roles" 
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:18:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering users/new
+Completed in 191ms (View: 55, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:18:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (69.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.5ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.8ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (3.0ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.5ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.8ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.5ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (2.6ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.5ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (1.9ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.2ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.3ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.3ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.7ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:24:53', 'Customer', '2009-12-09 06:24:53', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:24:53', 'Agent', '2009-12-09 06:24:53', 'The default role for agent')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:24:53', 'Supplier', '2009-12-09 06:24:53', 'The default role for supplier')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:24:53', 'Employee', '2009-12-09 06:24:53', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:24:53', 'Shareholder', '2009-12-09 06:24:53', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:24:53', 'Manager', '2009-12-09 06:24:53', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:24:53', 'Administrator', '2009-12-09 06:24:53', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '2b0d1f05baabb83c29a3a98655f5a8f30b6036a55d7dd1135cb5eaaf19d3b72cf6f8e650a05105853f9cdf25b7b47d15273a4409eec34b53a1e6ed51c0440a43') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'yVKKyuIAsv4VhIaRx9t7') LIMIT 1
+User Create (0.4ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('yVKKyuIAsv4VhIaRx9t7', NULL, '2009-12-09 06:24:53', NULL, '_0GXj_HewUZEoERUZ1jc', '2009-12-09 06:24:53', 0, NULL, NULL, NULL, NULL, '2b0d1f05baabb83c29a3a98655f5a8f30b6036a55d7dd1135cb5eaaf19d3b72cf6f8e650a05105853f9cdf25b7b47d15273a4409eec34b53a1e6ed51c0440a43', 0, NULL, 'root', NULL, 'root@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 1) LIMIT 1
+Preference Create (0.2ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-09 06:24:53', '2009-12-09 06:24:53', NULL, 1, NULL)
+Folder Load (0.1ms)  SELECT * FROM "folders" WHERE ("folders".user_id = NULL) 
+Folder Create (0.1ms)  INSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-12-09 06:24:53', '2009-12-09 06:24:53', 1, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '433819587ed75436cc5ad147614031b9a280f81a71e8c558003d21aa3752df827f3876d1049e0064d8dc584d964948a795510964f3e15aaf4c266fe3e631da86' AND "users".id <> 1) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "persistence_token" = '433819587ed75436cc5ad147614031b9a280f81a71e8c558003d21aa3752df827f3876d1049e0064d8dc584d964948a795510964f3e15aaf4c266fe3e631da86', "updated_at" = '2009-12-09 06:24:53', "perishable_token" = 'JZ1daFPTtG6Yi_FZiPyx', "state" = 'active', "password_salt" = 'VktlFfl80D53uNO8b2Um', "crypted_password" = '$2a$10$zJ5N6JK8exxvOWQWq6KRd.xDHVc7luYwIpyBlelsRK9dm.T9yMs0.' WHERE "id" = 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (7, 1)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:25:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 100ms (View: 35, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:25:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (68.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:33:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+User Load (1.7ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering users/new
+Completed in 109ms (View: 36, DB: 2) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:33:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 49ms (View: 9, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:33:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering users/new
+Completed in 45ms (View: 3, DB: 1) | 200 OK [http://localhost/signup]
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.4ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.4ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.6ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.2ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (1.8ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.1ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (1.9ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.2ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.3ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.6ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.7ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:37:26', 'Customer', '2009-12-09 06:37:26', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.3ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:37:26', 'Agent', '2009-12-09 06:37:26', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:37:26', 'Supplier', '2009-12-09 06:37:26', 'The default role for supplier')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:37:26', 'Employee', '2009-12-09 06:37:26', 'The default role for employee')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.4ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:37:26', 'Shareholder', '2009-12-09 06:37:26', 'The default role for shareholder')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.2ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:37:26', 'Manager', '2009-12-09 06:37:26', 'The default role for manager')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:37:26', 'Administrator', '2009-12-09 06:37:26', 'The default role for administrator')
+Role Load (0.5ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '3eabd333154379cc3228b06e1e9a0ddfcb552c930aaa5caaa9e2d74ebb1fb6cd4a5fe87fd098feec9fb016a57725668e72858d069eeb2a8ef22e6b85047ebe1c') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'TJMGtDxPQ_NJ37LovLGj') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('TJMGtDxPQ_NJ37LovLGj', NULL, '2009-12-09 06:37:26', NULL, 'dLey-bwut-ygxYkRKbdD', '2009-12-09 06:37:26', 0, NULL, NULL, NULL, NULL, '3eabd333154379cc3228b06e1e9a0ddfcb552c930aaa5caaa9e2d74ebb1fb6cd4a5fe87fd098feec9fb016a57725668e72858d069eeb2a8ef22e6b85047ebe1c', 0, NULL, 'root', NULL, 'root@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 1) LIMIT 1
+Preference Create (0.1ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-09 06:37:26', '2009-12-09 06:37:26', NULL, 1, NULL)
+Folder Load (0.1ms)  SELECT * FROM "folders" WHERE ("folders".user_id = NULL) 
+Folder Create (0.1ms)  INSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-12-09 06:37:26', '2009-12-09 06:37:26', 1, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ea5db79b54cbc7627f0de5fa53075fa2692ea6fe0e3dee6457b0492c7dd52d8cc3d52307af8f0640902f7cd8ab61e9756086be210c10c6e59f5020bad65abc45' AND "users".id <> 1) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "persistence_token" = 'ea5db79b54cbc7627f0de5fa53075fa2692ea6fe0e3dee6457b0492c7dd52d8cc3d52307af8f0640902f7cd8ab61e9756086be210c10c6e59f5020bad65abc45', "updated_at" = '2009-12-09 06:37:26', "perishable_token" = '5ou-baQk3lKfuO52WdJx', "state" = 'active', "password_salt" = 'NjX1uPVPowi_goaSHwhY', "crypted_password" = '$2a$10$PpK1eiDiiYNOutFLIRcXDemiyD1ss/nrottEjcfMDhehnznQYMnVK' WHERE "id" = 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+SQL (0.2ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (7, 1)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:37:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 104ms (View: 37, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:37:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+TypeError (can't dup NilClass):
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.3) [v] lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.3) [v] lib/authlogic/session/cookies.rb:108:in `persist_by_cookie'
+  authlogic (2.1.3) [v] lib/authlogic/session/callbacks.rb:79:in `persist'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:55:in `persisting?'
+  authlogic (2.1.3) [v] lib/authlogic/session/persistence.rb:39:in `find'
+  haml (2.2.14) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (69.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.2ms)  select sqlite_version(*)
+SQL (0.2ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (3.6ms)  CREATE TABLE "folders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "parent_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "message_copies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipient_id" integer, "message_id" integer, "folder_id" integer, "deleted" boolean, "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.3ms)  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "subject" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.0ms)  CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.1ms)  CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.7ms)  CREATE TABLE "preferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "language" varchar(255), "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (1.5ms)  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "title" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.5ms)  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+SQL (2.8ms)  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+SQL (2.7ms)  CREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.2ms)  CREATE TABLE "user_roles" ("user_id" integer NOT NULL, "role_id" integer NOT NULL) 
+SQL (1.1ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.7ms)  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255) NOT NULL, "state" varchar(255) DEFAULT 'passive' NOT NULL, "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "last_login_ip" varchar(255), "current_login_at" datetime, "current_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "openid_identifier" varchar(255)) 
+SQL (2.1ms)  CREATE INDEX "index_users_on_email" ON "users" ("email")
+SQL (6.3ms)  CREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")
+SQL (2.5ms)  CREATE INDEX "index_users_on_login" ON "users" ("login")
+SQL (2.7ms)  CREATE INDEX "index_users_on_openid_identifier" ON "users" ("openid_identifier")
+SQL (2.5ms)  CREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")
+SQL (2.5ms)  CREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")
+SQL (2.8ms)  CREATE INDEX "index_users_on_single_access_token" ON "users" ("single_access_token")
+SQL (2.6ms)  CREATE INDEX "index_users_on_state" ON "users" ("state")
+SQL (0.5ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (2.6ms)  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+SQL (2.8ms)  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+SQL (0.7ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+SQL (0.2ms)  SELECT version FROM "schema_migrations"
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202141234')
+SQL (2.3ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053748')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053750')
+SQL (2.6ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053752')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053754')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201053756')
+SQL (2.4ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091201081358')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202101234')
+SQL (2.5ms)  INSERT INTO "schema_migrations" (version) VALUES ('20091202121234')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'customer') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('customer', '2009-12-09 06:38:33', 'Customer', '2009-12-09 06:38:33', 'The default role for customer')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'agent') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('agent', '2009-12-09 06:38:33', 'Agent', '2009-12-09 06:38:33', 'The default role for agent')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'supplier') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('supplier', '2009-12-09 06:38:33', 'Supplier', '2009-12-09 06:38:33', 'The default role for supplier')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'employee') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('employee', '2009-12-09 06:38:33', 'Employee', '2009-12-09 06:38:33', 'The default role for employee')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'shareholder') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('shareholder', '2009-12-09 06:38:33', 'Shareholder', '2009-12-09 06:38:33', 'The default role for shareholder')
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Load (0.2ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'manager') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('manager', '2009-12-09 06:38:33', 'Manager', '2009-12-09 06:38:33', 'The default role for manager')
+Role Load (0.2ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Load (0.1ms)  SELECT "roles".id FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+Role Create (0.3ms)  INSERT INTO "roles" ("name", "created_at", "title", "updated_at", "description") VALUES('admin', '2009-12-09 06:38:33', 'Administrator', '2009-12-09 06:38:33', 'The default role for administrator')
+Role Load (0.7ms)  SELECT * FROM "roles" 
+User Load (0.2ms)  SELECT * FROM "users" WHERE ("users"."login" = 'root') LIMIT 1
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'root@example.com') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'root') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '17276a42c9b5f5c5f7d3fa26c736b2a9db74df6012008f98b04da297bda336132298eceb766d4585d9ee96a6a047d96d98b42460e062e672a686ddb8ffc46f79') LIMIT 1
+User Load (0.1ms)  SELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'nSO5HSjtREsOZxXfMmlH') LIMIT 1
+User Create (0.5ms)  INSERT INTO "users" ("single_access_token", "last_request_at", "created_at", "crypted_password", "perishable_token", "updated_at", "failed_login_count", "current_login_ip", "openid_identifier", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "email", "state") VALUES('nSO5HSjtREsOZxXfMmlH', NULL, '2009-12-09 06:38:33', NULL, 'S14jy_0k9Ex23B2l3Udc', '2009-12-09 06:38:33', 0, NULL, NULL, NULL, NULL, '17276a42c9b5f5c5f7d3fa26c736b2a9db74df6012008f98b04da297bda336132298eceb766d4585d9ee96a6a047d96d98b42460e062e672a686ddb8ffc46f79', 0, NULL, 'root', NULL, 'root@example.com', 'passive')
+SQL (0.4ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Preference Load (0.1ms)  SELECT * FROM "preferences" WHERE ("preferences".user_id = 1) LIMIT 1
+Preference Create (0.1ms)  INSERT INTO "preferences" ("created_at", "updated_at", "language", "user_id", "time_zone") VALUES('2009-12-09 06:38:33', '2009-12-09 06:38:33', NULL, 1, NULL)
+Folder Load (0.1ms)  SELECT * FROM "folders" WHERE ("folders".user_id = NULL) 
+Folder Create (0.1ms)  INSERT INTO "folders" ("name", "created_at", "updated_at", "user_id", "parent_id") VALUES('Inbox', '2009-12-09 06:38:33', '2009-12-09 06:38:33', 1, NULL)
+Role Load (0.2ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+Role Load (0.1ms)  SELECT * FROM "roles" LIMIT 1
+SQL (0.1ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (1, 1)
+User Load (0.2ms)  SELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '2d2b3dc0ae1f4697585b439989ea5b946342f9660a4d586446b539992d085b4fb4d99cf6dc1b29ec746a9539c6e58bbe52461d1e7a0fddfc670ac8519917d2fe' AND "users".id <> 1) LIMIT 1
+User Update (0.6ms)  UPDATE "users" SET "persistence_token" = '2d2b3dc0ae1f4697585b439989ea5b946342f9660a4d586446b539992d085b4fb4d99cf6dc1b29ec746a9539c6e58bbe52461d1e7a0fddfc670ac8519917d2fe', "updated_at" = '2009-12-09 06:38:33', "perishable_token" = 'rkmeT1j8fQcNjA2IdJLH', "state" = 'active', "password_salt" = '2UdDpOLiQ9m5tVwyPB_I', "crypted_password" = '$2a$10$fQf/PuVdBOOW7SMhQmpcE.RiUnEnS2BEI4xAtdjP.GMEG58BQj7dy' WHERE "id" = 1
+Role Load (0.3ms)  SELECT * FROM "roles" WHERE ("roles"."name" = 'admin') LIMIT 1
+SQL (0.3ms)  INSERT INTO "user_roles" ("role_id", "user_id") VALUES (7, 1)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:38:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+User Load (0.6ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering users/new
+Completed in 174ms (View: 33, DB: 1) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-08 22:38:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 48ms (View: 10, DB: 1) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-08 22:38:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+User Load (0.5ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+CACHE (0.0ms)  SELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1
+Rendering template within layouts/application
+Rendering users/new
+Completed in 120ms (View: 3, DB: 1) | 200 OK [http://localhost/signup]
