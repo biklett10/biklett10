@@ -14,8 +14,8 @@ class FortestsController < ApplicationController
 
   def post_register
     a_login= params[:a_login]
-    AuthlogicBundle::Maintenance.speak = true
-    create_roles_from_rule_file
+#    AuthlogicBundle::Maintenance.speak = true
+#    create_roles_from_rule_file
     a_user= create_user_by_login(a_login, ['customer'])
     a_user.email= "#{a_user.login}@yahoo.com"
     a_user.save
