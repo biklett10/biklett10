@@ -6,9 +6,7 @@ Feature: See Messages UI
   I want access to a messages UI
 
   Scenario: See Messages UI
-
     Given I am logged in as bobsmith
-    And debug
     And I am on the homepage
     When I follow "Messages"
     Then I should see "Compose"

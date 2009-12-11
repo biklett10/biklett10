@@ -58,8 +58,9 @@ end
 Given /^I am logged in as bobsmith$/ do
   visit '/fortests/register'
   fill_in("a_login", :with => "bobsmith")
-debugger
   click_button("submit")
-  # submit_form
+  visit '/fortests/login'
+  fill_in("a_login", :with => "bobsmith")
+  click_button("submit")
 end
 

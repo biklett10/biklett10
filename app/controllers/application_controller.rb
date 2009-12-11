@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
     else
       @the_user= User.find(session["user_credentials_id"]).email
     end
-    @the_user
+    session[:login]= @the_user
+    return @the_user
   end
   # bikle 2009-12-06
 

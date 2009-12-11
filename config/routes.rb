@@ -1,5 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
 
+  # bikle 2009-1210
+  map.connect '/fortests/register', :controller => 'fortests', :action => 'register'
+  map.connect '/fortests/post_register', :controller => 'fortests', :action => 'post_register'
+  map.connect '/fortests/login', :controller => 'fortests', :action => 'login'
+  map.connect '/fortests/post_login', :controller => 'fortests', :action => 'post_login'
+  # bikle 2009-1210
 
   # bikle 2009-1208 http://www.novawave.net/public/rails_messaging_tutorial.html
   map.resources :sent
