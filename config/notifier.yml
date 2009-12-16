@@ -1,17 +1,17 @@
 development:
   notifier:
-    host: localhost:3000
+    host: demo.pelesend.com
     name: User Notifier
-    email: noreply@example.com
+    email: noreply@pelesend.com
   default_content_type: text/html # "text/plain" "text/html" "text/enriched"
   delivery_method: :smtp # :sendmail :stmp
   smtp_settings:
-    address: localhost
-    port: 25
-    domain: example.com
-    authentication: :login
-    user_name: noreply@example.com
-    password: noreply
+    address: smtp.gmail.com
+    port: 587
+    domain: gmail.com
+    authentication: :plain
+    user_name: admin@pelesend.com
+    password: dogscatsgerbils2
     enable_starttls_auto: true
 
 test: &TEST
