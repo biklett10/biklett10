@@ -26,3 +26,12 @@ cucumber:
 
 selenium:
   <<: *TEST
+
+mysqldemo:
+  adapter: mysql
+  encoding: utf8
+  database: m2dev
+  pool: 5
+  username: m2user
+  password: m
+  host: localhost
