@@ -1,5 +1,5 @@
 %h2 Login (for testing only)
-%form{:action => "/fortests/post_login"}
+-form_tag :action => "post_login" do
   a_login:
-  %input{:name => "a_login"}
-  %input{:id => "submit", :type => "submit", :value => "submit"}
+  =text_field_tag 'a_login'
+  =submit_tag 'submit'

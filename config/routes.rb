@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  # bikle 2009-1215
+#  map.connect '/static/messages', :controller => 'static', :action => 'messages'
+  # bikle 2009-1215
 
   # bikle 2009-1210
   map.connect '/fortests/register', :controller => 'fortests', :action => 'register'

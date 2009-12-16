@@ -8,18 +8,18 @@
     %table.main_table{:width => '98%', :border => '1'}
       %tr.main_tr
         %td.lhs{:valign => 'top'} 
-          %a{:href => '/login'}Login
+          =link_to("Login",:login)
           %br/
-          %a{:href => '/signup'}Register
+          =link_to("Register",:signup)
           %br/
           Logged in as:
           %p{:style => "color:green"}=@the_user
           %br/
-          %a{:href => '/static/messages'}Messages
+          =link_to("Messages",:controller => :static, :action => :messages)
           %br/
-          %a{:href => '/profile'}Profile
+          =link_to("Profile",:controller => :static, :action => :profile)
           %br/
-          %a{:href => '/logout'}Logout
+          =link_to("Logout",:controller => :user_sessions, :action => :destroy)
 
         %td.rhs{:valign => 'top'}
           -if flash[:notice]

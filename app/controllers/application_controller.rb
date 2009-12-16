@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   # bikle 2009-12-08
   def repel_em
-    (redirect_to("/");flash[:notice]="Please Login")if (session[:login].nil? || session[:login] == "not_logged_in")
+    (redirect_to(root_url);flash[:notice]="Please Login")if (session[:login].nil? || session[:login] == "not_logged_in")
   end
   # bikle 2009-12-08
 

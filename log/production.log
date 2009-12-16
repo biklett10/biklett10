@@ -1,1 +1,8 @@
 Fri Dec 11 14:40:06 PST 2009
+
+
+Processing StaticController#about (for 127.0.0.1 at 2009-12-12 15:20:37) [GET]
+  Parameters: {"action"=>"about", "controller"=>"static"}
+Rendering template within layouts/application
+Rendering static/about
+Completed in 111ms (View: 8, DB: 0) | 200 OK [http://localhost/]

@@ -1,5 +1,5 @@
 %h2 Register a login for testing only
-%form{:action => "/fortests/post_register"}
+-form_tag :action => "post_register" do
   a_login:
-  %input{:name => "a_login"}
-  %input{:id => "submit", :type => "submit", :value => "submit"}
+  =text_field_tag 'a_login'
+  =submit_tag 'submit'
