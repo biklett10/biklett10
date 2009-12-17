@@ -13,6 +13,21 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
-# Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
+
+# Care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_charset = 'utf-8'
+config.action_mailer.delivery_method = :smtp
+#config.action_mailer.perform_deliveries = true
+config.action_mailer.smtp_settings = {
+  :tls => true,
+  :address => 'smtp.gmail.com',
+  :port => '587',
+  :domain => 'gmail.com',
+  :authentication => :plain,
+  :user_name => 'admin@pelesend.com',
+  :password => 'catsdogsgerbils2'
+}
+
 config.gem 'rails-footnotes', :lib => 'rails-footnotes', :source => 'http://gemcutter.org', :version => '>=3.6.3'
+
